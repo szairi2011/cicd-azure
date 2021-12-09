@@ -9,6 +9,9 @@
 ## SSH Login to this VM:
 - ssh -i ./cicd-vm_ssh_key.pem azureuser@20.79.205.225
 
+## Managed Gir repositories from VS Code
+- Followed below link -- https://code.visualstudio.com/docs/editor/github
+
 
 ## Deployments:
 1. Docker Deamon:

@@ -7,9 +7,9 @@
 - Azure managed reource: cicd-vm
 
 ## SSH Login to this VM:
-- ssh -i ./cicd-vm_ssh_key.pem azureuser@20.79.205.225
+- ssh -i ./cicd-vm_ssh_key.pem azureuser@20.79.218.100
 
-## Managed Gir repositories from VS Code
+## Managed Git repositories from VS Code
 - Followed below link -- https://code.visualstudio.com/docs/editor/github
 
 
@@ -21,4 +21,12 @@
 	Installed using this url -- https://docs.docker.com/compose/install/
 
 3. Jenkins using docker compose:
-	Installed using this url -- https://digitalavenue.dev/Run-Jenkins-On-Docker-Compose/
+	- Installed using this url -- https://digitalavenue.dev/Run-Jenkins-On-Docker-Compose/
+	- UI admin creds admin/admin
+	
+4. SSH Jenkins Authentication to GitHub projects
+	To be able to checkout private projects from Github, an ssh credential needs to be set up for Jenkins (i.e. rsa private key) and Github (i.e. rsa public key). The following url is used to highlight the steps -- https://medium.com/appgambit/ssh-authentication-between-github-and-jenkins-d873dd138db0 
+
+4. Install nodejs and npm:
+	- To run outside Jenkins -- Installed nodejs and npm using url -- https://linuxize.com/post/how-to-install-node-js-on-ubuntu-20-04/
+	- To execute npm / node scripts from Jenkins need to install the nodejs plugin from Jenkins plugin manager

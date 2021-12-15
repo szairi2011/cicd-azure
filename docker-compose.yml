@@ -27,10 +27,15 @@ services:
   # the specicified virtual network created by docker-compose i.e. jenkins-net in this case    
   mails:
     image: mailhog/mailhog
+    container_name: mails-server
     restart: unless-stopped
     ports:
       - "8025:8025" # mailhog's web app (think test instance of gmail)
       # - "1025:1025" jenkins will us mail:1025 to send emails; only map to host if we need to send files as part of the email notifications
+    networks:
+      jenkins-net:
+        aliases:
+          - jenkins-net
 
 volumes:
   jenkins-data:

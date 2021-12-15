@@ -6,6 +6,10 @@
 
 - Azure managed reource: cicd-vm
 
+## Public DNS name:
+A domain name is allocated for the cicd-vm: cicd-vm.germanywestcentral.cloudapp.azure.com
+NB: this could be useful if we can not access VM resources through IP.
+
 ## SSH Login to this VM:
 - ssh -i ./cicd-vm_ssh_key.pem azureuser@20.79.218.100
 

@@ -1,0 +1,986 @@
+197363005/IU1308843264/TWXW8K9
+
+====
+104090/$IGOGYG0
+
+====
+VDI:
+Host# EMEA-TUN-VDI148 (if neded include suffux [host].internal.sungard.corp)
+IP# 10.215.60.209
+
+====
+tanitjobs | soulou | Danialv44{
+
+====
+IBM
+sofien.zairi@sungard.com/Zambraqwerty
+
+====
+Perforce:
+LDAP username/password
+
+====
+Hudson:
+sofien.zairi/Zambra44{
+
+====
+TeamSupport:
+- Portal url: https://app.fisglobal.teamsupport.com/Login.aspx
+- Username: sofien.zairi@fisglobal.com
+- pwd: Merit44{
+
+====
+FNFIS.com:
+Domain user# fnfis.com\e1079458 --> sometimes we may need to omit the domain name and keep only   - username, i.e. e1079458
+ 
+ - pwd# Be hell or high water 33$
+ - Old# Be hell or high water 44$
+ - Old# Be hell or high water 33$
+ - Old# Be hell or high water 22$
+ - Old# Be hell or high water 11$
+ - Old# Be hell or high water 88$
+ - Old# Be hell or high water 99$
+ - Old# Be hell or high water 00$
+ - Old# Be hell or high water 90$
+ - Old# Be hell or high water 80$
+ - Old# Be hell or high water 70$
+ - Old# Be hell or high water 60$
+ - Old# Be hell or high water 40$
+ - Old# Be hell or high water 30$
+ - Old# Be hell or high water 20$
+ - Old# Be hell or high water 10$
+ - Old# Open the box you find 10$
+ - Old# Open the box you find 100$
+ - Old# Open the box you find 60$
+ - Old# Open the box you find 40$
+ - Old# Open the box you find 30$
+ - Old# Open the box you find 20$
+ - Old# FISFIS2018{
+ - Old# FISTN2018{
+ - Old# SGWTN2018{
+ - Old# Ready44{
+ - Old# Rathi44{
+ - Old# Sabir44{
+ - Old# Samit44{
+ - Old# Skandoura44{
+ - Old pwd# Stupha44{
+ - old pwd# Skander44{
+ - old pwd# Sallouma44{
+ - old pwd# Angelica44{
+ - Old pwd# 6Gj=}4QaWf
+
+	Q1. What is the name of the school where you attended 6th grade?
+	R. ibncharaf
+
+	Q2. What is your favourite city?
+	R. london
+
+	Q3. What is the manufacturer/brand of your first vehicle?
+	R. volkswagen
+
+	Q4. What city or town did you meet your spouse/partner?
+	R. monastir
+
+	Q5. What city where you born?
+	R. tunis
+
+	Q5. What is your fvourite sports team?
+	R. clubafricain
+====
+Sungard INTERNAL:
+ - user# sofien.zairi
+ - pwd: Lead@with@integrity22{
+ - Old# Be@the@change@44{
+ - Old# Yet@nother@year@end@9
+ - Old# Winter@Spring@4
+ - Old# Spring@Summer@4
+ - Old# Tara@Tata@Summer@1
+ - old# Summer@Winter@2
+ - Old# Summer@Winter@1
+ - Old# Goals44{ 
+ - Old# Merit44{
+ - Old# Sabir44{
+ - Old# Soulou44{
+ - Old# Summer@123
+ - Old# Behit44{
+ - Old# Samit44{
+ - Old# Rathi44{
+
+====
+Veracode:
+user# sofien.zairi@fisglobal.com
+pwd# Zambra44{
+
+====
+Build Automation:
+\\EMEA-TUN-VMW183\Users\MohamedHabib.Masmou\Desktop\Share\BuildAutomation
+
+====
+STEG en ligne:
+user# soulou2000@yahoo.fr
+pwd# Danialv44{
+
+====
+SONEDE en ligne:
+- URL: https://portail.sonede.com.tn/login
+- username: soulou2000@yahoo.fr
+- pwd: Danialv44$
+
+====
+e-Payslip: 
+pwd# jqkync
+pwd old# Bh7rkQmz
+
+====
+gmail:
+- email: szairi2011@gmail.com
+- pwd: Danialv44{
+- #old pwd:Merit44{
+
+====
+Postman account:
+- New: szairi2011/Merit44{
+- Old: szairi2011@gmail.com/Merit44{
+
+====
+yahoo web mail:
+soulou2000@yahoo.fr
+- New: Addouma44{
+- Old:Skandoura44{
+
+====
+RSA SecureID VPN token
+** Samsung device
+- RSA bind ID# 3EA5F1E190D419AF21257FA3
+- RSA token: 26011973
+
+** iOS device:
+- RSA Binding ID# 407f14820133c733aab39698
+
+====
+RegU URL: edsprod.fnfis.com
+
+====
+Adam school :: TouteMonAnnee website account
+- New# Soulou44{
+- Old# Danialv44{
+
+====
+Sodexo pass mobile app
+- email: sofien.zairi@fisglobal.com
+- pwd: Danialv44$
+- Old pwd: Danialv44!
+
+===
+IPhone mobile phone:
+- PIN# 0000
+- PUK# code PUK: 91278250
+- Pwd# Salam44{
+
+====
+KDPW online registration account
+- Username# soulou
+- PWD# KDPWFIS44{
+
+====
+Company mobile (Samsung)
+- PWD# Sabir44{
+
+====
+Maghrebia (Portal access)
+
+- Portal link# https://portail.magassur.com.tn/sante/login.jsp
+- Username# C846_00780
+- Pwd# 7257
+
+====
+la Carte assurance (Portal access):
+
+- URL: https://e-sigourta.carte.com.tn
+- Old URL: http://www.cartenet.tn:5050/
+- Username: 04638507
+- pwd: Merit44{
+
+- Old pwd: Carte123
+
+====
+OCC ENCORE GUI (login)
+UserID# szairi036
+Pwd# Addouma2018{
+
+====
+Docker Hub
+- Username# soulou2019
+- Password# Danialv44{
+- API access token from docker: dckr_pat_SjgEiOU8LRuPLQ4dtWKxL9jtQ4o
+- Access token label: dockerhub_access
+
+====
+Github account:
+- URL: https://github.com/
+- username: szairi2011@gmail.com
+- email address: szairi2011@gmail.com
+- password: Open the box you find 10$
+
+- api access token (classic): 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
+- api token label: github_workflows
+
+- 2FA is rolled on for Github since Oct 12th 2023, and I have backed it up by Microsoft Authenticator app in the iPhone
+
+**** Two Factor authentication recovery codes as a second factor to authenticate to Github in case
+we lose access to my phone device:
+14029-3fbe5  --> Used already to recover when I re-installed MS authenticator on my iPhone 11 device
+1644f-213ed  --> Used when cloning n8n self-hoting project I had to switch accounts from FIS accoubt to personal
+4c792-6e480  --> Used
+043aa-3dd51	 --> Used
+0e95a-3737c	 --> Used
+4a2b4-a0d70
+f37af-8a5eb
+9250f-e7c12
+602a4-da21a
+4c64d-f1f38
+ddbb4-cf351
+59810-3eebf
+a9ca6-9dcf0
+8ac93-13c21
+f4bfb-b193e
+33f37-c8279
+
+====
+Internship program:
+- Jenkins server under: 10.254.116.49:8081
+- username# admin
+- pwd# admin
+
+====
+Own Rancher Jenkins stack for cat-batch eval
+- Rancher server: http://10.28.117.136:8181/
+- Jenkins server under: 10.254.116.49:9080
+- username# admin
+- pwd# Salam44{
+
+====
+Local (Own laptop) Jenkins server
+- Jenkins URL: localhost:8080
+- Admin user: admin
+- password: Salam44{
+====
+TeamSupport system login:
+- URL: https://app.fisglobal.teamsupport.com
+- Username: sofien.zairi@fisglobal.com
+- Pwd: Danialv44{
+
+====
+- AppleID: szairi2011@gmail.com
+- pwd: Danialv44{
+- Security Question-1: first pet...? / Answer: nannoussa
+- Security Question-2: Model of first car...? / Answer: volkswagen
+
+====
+PMI / PMP - url (https://www.pmi.org/account-registration)
+- Username: szairi
+- Password: Danialv44{
+
+====
+Wireframing online (NinjaMock - https://ninjamock.com/account/login)
+- Username: soulou2000
+- Password: Salam44{
+
+====
+Anaconda cloud
+- URL: https://anaconda.org/
+- username: soulou
+- email: soulou2000@yahoo.fr
+- pwd: Danialv44{
+
+====
+Gallup - FIS Strength assessment
+- URL: https://login.gallup.com/identity/login
+- username: sofien.zairi@fisglobal.com
+- email: sofien.zairi@fisglobal.com
+- pwd: Salam44{
+
+====
+Wifi maison Hamouda (Nsibi)
+- Wifi name: Topnet_EA88
+- pwd: Fs171071050280
+
+====
+PMP - STS system for exam preparation:
+- URL: https://sts.ch/fr/produits/simulation/simultrain
+- id : CR91997
+- pwd: KKN708
+
+====
+Mongo DB Atlas cloud -- mongodb.com -- community server
+- username: szairi2011@gmail.com
+- pwd: Salam44{
+
+====
+LinkedIn:
+- username: soulou2000@yahoo.fr
+- pwd: Merit44{
+- Old: Danialv44{
+====
+Temporay VPN token:
+- 34857625
+- Need to preceed above temporary code by 26011973
+
+
+====
+CNSS verification de mes cotisations:
+- URL: http://www.cnss.tn/en/group/salarie/mon_salaire
+- Username: 04638507
+- pwd: Salam44{
+
+====
+Oracle.com account e.g. to download Java JDK
+- Username: soulou2000@yahoo.fr
+- pwd: Danialv44{
+
+====
+ASTREE -- Pension retraite complementaire + saving plan:
+- URL: https://www.astree.com.tn/capitalisation/ConsultationCompte.aspx
+- Username: 3883
+- pwd: 3883zGVBqkPL
+
+====
+Virgin Pulse Health app and portal
+- URL: https://app.member.virginpulse.com/#/home
+- Username: sofien.zairi@fisgobal.com
+- pwd: Salam40$
+
+====
+Global support: Also available from the Global Support Portal
+Phone number for Tunisia	+216 70106610 extn 2166610
+
+
+
+*** Test environments ***
+ -- CME MQ server --
+- RDP access:
+	- Domain: PTD-VM-CV-MQ2
+	- IP 10.215.102.105
+	- RDP username:  Admin
+	- passwd: FISFISGlobal123#
+- MQ server: 10.215.102.105:1414
+- CME Trade entry portal:
+	- URL: https://loginnr.cmegroup.com/sso/accountstatus/showAuth.action
+	- QA creds (Security code will be sent to Emira's device): TUNISQA2/March9877!
+	- Dev creds (Security code will be sent to Riadh device): TUNISDEV2/March9877!
+
+- For how to fill the trade entry form in CME FECPlus portal above, check email from Zied (Subject: "cme trade entry")
+- The CME incoming queue for 714 member:
+	- MQ Explorer filter: CME_NR_714_Paris_Incoming
+	- Queue name: NR.CME.PAR2.714.LQUEUE
+
+=== Interns VM EMEA-TUN-PTDS01
+
+- Archer server: https://archer.fnfis.com/RSAarcher/apps/ArcherApp/Home.aspx
+
+- Host: EMEA-TUN-PTDS01
+- OS:  CentOS Linux 7
+- IP: 10.254.116.47
+- New access through BoKS:
+	
+	Procedure to login into the machine” 
+
+	1. Start up an SSH client, e.g. Putty
+	1. Use your eNUMBER as username
+	2. PASSCODE is your SecureID Token
+	3. suexec su ( /usr/boksm/bin/suexec su ) to switch to root -- This is only setup on a temporariy basis
+
+	Procedure to raise a ticket to request an access resumption when access is denied; e.g. when VMs are not used for a while:
+	
+- If access is lost or denied, we can resume the access by:
+1. Raising a Dash request to ask for a login access -- https://dash.fisglobal.com/Request/NRBoKS.aspx
+2. Specify userclass -- 4233.501733.9801_CM_SDT_ALL_LOGIN - SUNGARD
+
+=== A verifier below we may not need it ==
+1. Raise a Generic SNOW ticket -- Technology Service Catalog > Employee Support Services > Generic > Generic Create Ticket to Global Support Desk
+2. Contact Aymen Ammar to let him know
+
+Info below is provided by [Mtibaa, Yssam <Yssam.Mtibaa@fisglobal.com> from Neji, Zied <Zied.Neji@fisglobal.com> team]
+	1. What I recommend doing is to raise a ticket to the boks team to find out which userclasses are associated to those machines, you can use the following link and make sure to select “other” and describe your issue asking them for the userclasses.
+ https://atyourserviceportal.service-now.com/com.glideapp.servicecatalog_cat_item_view.do?v=1&sysparm_id=570e0cfb1b6874d07cb1ed33b24bcb43&sysparm_link_parent=c67b58224f741304e6da69118110c7b1&sysparm_catalog=742ce428d7211100f2d224837e61036d&sysparm_catalog_view=catalog_Technology_Service_Catalog&sysparm_view=catalogs_default
+
+	NB: Regarding the ability to install/manage binaries on both machines it is something you need to raise with the boks team as they do manage privilege escalation and we cannot grant you root access as it is reserved to our team. 
+
+
+=== Interns VM EMEA-TUN-PTDS03
+- Host: EMEA-TUN-PTDS03
+- OS:  CentOS Linux 7
+- IP: 10.254.116.49
+- New access through BoKS:
+	
+	Procedure to login into the machine” 
+
+	1. Start up an SSH client, e.g. Putty
+	1. Use your eNUMBER as username
+	2. PASSCODE is your SecureID Token
+	3. suexec su ( /usr/boksm/bin/suexec su ) to switch to root -- This is only setup on a temporariy basis
+
+
+	Old setup (Prior to BoKS migration):
+	===================================
+	- SSH Admin username: admin
+	- SSH Admin pwd: Fisglobal123
+
+	- Gitea portal username# sofien.zairi
+	- Gitea portal password# Danialv44{ 
+
+
+===
+virtualBox:
+- Root user password# root
+- szairi user passwor: password
+
+- centos-7 VM:
+	- To Change to french keyboard: > localctl set-keymap fr (To check change is done: > localectl)
+	- Network settings: 
+		- From VirtualBox Manager interface right click on the VM 
+		- and select network, 
+		- then choose bridged one, 
+		- Finally roboot the VM (> reboot) if it's running
+		- ping the host machine to make sure network is established
+	- Set proxy for yum to be upbe to install/update packages:
+		- open /etc/yum.conf
+		- add following proxy entry:
+			- http_proxy=http://10.215.70.73:8080
+		- optional: You may set proxy wide settings in /etc/environment or in /root/.bashrc, by typing following commands:
+			- > export http_proxy=http://10.215.70.73:8080
+			- > export no_proxy=127.0.0.1, localhost
+
+	- yum examples: 
+		1. > yum search chromium
+			Search the yum repositories for all packages with the word "chromium" in the title.
+
+		2. > yum -y install chromium
+			Install the package named "chromium", and assume the answer "y" (yes) to any questions asked during installation.
+
+	- Few useful Linux commands:
+		- A simple and quick way to refresh knowledge is to watch youtube recording under - "https://www.youtube.com/watch?v=V1y-mbWM3B8&vl=en" --> title of the video: "Linux Tutorial for begineers: Introduction to Linux Operating System"
+		
+		- print working directory useful to know where we are in the file system 
+			> pwd
+		
+		- To list files and directories in the present working directory:
+			> ls
+		- To show files in directory and in its subdirectories as well:
+			> ls [dir to enlist] -R
+		- To show more details about files like permissions, size, file owners, group where owners belong to, etc:
+			> ls -al
+		- To show hidden files (i.e. file starting with . e.g. .nodejs):
+			> ls -a
+		- To create files use vi or cat:
+
+		- To delete file:
+			> rm file_name
+		- To move file to a new location:
+			> mv file_name directory_path
+
+		- To rename a file:
+			> mv file-name1 file_name2
+
+		- To create directorie(s):
+			> mkdir dir1 dir2
+
+		- To delete directory:
+			> rmdir dir1
+		
+		- A man command, which stands for manual, to print purpose of a Linux command etc:
+			> man ls --> will display what ls command is for and how to use it
+
+		- History comman to show all commands used for the current terminal session:
+			> history
+
+		- Clear command to clean the window:
+			> clear
+
+========
+		- To extend the virtual disk space inside Linux guest:
+			1. Make sure the Linux VM is shutdown 
+			2. Increase the storage space by running from the host 
+				cmd > C:\Program Files\Oracle\VirtualBox>VBoxManage.exe modifyhd "C:\Users\e1079458\VirtualBox VMs\centos-7_with_gui\centos-7_with_gui.vdi" --resize 40560 
+			3. Boot up the Linux VM from a GParted optical drive to reallocate the space to the required partition
+			4. Shutdown and boot up the VM normally on Centos this time
+			5. Login as root user 
+			6. Make sure physical volume (Partition) /dev/sda2 contains the space as allocated by GParted
+				> pvs /dev/sda2
+					PV         VG     Fmt  Attr PSize  PFree  
+  					/dev/sda2  centos lvm2 a--  38.08g <31.09g
+
+				Above pvs command shows that 31.09g is still free to allocate
+				NB: Looking at this online thread "https://stackoverflow.com/questions/8141045/virtualbox-extend-partition", it seems also possible to resize the partition (i.e. physical volume) from Linux and no need for GParted by logging as root typing > pvresize /dev/sda2
+
+			7. Now it's time to allocate the entire free space to the Logical Volume (i.e. /dev/mapper/centos-root in this case) 
+				[root@centos7 ~]# lvresize -l +100%FREE /dev/mapper/centos-root
+  					Output: Size of logical volume centos/root changed from <6.20 GiB (1586 extents) to 37.28 GiB (9544 extents).
+  Logical volume centos/root successfully resized.
+
+			8. No it's time to resize the filesystem (i.e. / in this case). Depending on the type of filesystem, the command to use for resizing will be different:
+	It might not be obvious what filesystem we are using but i bet that its either ext4 or xfs (type >df -T -h will tell which type of the filesystem is in use).
+
+In the first case, i.e. if it's Ext4:
+
+> resize2fs /dev/mapper/centos-root
+
+In the second case, i.e. if it's xfs:
+
+> xfs_growfs /
+
+
+				i.e. In our case it's xfs, so:
+					[root@centos7 ~]# xfs_growfs /
+						Output: meta-data=/dev/mapper/centos-root isize=512    agcount=4, agsize=406016 blks
+         =                       sectsz=512   attr=2, projid32bit=1
+         =                       crc=1        finobt=0 spinodes=0
+data     =                       bsize=4096   blocks=1624064, imaxpct=25
+         =                       sunit=0      swidth=0 blks
+naming   =version 2              bsize=4096   ascii-ci=0 ftype=1
+log      =internal               bsize=4096   blocks=2560, version=2
+         =                       sectsz=512   sunit=0 blks, lazy-count=1
+realtime =none                   extsz=4096   blocks=0, rtextents=0
+data blocks changed from 1624064 to 9773056
+
+	NB: The last line above indicates that the change took place (i.e. data blocks changed from 1624064 to 9773056)
+
+			9. Double check that filesystem resizing took place as expected by typing:
+				[root@centos7 ~]# df -h
+Filesystem               Size  Used Avail Use% Mounted on
+/dev/mapper/centos-root   38G  5.8G   32G  16% /
+devtmpfs                 903M     0  903M   0% /dev
+tmpfs                    920M     0  920M   0% /dev/shm
+tmpfs                    920M  9.4M  910M   2% /run
+tmpfs                    920M     0  920M   0% /sys/fs/cgroup
+/dev/sda1               1014M  232M  783M  23% /boot
+couchbase_shared_data    238G  141G   98G  59% /dev/mount
+tmpfs                    184M   28K  184M   1% /run/user/0
+
+========
+		
+
+	- Docker installation:
+		- To install Docker: > sudo yum install -y docker
+		- To check docker version: > docker --version
+		- To check status of docker: > docker info --> this will tell if Docker is started...
+
+	- If docker service is not started as per docker info command, we need to start the service:
+		> sudo service docker start
+		or
+		> sudo systemctl docker start
+
+	- Set up proxy setting for Docker:
+		/etc/systemd/system/docker.service.d/http-proxy.conf
+			======
+			Environment="HTTP_PROXY=http://10.215.70.71:8081" "HTTPS_PROXY=http://10.215.70.71:8081" 			"NO_PROXY=127.0.0.1,localhost,10.215.13.225,10.243.117.136,internal.sungard.corp,*.internal.sungard.corp"
+
+	- Reload network daemon for the proxy settings above to take effect:
+		- # systemctl daemon-reload
+		- # systemctl restart docker
+
+	- Add a user to Docker group of users to run docker without elevated priviliges, i.e. without using sudo for instance:
+		> sudo usermod -a -G docker szairi
+	NB: If docker group is not create yet, it can be created using:
+		> sudo addgroup docker
+
+	- Docker commands:
+		- List of docker images: > docker images
+		- List of running containers: > docker ps
+		- List of all containers (regardless of their state): > docker ps -a
+
+	- Rancher:
+		emea-tun-ws0001.fnfis.com [10.254.120.66]
+		
+=====
+Couchbase server on VirtualBox VM# "centos-7_with_gui"
+
+- To start couchbase server follow cheatsheet under C:\Users\e1079458\work\PTD\SGW\MGMT\perso\intern_projects\pfe_2019\monitoring_platform\env_setup_cheatsheet.txt
+
+- Portal credentials: Administrator / password
+
+
+=====
+One Note (Sofien-Bi-Weekly)
+pwd# Sofien2019
+
+=====
+Swagger (OpenAPI tools)
+* Account:
+	* Username: soulou
+	* pwd: Merit44{
+* Swaggerhub personalized workspace:
+	* URL: https://app.swaggerhub.com/apis/soulou.org
+
+=====
+Online Mockup, Wireframe and UI
+- URL: app.moqups.com
+- Account username: sofien.zairi@fisglobal.com
+- Pwd: Salam44{
+
+=====
+Rancher 2.x on inetrn server2
+- URL: https://10.254.116.47:8443/
+- Username: admin
+- Password: Salam44{
+- Docker container installed on Linux VM# 10.254.116.47
+- Linux VM username: admin
+- Linux VM password: Fisglobal123
+- Initially deployed from a docker image rancher/rancher:latest --> and corresponds to Rancher v2.2.4
+- Docker registry mirror is already set up in VM to user FIS Artifactory: https://docker.fnis.com/
+	* Hint: To set up Docker mirror use > sudo systemctl edit docker.service..., then add mirror as described under "https://medium.com/@arastu/add-docker-registry-mirror-to-docker-daemon-on-systemd-ubuntu-16-04-d9a224be4d86"
+
+======
+http proxy configuration for our Linux environments:
+- Server: proxy.fisdev.local (NB: Don't add http:// for Jenkins proxy setup for instance)
+- Port: 8080
+
+======
+GitMind mind mapping online app
+- URL: https://app.gitmind.com/my
+- email: szairi2011@gmail.com
+- Password: Soulou2000_
+
+======
+PluralSight -- the Tech Skills Platform:
+- URL: https://app.pluralsight.com/profile/onboarding/welcome
+- email: sofien.zairi@fisglobal.com
+- password: Merit44{
+
+======
+Figma: Prototyping tool and vector graphics design editor
+- URL: https://www.figma.com/
+- email: szairi2011@gmail.com
+- password: Merit44{
+
+======
+MyBIAT app
+- Username: soulou2000@yahoo.fr
+- Pwd: Behellorhigh44{
+- Passcode: 260173
+
+====
+iphone:
+- iphone 11 new: passcode: Merit44{
+- iphone 11 Old: passcode: 121201
+- iphone 7+ New registered on the cloud: passcode: Danialv44{
+- iphone 7+ previous did not work try passcode: Skan44{
+
+======
+Wavemaker: 
+- 
+- email: sofien.zairi@fisglobal.com
+- password: Merit44{.
+
+======
+npmjs account:
+- Username: szairi
+- email: szairi2011@gmail.com
+- pwd: Mykidzrlovely
+
+======
+FIS Authenticator bypass URL:
+- URL: https://myapps.microsoft.com/signin/e88d5993-963c-4143-8909-b8b16f53239a?tenantId=e3ff91d8-34c8-4b15-a0b4-18910a6ac575
+
+======
+Using docker compose:
+
+* from the Linux command prompt download and install docker-compose binary from github by running the following command (NB: The -x flag below is used to specify the proxy server):  
+	$ sudo curl -x http://10.49.98.4:8080 -L "https://github.com/docker/compose/releases/download/1.25.3/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+
+* Then, to provide the execution permission on docker-compose file we need to elevate user priviliges by running:
+	$ sudo chmod +x /usr/local/bin/docker-compose
+
+* As an example we can run docker-compose on an existing project, e.g. cat-batch, that is downloaded from the interns Jenkins image. The running Jenkins docker container is using a volume mounted on /var/lib/docker/jenkins-ci/interns/workspace/ on VM http://10.254.116.49/.
+
+* To run docker-compose from the Jenkins pipeline you may need to mount volumes as follows between docker-agent container and the host machine:
+	/usr/local/bin/docker-compose:/usr/local/bin/docker-compose
+
+======
+Jenkins agent node
+
+* ssh key location on 10.254.116.47 -> /home/admin/.ssh/id_rsa.pub
+
+====
+Chatt ezzouhour:
+- Tahyine fi farz maneb numero 5393 aupres du tribunal immobilier de Nabeul
+
+====
+BouKrim:
+- Tahyine fi
+
+====
+Azure Hybrid Cloud virtual box vlmazsgwk8s1.fisdev.local
+- Description: This is node1 of a two node K8s cluster managed by master node (installed on vlmazcicdvm.fisdev.local)
+- New pwd: Danialv44$
+- Old pwd: Merit44$
+
+Azure Hybrid Cloud virtual box vlmazsgwk8s3.fisdev.local
+- Description: This is node2 of a two node K8s cluster managed by master node (installed on vlmazcicdvm.fisdev.local)
+- New pwd: Danialv44{
+- Old pwd: Merit44$
+
+====
+AKS cluster:
+- To understand how to set up the local env to access the AKS cluster, follow the Wiki page -- https://wiki.fnis.com/display/stmcl/Setup+a+SGW+Testing+Environment+on+Kubernetes+with+Helm
+
+====
+Kaggle machine learning datasets
+
+- URL: https://www.kaggle.com/datasets/karthickveerakumar/salary-data-simple-linear-regression?resource=download
+- username: sofien.zairi@fisglobal.com
+- pwd: Merit44{
+
+====
+OpenAI portal account-1:
+- URL: 
+- username: sofien.zairi@fisglobal.com
+- pwd: Danialv44{
+- New API key (From InnovateIn48 contest): a375878359e447e98b0082147472411c
+- Old API key: (for account szairi2011@gmail.com): sk-0IgcxL7N7u6fm5wQ5ET6BTCzChV3qH7Jg4n6MFuVMDT3BlbkFJZ2T3WLrG5jp1fszCAl43QY6kqsQzHVkNJZmSdIg44A
+- Old API key (for account: szairi2011@gmail.com): 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
+- Old API key (associate with account sofien.zairi@fisglobal.com): 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
+
+====
+OpenAI portal account-2:
+- URL: 
+- username: szairi2011@gmail.com
+- pwd: Be brave and speak up 44{
+
+====
+Rquest a new Azure SDL resource process
+
+- Use this SNOW link to raise a new request: 
+https://atyourserviceportal.service-now.com/nav_to.do?uri=%2Fcom.glideapp.servicecatalog_cat_item_view.do%3Fv%3D1%26sysparm_id%3D858097381baf3300938c10e58d4bcb40%26sysparm_link_parent%3Db2e331f31b4100108cb04157dc4bcb0f%26sysparm_catalog%3D742ce428d7211100f2d224837e61036d%26sysparm_catalog_view%3Dcatalog_technical_catalog%26sysparm_view%3Dcatalog_technical_catalog
+
+- If the link is not working use this process: Technology Service Catalog > FIS Cloud Services > FISDEV Cloud Operations > FISDEV Managed Public and Private Cloud Full-Service Provisioning > Request New FISDEV SDL Server
+
+====
+Slido
+- Admin portal: https://admin.sli.do/user-onboarding/organization_type
+- Username: sofien.zairi@fisglobal.com
+- Password: Merit44{
+
+====
+Weather api for development purpose
+- url: https://weatherapi.com
+- email: soulou2000@yahoo.fr
+- password: Salam44{ 
+
+====
+Neo4j graph database cloud instance (Free tier)
+** Platform portal account:
+- email/username: sofien.zairi@fisglobal.com
+- password: Danialv44{
+** Cloud DB (1GB) account:
+- Username: neo4j
+- Generated password: dJG4z9Z3Z_jY_993aDsl_T_K-vhVqJLpdVQFYP70VA4
+
+====
+Jira + Confluence Atlassian cloud account (Free tier)
+- url: https://fisglobal-sofienzairi.atlassian.net/
+- email: sofien.zairi@fisglobal.com
+- password: Danialv44$
+- API token (set to expire on April 23rd 2026): ATATT3xFfGF02URhR_DNT-f-I1Cb4rbldfwF7NvlCPRujtabwJXTX6V5f8UERPWKkYk-IEXrV5W36fvoXGopPcybxn8eoT8vpke_o5nmq3_MgF2So-ezi_geR7iY5XCPGpU8mcWUTl8gr08y4sLZ6AyY09T-O7QyzcD6d4II8LkxtlktA7CT43Y=4DC97E08
+- old api token: ATATT3xFfGF0qb7uDkT-szbKa0T-dXl87aKOLXSqzMIi7GWuv9Qty_ASu0qq4ps7jgZfgM6Ht7e7_fcURXmTxYGOJdYjheepYip6VEENo3FQrXmm_mwh0YSPRvEmmPwPQty6bSVCWEJCzWSX-C3Dxh1y74XTxZR7itWhY44W0Ijkd2V2Ej5Z974=36559B3C
+
+====
+TestRail on the cloud:
+- INstance URL: https://souzou.testrail.io/
+- username: szairi2011@gmail.com
+- password: Danialv44{
+- API key: C0t28UNSdtcQqAQE.5yg-ByrI0syg2gZnrxcVa0Rs
+
+====
+TestRail on testrail.fis.dev:
+- INstance URL: https://testrail.fis.dev/
+- username: sofien.zairi@fisglobal.com
+- API key: Y9HugFr1LRRKtzbSAUnc-19qu6eXuq.lmqPUNitY.
+
+** Old disabled
+- INstance URL: https://soulou.testrail.io/
+- username: sofien.zairi@fisglobal.com
+- password: Danialv44{
+- Integration key (Used by Jira add-on): .s8C7rAZeRyw.gwZAIYI
+
+====
+Harness CI/CD platform
+- URL: https://app.harness.io/ng/account/J1E416nCQ9-YSx6GUNIvUg/cd/orgs/default/projects/default_project/pipelines
+- email: sofien.zairi@fisglobal.com
+- Password: Danialv44$
+- Account ID: J1E416nCQ9-YSx6GUNIvUg
+- API token: pat.J1E416nCQ9-YSx6GUNIvUg.65e5733d91b0036b62c9935c.8f1aGwHA87IMbXDwWHCP
+- API token label: harness_secret
+
+====
+Github Enterprise (GHE): Follow setup in Wiki on how to set up access to FIS GHE account
+- email: sofien.zairi@fisglobal.com
+- password: use my FIS password -- This account is also SSO enabled
+- API token (classic): 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
+
+====
+Python FIS Artifactory access token
+- API key or Identity token:
+cmVmdGtuOjAxOjE3Mzk1NDM5OTg6OWxWT0ZEWWhFTUl0a0YzUzlIQWhOY3FiY1Fk
+- We can use the token inline to install the packages with pip:
+ e.g. > pip install jupyter --index-url https://e1079458:cmVmdGtuOjAxOjE3Mzk1NDM5OTg6OWxWT0ZEWWhFTUl0a0YzUzlIQWhOY3FiY1Fk@artifactory.fis.dev/artifactory/api/pypi/apexsecfin-pypi-dev/simple/
+
+====
+Tabnine AI code completion VSCode extension
+email: sofien.zairi@fisglobal.com
+password: Danialv44{
+
+===
+Slidego.com AI presentations
+- URL: https://slidesgo.com/
+- email: sofien.zairi@fisglobal.com
+- Password: Danialv44{
+
+====
+Ngrok (Reverse proxy, e.g. For Github webhooks)
+- URL: https://dashboard.ngrok.com/signup
+- Username: sairi2011@gmail.com
+- pwd: Danialv44{
+- Tunnel credentials: 2fYPAqGhcEjrsmakKBJm1OufmM1_4hwXe6ck5PZvKaiDMrnJX
+- API key (For the Ngrok rest service): 2fd7ASOI6AVFOvAWSO40pvFhucd_4ZPETLq48haTQ6PXrQSjz
+
+=====
+HuggingFace model HUB
+
+- URL: https://huggingface.co/join
+- Username: soulou2000
+- pwd: Open the box you find 10$
+- API token: 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
+- Another API token: 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
+- my-hugging-face-api-key-2: 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
+- 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
+
+=====
+Streamlit.io
+
+- URL: https://bertclass1-ijnnv6p9v84hfzkbsfy5kd.streamlit.app/
+- 
+
+=====
+Grafana
+
+- URL: https://grafana.com
+- username: sofien.zairi@fisglobal.com
+- password: Danialv44{
+- THe download page: https://grafana.com/grafana/download
+
+=====
+OpenArt AI
+
+- URL: https://openart.ai/
+- email: sofien.zairi@fisglobal.com
+- password: Danialv44{
+
+An AI prompt example to OpenArt AI: Two cats each one is sitting on a separate chair typing on a separate keyboard and looking at a separate monitor. Give the chats a geeky look of genuine Software developers wearing relaxed attires. One will be wearing a sweat, and the other is wearing a hoody.
+
+
+=====
+Databricks
+
+- URL: https://community.cloud.databricks.com/login.html?_ga=2.210815829.1169384706.1730288533-198424553.1730288532
+- username: sofien.zairi@fisgobal
+- password: Danialv44{
+
+=====
+Slack account
+
+- sofien.zairi@fisglobal.com
+
+=====
+Chatbase
+- URL: https://www.chatbase.co/
+- Username: sofien.zairi@fisglobal
+- Password: Danialv44{
+
+=====
+Tunisie Telecom
+- URL: https://myspace.tunisietelecom.tn/Particulier/Pages/MySpace.aspx
+- email: sofien.zairi@fisglobal.com
+- pwd: Danialv44{
+
+=====
+Zitouna Takaful
+- Portal url: https://client.zitounatakaful.com/
+- username: sofien.zairi@fisglobal.com
+- pwd: o4q8gA
+
+=====
+Cursor IDE
+- Username: sofien.zairi@fisglobal.com
+- pwd: Be hell or high water 44{
+
+=====
+n8n AI automation
+- email: sofien.zairi@fisglobal.com
+- pwd: Danialv44{
+- n8n self-hosted on a Railway cloud (i.e. a completely free instance of n8n platform with a 5$ Railway free credit for quick testing and eval): https://primary-production-d288.up.railway.app/home/workflows
+	--> The cloud based self-hosted env is deployed using this Youtube video -- https://www.youtube.com/watch?v=PszhyPQj9zg
+	
+=====
+Render IaaS:
+- email: sofien.zairi@fisglobal.com
+- pwd: Danialv44{
+
+=====
+InnovateIn48 Azure resources access:
+
+- OpenAI API showcase access: https://innovate-openai-api-mgt.developer.azure-api.net/api-details#api=innovate-tracked&operation=ChatCompletions_Create
+ --> OpenAI API key: a375878359e447e98b0082147472411c
+
+- Copilot Studio: https://copilotstudio.microsoft.com/ --> Create AI automated workflows and AI agents
+
+- Check Render n8n deployment (https://n8n-a0ma.onrender.com/), 
+
+- May use namecheap DNS to create a temporary domain for a demo purpose
+
+======
+RAG with n8n agentic ai:
+- Youtube url: https://www.youtube.com/watch?v=mQt1hOjBH9o
+
+======
+RAG simple for beginners:
+- Youtube url: https://www.bing.com/videos/riverview/relatedvideo?&q=RAG+pipeline+using+n8n&&mid=12BD567ED55EE18F06E512BD567ED55EE18F06E5&&FORM=VRDGAR
+
+
+======
+Anthropic account
+
+- Username: sofien.zairi@fisglobal.com
+- API key (my-anthropic-test-api-key): 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
+
+======
+PostGreSQL database server online
+- URL: 
+- username: soulou
+- email: sofien.zairi@fisglobal.com
+- pwd: Danialv44{
+
+======
+Supabase vector database
+ 
+- URL: https://supabase.com/dashboard/sign-up
+- username: sofien.zairi@fisglobal.com
+- pwd: Merit44{
+
+- database name: n8nrag
+- database password: w3lc0me
+
+======
+Langsmith settings
+- URL: https://www.langchain.com/langsmith
+- Login by choosing Github authentication -- account szairi_2011@gmail.com
+- Langsmith API key: Browse to https://smith.langchain.com/o/27b2d847-7dfa-4797-9140-782ff34d2828/settings
+	e.g. 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
+
+
+======
+Chicago VM
+
+- IP: 10.7.148.4 / 10.154.7.130
+- login: sungardptd\ptd.ba.support
+- password: 7=\jWaEe4'

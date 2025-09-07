@@ -1,0 +1,15 @@
+
+
+	Proposed ideas:
+	
+	1. Idea title:
+		- Description:
+		- How to implement:
+		- Youtube Reference: 
+	
+	2. Idea title:
+		- Description:
+		- How to implement:
+		- Youtube Reference: 
+		
+	...

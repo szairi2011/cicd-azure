@@ -1,0 +1,34 @@
+
+
+**** Quick wins ****
+
+- How to use Copilot in Microsoft Teams
+	- Google search keywords: "include copilot ai trigger to call in teams"
+	- Youtube:  https://www.youtube.com/watch?v=W6g6lr9NM6Y by Scott Brant who is a seasoned speaker about AI practices for Microsoft agents ...
+	- Approximate time to learn ~ 1h
+	- Approximate time to set up ~ 0 min (i.e. It works out of the box with outlook calendar, org people access, Sharepoint file access)
+	- Ref. to an app I have set up locally on Teams: Just use the example prompts from Copilot in Teams
+		App description:
+			- prompt-1: when is my next meeting with  /<person's name>
+			- Prompt-2: Highlight the priority tasks from our meeting /<File_OneNote_example_SGW_OPS>
+			- Explain concisely in very few sentences how we can design an agentic ai using n8n /<Provide the sharepoint n8n pdf doc from the innovate journey ...>
+
+- How we can export specific content from one file to template bound new file format
+	- Description: The idea is to show case how we can leverage Copilot agentic ai from Teams to transform file formats in a natural language way
+	- Prompt: 
+		Transform the content from ai_deas_for cop_community.txt to knowledge_sharing_template.txt. 
+		Make the new document concise and only include the requested fields in the template. 
+		Don't create a new file just yet, I need to approve the transformed content first through an approval action if possible.
+		The newly created file name should be in the the following format cop_ideas_<date and time>.txt. 
+		The <date and time> in the filename is a placeholder and should reflect the actual file creation date and time.
+		Are you able to check the current date and time using UTC timezone and modify it in the filename placeholder ? Be accurate no hallucination.
+
+- How to create a custom Copilot agent that will use custom knowledge base from Sharepoint
+	- Google search keywords: "create a copilot agent as a RAG pipeline and integrate with Teams"
+	- Approximate time to learn ~ 1h
+	- Approximate time to set up ~ 10 min
+
+**** AI learning path ****
+
+A custom learning path and Skill IQ exam material that is suited to our needs is available under:
+	- (TODO)

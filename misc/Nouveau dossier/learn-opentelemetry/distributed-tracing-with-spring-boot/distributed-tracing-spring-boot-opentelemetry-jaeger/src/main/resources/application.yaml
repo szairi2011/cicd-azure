@@ -1,0 +1,23 @@
+server:
+  port: 8090
+#  port: 8080
+
+spring:
+  application:
+    name: app
+#    name: ${SPRING_APPLICATION_NAME}
+
+
+tracing:
+#  url: http://emea-tun-ptds01:4318/v1/traces
+  url: http://jaeger:4318/v1/traces
+
+management:
+  tracing:
+    sampling:
+      probability: 1.0
+
+logging:
+  pattern:
+    level: "%5p [${spring.application.name:},%X{traceId:-},%X{spanId:-}]"
+

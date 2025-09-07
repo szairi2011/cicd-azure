@@ -1,0 +1,285 @@
+{
+ "cells": [
+  {
+   "cell_type": "code",
+   "execution_count": 3,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Looking in indexes: https://e1079458:****@artifactory.fis.dev/artifactory/api/pypi/apexsecfin-pypi-dev/simple, http://pypi.org/simple\n",
+      "Requirement already satisfied: llama-index==0.10.18 in c:\\users\\e1079458\\work\\learn-llamaindex\\llamaindex_using_groq_llms\\.venv\\lib\\site-packages (0.10.18)\n",
+      "Requirement already satisfied: llama-index-llms-groq==0.1.3 in c:\\users\\e1079458\\work\\learn-llamaindex\\llamaindex_using_groq_llms\\.venv\\lib\\site-packages (0.1.3)\n",
+      "Requirement already satisfied: groq==0.4.2 in c:\\users\\e1079458\\work\\learn-llamaindex\\llamaindex_using_groq_llms\\.venv\\lib\\site-packages (0.4.2)\n",
+      "Requirement already satisfied: llama-index-embeddings-huggingface==0.2.0 in c:\\users\\e1079458\\work\\learn-llamaindex\\llamaindex_using_groq_llms\\.venv\\lib\\site-packages (0.2.0)\n",
+      "Requirement already satisfied: llama-index-agent-openai<0.2.0,>=0.1.4 in c:\\users\\e1079458\\work\\learn-llamaindex\\llamaindex_using_groq_llms\\.venv\\lib\\site-packages (from llama-index==0.10.18) (0.1.7)\n",
+      "Requirement already satisfied: llama-index-cli<0.2.0,>=0.1.2 in c:\\users\\e1079458\\work\\learn-llamaindex\\llamaindex_using_groq_llms\\.venv\\lib\\site-packages (from llama-index==0.10.18) (0.1.13)\n",
+      "Requirement already satisfied: llama-index-core<0.11.0,>=0.10.18 in c:\\users\\e1079458\\work\\learn-llamaindex\\llamaindex_using_groq_llms\\.venv\\lib\\site-packages (from llama-index==0.10.18) (0.10.68.post1)\n",
+      "Requirement already satisfied: llama-index-embeddings-openai<0.2.0,>=0.1.5 in c:\\users\\e1079458\\work\\learn-llamaindex\\llamaindex_using_groq_llms\\.venv\\lib\\site-packages (from llama-index==0.10.18) (0.1.11)\n",
+      "Requirement already satisfied: llama-index-indices-managed-llama-cloud<0.2.0,>=0.1.2 in c:\\users\\e1079458\\work\\learn-llamaindex\\llamaindex_using_groq_llms\\.venv\\lib\\site-packages (from llama-index==0.10.18) (0.1.6)\n",
+      "Requirement already satisfied: llama-index-legacy<0.10.0,>=0.9.48 in c:\\users\\e1079458\\work\\learn-llamaindex\\llamaindex_using_groq_llms\\.venv\\lib\\site-packages (from llama-index==0.10.18) (0.9.48.post4)\n",
+      "Requirement already satisfied: llama-index-llms-openai<0.2.0,>=0.1.5 in c:\\users\\e1079458\\work\\learn-llamaindex\\llamaindex_using_groq_llms\\.venv\\lib\\site-packages (from llama-index==0.10.18) (0.1.31)\n",
+      "Requirement already satisfied: llama-index-multi-modal-llms-openai<0.2.0,>=0.1.3 in c:\\users\\e1079458\\work\\learn-llamaindex\\llamaindex_using_groq_llms\\.venv\\lib\\site-packages (from llama-index==0.10.18) (0.1.9)\n",
+      "Requirement already satisfied: llama-index-program-openai<0.2.0,>=0.1.3 in c:\\users\\e1079458\\work\\learn-llamaindex\\llamaindex_using_groq_llms\\.venv\\lib\\site-packages (from llama-index==0.10.18) (0.1.7)\n",
+      "Requirement already satisfied: llama-index-question-gen-openai<0.2.0,>=0.1.2 in c:\\users\\e1079458\\work\\learn-llamaindex\\llamaindex_using_groq_llms\\.venv\\lib\\site-packages (from llama-index==0.10.18) (0.1.3)\n",
+      "Requirement already satisfied: llama-index-readers-file<0.2.0,>=0.1.4 in c:\\users\\e1079458\\work\\learn-llamaindex\\llamaindex_using_groq_llms\\.venv\\lib\\site-packages (from llama-index==0.10.18) (0.1.33)\n",
+      "Requirement already satisfied: llama-index-readers-llama-parse<0.2.0,>=0.1.2 in c:\\users\\e1079458\\work\\learn-llamaindex\\llamaindex_using_groq_llms\\.venv\\lib\\site-packages (from llama-index==0.10.18) (0.1.6)\n",
+      "Requirement already satisfied: llama-index-llms-openai-like<0.2.0,>=0.1.3 in c:\\users\\e1079458\\work\\learn-llamaindex\\llamaindex_using_groq_llms\\.venv\\lib\\site-packages (from llama-index-llms-groq==0.1.3) (0.1.3)\n",
+      "Requirement already satisfied: anyio<5,>=3.5.0 in c:\\users\\e1079458\\work\\learn-llamaindex\\llamaindex_using_groq_llms\\.venv\\lib\\site-packages (from groq==0.4.2) (4.8.0)\n",
+      "Requirement already satisfied: distro<2,>=1.7.0 in c:\\users\\e1079458\\work\\learn-llamaindex\\llamaindex_using_groq_llms\\.venv\\lib\\site-packages (from groq==0.4.2) (1.9.0)\n",
+      "Requirement already satisfied: httpx<1,>=0.23.0 in c:\\users\\e1079458\\work\\learn-llamaindex\\llamaindex_using_groq_llms\\.venv\\lib\\site-packages (from groq==0.4.2) (0.28.1)\n",
+      "Requirement already satisfied: pydantic<3,>=1.9.0 in c:\\users\\e1079458\\work\\learn-llamaindex\\llamaindex_using_groq_llms\\.venv\\lib\\site-packages (from groq==0.4.2) (2.10.6)\n",
+      "Requirement already satisfied: sniffio in c:\\users\\e1079458\\work\\learn-llamaindex\\llamaindex_using_groq_llms\\.venv\\lib\\site-packages (from groq==0.4.2) (1.3.1)\n",
+      "Requirement already satisfied: typing-extensions<5,>=4.7 in c:\\users\\e1079458\\work\\learn-llamaindex\\llamaindex_using_groq_llms\\.venv\\lib\\site-packages (from groq==0.4.2) (4.12.2)\n",
+      "Requirement already satisfied: huggingface-hub>=0.19.0 in c:\\users\\e1079458\\work\\learn-llamaindex\\llamaindex_using_groq_llms\\.venv\\lib\\site-packages (from huggingface-hub[inference]>=0.19.0->llama-index-embeddings-huggingface==0.2.0) (0.29.2)\n",
+      "Requirement already satisfied: sentence-transformers<3.0.0,>=2.6.1 in c:\\users\\e1079458\\work\\learn-llamaindex\\llamaindex_using_groq_llms\\.venv\\lib\\site-packages (from llama-index-embeddings-huggingface==0.2.0) (2.7.0)\n",
+      "Requirement already satisfied: exceptiongroup>=1.0.2 in c:\\users\\e1079458\\work\\learn-llamaindex\\llamaindex_using_groq_llms\\.venv\\lib\\site-packages (from anyio<5,>=3.5.0->groq==0.4.2) (1.2.2)\n",
+      "Requirement already satisfied: idna>=2.8 in c:\\users\\e1079458\\work\\learn-llamaindex\\llamaindex_using_groq_llms\\.venv\\lib\\site-packages (from anyio<5,>=3.5.0->groq==0.4.2) (3.10)\n",
+      "Requirement already satisfied: certifi in c:\\users\\e1079458\\work\\learn-llamaindex\\llamaindex_using_groq_llms\\.venv\\lib\\site-packages (from httpx<1,>=0.23.0->groq==0.4.2) (2025.1.31)\n",
+      "Requirement already satisfied: httpcore==1.* in c:\\users\\e1079458\\work\\learn-llamaindex\\llamaindex_using_groq_llms\\.venv\\lib\\site-packages (from httpx<1,>=0.23.0->groq==0.4.2) (1.0.7)\n",
+      "Requirement already satisfied: h11<0.15,>=0.13 in c:\\users\\e1079458\\work\\learn-llamaindex\\llamaindex_using_groq_llms\\.venv\\lib\\site-packages (from httpcore==1.*->httpx<1,>=0.23.0->groq==0.4.2) (0.14.0)\n",
+      "Requirement already satisfied: filelock in c:\\users\\e1079458\\work\\learn-llamaindex\\llamaindex_using_groq_llms\\.venv\\lib\\site-packages (from huggingface-hub>=0.19.0->huggingface-hub[inference]>=0.19.0->llama-index-embeddings-huggingface==0.2.0) (3.17.0)\n",
+      "Requirement already satisfied: fsspec>=2023.5.0 in c:\\users\\e1079458\\work\\learn-llamaindex\\llamaindex_using_groq_llms\\.venv\\lib\\site-packages (from huggingface-hub>=0.19.0->huggingface-hub[inference]>=0.19.0->llama-index-embeddings-huggingface==0.2.0) (2025.3.0)\n",
+      "Requirement already satisfied: packaging>=20.9 in c:\\users\\e1079458\\work\\learn-llamaindex\\llamaindex_using_groq_llms\\.venv\\lib\\site-packages (from huggingface-hub>=0.19.0->huggingface-hub[inference]>=0.19.0->llama-index-embeddings-huggingface==0.2.0) (24.2)\n",
+      "Requirement already satisfied: pyyaml>=5.1 in c:\\users\\e1079458\\work\\learn-llamaindex\\llamaindex_using_groq_llms\\.venv\\lib\\site-packages (from huggingface-hub>=0.19.0->huggingface-hub[inference]>=0.19.0->llama-index-embeddings-huggingface==0.2.0) (6.0.2)\n",
+      "Requirement already satisfied: requests in c:\\users\\e1079458\\work\\learn-llamaindex\\llamaindex_using_groq_llms\\.venv\\lib\\site-packages (from huggingface-hub>=0.19.0->huggingface-hub[inference]>=0.19.0->llama-index-embeddings-huggingface==0.2.0) (2.32.3)\n",
+      "Requirement already satisfied: tqdm>=4.42.1 in c:\\users\\e1079458\\work\\learn-llamaindex\\llamaindex_using_groq_llms\\.venv\\lib\\site-packages (from huggingface-hub>=0.19.0->huggingface-hub[inference]>=0.19.0->llama-index-embeddings-huggingface==0.2.0) (4.67.1)\n",
+      "Requirement already satisfied: aiohttp in c:\\users\\e1079458\\work\\learn-llamaindex\\llamaindex_using_groq_llms\\.venv\\lib\\site-packages (from huggingface-hub[inference]>=0.19.0->llama-index-embeddings-huggingface==0.2.0) (3.11.13)\n",
+      "Requirement already satisfied: SQLAlchemy>=1.4.49 in c:\\users\\e1079458\\work\\learn-llamaindex\\llamaindex_using_groq_llms\\.venv\\lib\\site-packages (from SQLAlchemy[asyncio]>=1.4.49->llama-index-core<0.11.0,>=0.10.18->llama-index==0.10.18) (2.0.38)\n",
+      "Requirement already satisfied: dataclasses-json in c:\\users\\e1079458\\work\\learn-llamaindex\\llamaindex_using_groq_llms\\.venv\\lib\\site-packages (from llama-index-core<0.11.0,>=0.10.18->llama-index==0.10.18) (0.6.7)\n",
+      "Requirement already satisfied: deprecated>=1.2.9.3 in c:\\users\\e1079458\\work\\learn-llamaindex\\llamaindex_using_groq_llms\\.venv\\lib\\site-packages (from llama-index-core<0.11.0,>=0.10.18->llama-index==0.10.18) (1.2.18)\n",
+      "Requirement already satisfied: dirtyjson<2.0.0,>=1.0.8 in c:\\users\\e1079458\\work\\learn-llamaindex\\llamaindex_using_groq_llms\\.venv\\lib\\site-packages (from llama-index-core<0.11.0,>=0.10.18->llama-index==0.10.18) (1.0.8)\n",
+      "Requirement already satisfied: nest-asyncio<2.0.0,>=1.5.8 in c:\\users\\e1079458\\work\\learn-llamaindex\\llamaindex_using_groq_llms\\.venv\\lib\\site-packages (from llama-index-core<0.11.0,>=0.10.18->llama-index==0.10.18) (1.6.0)\n",
+      "Requirement already satisfied: networkx>=3.0 in c:\\users\\e1079458\\work\\learn-llamaindex\\llamaindex_using_groq_llms\\.venv\\lib\\site-packages (from llama-index-core<0.11.0,>=0.10.18->llama-index==0.10.18) (3.4.2)\n",
+      "Requirement already satisfied: nltk!=3.9,>=3.8.1 in c:\\users\\e1079458\\work\\learn-llamaindex\\llamaindex_using_groq_llms\\.venv\\lib\\site-packages (from llama-index-core<0.11.0,>=0.10.18->llama-index==0.10.18) (3.9.1)\n",
+      "Requirement already satisfied: numpy<2.0.0 in c:\\users\\e1079458\\work\\learn-llamaindex\\llamaindex_using_groq_llms\\.venv\\lib\\site-packages (from llama-index-core<0.11.0,>=0.10.18->llama-index==0.10.18) (1.26.4)\n",
+      "Requirement already satisfied: pandas in c:\\users\\e1079458\\work\\learn-llamaindex\\llamaindex_using_groq_llms\\.venv\\lib\\site-packages (from llama-index-core<0.11.0,>=0.10.18->llama-index==0.10.18) (2.2.3)\n",
+      "Requirement already satisfied: pillow>=9.0.0 in c:\\users\\e1079458\\work\\learn-llamaindex\\llamaindex_using_groq_llms\\.venv\\lib\\site-packages (from llama-index-core<0.11.0,>=0.10.18->llama-index==0.10.18) (11.1.0)\n",
+      "Requirement already satisfied: tenacity!=8.4.0,<9.0.0,>=8.2.0 in c:\\users\\e1079458\\work\\learn-llamaindex\\llamaindex_using_groq_llms\\.venv\\lib\\site-packages (from llama-index-core<0.11.0,>=0.10.18->llama-index==0.10.18) (8.5.0)\n",
+      "Requirement already satisfied: tiktoken>=0.3.3 in c:\\users\\e1079458\\work\\learn-llamaindex\\llamaindex_using_groq_llms\\.venv\\lib\\site-packages (from llama-index-core<0.11.0,>=0.10.18->llama-index==0.10.18) (0.9.0)\n",
+      "Requirement already satisfied: typing-inspect>=0.8.0 in c:\\users\\e1079458\\work\\learn-llamaindex\\llamaindex_using_groq_llms\\.venv\\lib\\site-packages (from llama-index-core<0.11.0,>=0.10.18->llama-index==0.10.18) (0.9.0)\n",
+      "Requirement already satisfied: wrapt in c:\\users\\e1079458\\work\\learn-llamaindex\\llamaindex_using_groq_llms\\.venv\\lib\\site-packages (from llama-index-core<0.11.0,>=0.10.18->llama-index==0.10.18) (1.17.2)\n",
+      "Requirement already satisfied: llamaindex-py-client<0.2.0,>=0.1.19 in c:\\users\\e1079458\\work\\learn-llamaindex\\llamaindex_using_groq_llms\\.venv\\lib\\site-packages (from llama-index-indices-managed-llama-cloud<0.2.0,>=0.1.2->llama-index==0.10.18) (0.1.19)\n",
+      "Requirement already satisfied: openai>=1.1.0 in c:\\users\\e1079458\\work\\learn-llamaindex\\llamaindex_using_groq_llms\\.venv\\lib\\site-packages (from llama-index-legacy<0.10.0,>=0.9.48->llama-index==0.10.18) (1.65.5)\n",
+      "Requirement already satisfied: transformers<5.0.0,>=4.37.0 in c:\\users\\e1079458\\work\\learn-llamaindex\\llamaindex_using_groq_llms\\.venv\\lib\\site-packages (from llama-index-llms-openai-like<0.2.0,>=0.1.3->llama-index-llms-groq==0.1.3) (4.49.0)\n",
+      "Requirement already satisfied: beautifulsoup4<5.0.0,>=4.12.3 in c:\\users\\e1079458\\work\\learn-llamaindex\\llamaindex_using_groq_llms\\.venv\\lib\\site-packages (from llama-index-readers-file<0.2.0,>=0.1.4->llama-index==0.10.18) (4.13.3)\n",
+      "Requirement already satisfied: pypdf<5.0.0,>=4.0.1 in c:\\users\\e1079458\\work\\learn-llamaindex\\llamaindex_using_groq_llms\\.venv\\lib\\site-packages (from llama-index-readers-file<0.2.0,>=0.1.4->llama-index==0.10.18) (4.3.1)\n",
+      "Requirement already satisfied: striprtf<0.0.27,>=0.0.26 in c:\\users\\e1079458\\work\\learn-llamaindex\\llamaindex_using_groq_llms\\.venv\\lib\\site-packages (from llama-index-readers-file<0.2.0,>=0.1.4->llama-index==0.10.18) (0.0.26)\n",
+      "Requirement already satisfied: llama-parse>=0.4.0 in c:\\users\\e1079458\\work\\learn-llamaindex\\llamaindex_using_groq_llms\\.venv\\lib\\site-packages (from llama-index-readers-llama-parse<0.2.0,>=0.1.2->llama-index==0.10.18) (0.4.9)\n",
+      "Requirement already satisfied: annotated-types>=0.6.0 in c:\\users\\e1079458\\work\\learn-llamaindex\\llamaindex_using_groq_llms\\.venv\\lib\\site-packages (from pydantic<3,>=1.9.0->groq==0.4.2) (0.7.0)\n",
+      "Requirement already satisfied: pydantic-core==2.27.2 in c:\\users\\e1079458\\work\\learn-llamaindex\\llamaindex_using_groq_llms\\.venv\\lib\\site-packages (from pydantic<3,>=1.9.0->groq==0.4.2) (2.27.2)\n",
+      "Requirement already satisfied: torch>=1.11.0 in c:\\users\\e1079458\\work\\learn-llamaindex\\llamaindex_using_groq_llms\\.venv\\lib\\site-packages (from sentence-transformers<3.0.0,>=2.6.1->llama-index-embeddings-huggingface==0.2.0) (2.6.0)\n",
+      "Requirement already satisfied: scikit-learn in c:\\users\\e1079458\\work\\learn-llamaindex\\llamaindex_using_groq_llms\\.venv\\lib\\site-packages (from sentence-transformers<3.0.0,>=2.6.1->llama-index-embeddings-huggingface==0.2.0) (1.6.1)\n",
+      "Requirement already satisfied: scipy in c:\\users\\e1079458\\work\\learn-llamaindex\\llamaindex_using_groq_llms\\.venv\\lib\\site-packages (from sentence-transformers<3.0.0,>=2.6.1->llama-index-embeddings-huggingface==0.2.0) (1.15.2)\n",
+      "Requirement already satisfied: aiohappyeyeballs>=2.3.0 in c:\\users\\e1079458\\work\\learn-llamaindex\\llamaindex_using_groq_llms\\.venv\\lib\\site-packages (from aiohttp->huggingface-hub[inference]>=0.19.0->llama-index-embeddings-huggingface==0.2.0) (2.5.0)\n",
+      "Requirement already satisfied: aiosignal>=1.1.2 in c:\\users\\e1079458\\work\\learn-llamaindex\\llamaindex_using_groq_llms\\.venv\\lib\\site-packages (from aiohttp->huggingface-hub[inference]>=0.19.0->llama-index-embeddings-huggingface==0.2.0) (1.3.2)\n",
+      "Requirement already satisfied: async-timeout<6.0,>=4.0 in c:\\users\\e1079458\\work\\learn-llamaindex\\llamaindex_using_groq_llms\\.venv\\lib\\site-packages (from aiohttp->huggingface-hub[inference]>=0.19.0->llama-index-embeddings-huggingface==0.2.0) (5.0.1)\n",
+      "Requirement already satisfied: attrs>=17.3.0 in c:\\users\\e1079458\\work\\learn-llamaindex\\llamaindex_using_groq_llms\\.venv\\lib\\site-packages (from aiohttp->huggingface-hub[inference]>=0.19.0->llama-index-embeddings-huggingface==0.2.0) (25.1.0)\n",
+      "Requirement already satisfied: frozenlist>=1.1.1 in c:\\users\\e1079458\\work\\learn-llamaindex\\llamaindex_using_groq_llms\\.venv\\lib\\site-packages (from aiohttp->huggingface-hub[inference]>=0.19.0->llama-index-embeddings-huggingface==0.2.0) (1.5.0)\n",
+      "Requirement already satisfied: multidict<7.0,>=4.5 in c:\\users\\e1079458\\work\\learn-llamaindex\\llamaindex_using_groq_llms\\.venv\\lib\\site-packages (from aiohttp->huggingface-hub[inference]>=0.19.0->llama-index-embeddings-huggingface==0.2.0) (6.1.0)\n",
+      "Requirement already satisfied: propcache>=0.2.0 in c:\\users\\e1079458\\work\\learn-llamaindex\\llamaindex_using_groq_llms\\.venv\\lib\\site-packages (from aiohttp->huggingface-hub[inference]>=0.19.0->llama-index-embeddings-huggingface==0.2.0) (0.3.0)\n",
+      "Requirement already satisfied: yarl<2.0,>=1.17.0 in c:\\users\\e1079458\\work\\learn-llamaindex\\llamaindex_using_groq_llms\\.venv\\lib\\site-packages (from aiohttp->huggingface-hub[inference]>=0.19.0->llama-index-embeddings-huggingface==0.2.0) (1.18.3)\n",
+      "Requirement already satisfied: soupsieve>1.2 in c:\\users\\e1079458\\work\\learn-llamaindex\\llamaindex_using_groq_llms\\.venv\\lib\\site-packages (from beautifulsoup4<5.0.0,>=4.12.3->llama-index-readers-file<0.2.0,>=0.1.4->llama-index==0.10.18) (2.6)\n",
+      "Requirement already satisfied: click in c:\\users\\e1079458\\work\\learn-llamaindex\\llamaindex_using_groq_llms\\.venv\\lib\\site-packages (from nltk!=3.9,>=3.8.1->llama-index-core<0.11.0,>=0.10.18->llama-index==0.10.18) (8.1.8)\n",
+      "Requirement already satisfied: joblib in c:\\users\\e1079458\\work\\learn-llamaindex\\llamaindex_using_groq_llms\\.venv\\lib\\site-packages (from nltk!=3.9,>=3.8.1->llama-index-core<0.11.0,>=0.10.18->llama-index==0.10.18) (1.4.2)\n",
+      "Requirement already satisfied: regex>=2021.8.3 in c:\\users\\e1079458\\work\\learn-llamaindex\\llamaindex_using_groq_llms\\.venv\\lib\\site-packages (from nltk!=3.9,>=3.8.1->llama-index-core<0.11.0,>=0.10.18->llama-index==0.10.18) (2024.11.6)\n",
+      "Requirement already satisfied: jiter<1,>=0.4.0 in c:\\users\\e1079458\\work\\learn-llamaindex\\llamaindex_using_groq_llms\\.venv\\lib\\site-packages (from openai>=1.1.0->llama-index-legacy<0.10.0,>=0.9.48->llama-index==0.10.18) (0.8.2)\n",
+      "Requirement already satisfied: charset-normalizer<4,>=2 in c:\\users\\e1079458\\work\\learn-llamaindex\\llamaindex_using_groq_llms\\.venv\\lib\\site-packages (from requests->huggingface-hub>=0.19.0->huggingface-hub[inference]>=0.19.0->llama-index-embeddings-huggingface==0.2.0) (3.4.1)\n",
+      "Requirement already satisfied: urllib3<3,>=1.21.1 in c:\\users\\e1079458\\work\\learn-llamaindex\\llamaindex_using_groq_llms\\.venv\\lib\\site-packages (from requests->huggingface-hub>=0.19.0->huggingface-hub[inference]>=0.19.0->llama-index-embeddings-huggingface==0.2.0) (2.3.0)\n",
+      "Requirement already satisfied: greenlet!=0.4.17 in c:\\users\\e1079458\\work\\learn-llamaindex\\llamaindex_using_groq_llms\\.venv\\lib\\site-packages (from SQLAlchemy>=1.4.49->SQLAlchemy[asyncio]>=1.4.49->llama-index-core<0.11.0,>=0.10.18->llama-index==0.10.18) (3.1.1)\n",
+      "Requirement already satisfied: jinja2 in c:\\users\\e1079458\\work\\learn-llamaindex\\llamaindex_using_groq_llms\\.venv\\lib\\site-packages (from torch>=1.11.0->sentence-transformers<3.0.0,>=2.6.1->llama-index-embeddings-huggingface==0.2.0) (3.1.6)\n",
+      "Requirement already satisfied: sympy==1.13.1 in c:\\users\\e1079458\\work\\learn-llamaindex\\llamaindex_using_groq_llms\\.venv\\lib\\site-packages (from torch>=1.11.0->sentence-transformers<3.0.0,>=2.6.1->llama-index-embeddings-huggingface==0.2.0) (1.13.1)\n",
+      "Requirement already satisfied: mpmath<1.4,>=1.1.0 in c:\\users\\e1079458\\work\\learn-llamaindex\\llamaindex_using_groq_llms\\.venv\\lib\\site-packages (from sympy==1.13.1->torch>=1.11.0->sentence-transformers<3.0.0,>=2.6.1->llama-index-embeddings-huggingface==0.2.0) (1.3.0)\n",
+      "Requirement already satisfied: colorama in c:\\users\\e1079458\\work\\learn-llamaindex\\llamaindex_using_groq_llms\\.venv\\lib\\site-packages (from tqdm>=4.42.1->huggingface-hub>=0.19.0->huggingface-hub[inference]>=0.19.0->llama-index-embeddings-huggingface==0.2.0) (0.4.6)\n",
+      "Requirement already satisfied: tokenizers<0.22,>=0.21 in c:\\users\\e1079458\\work\\learn-llamaindex\\llamaindex_using_groq_llms\\.venv\\lib\\site-packages (from transformers<5.0.0,>=4.37.0->llama-index-llms-openai-like<0.2.0,>=0.1.3->llama-index-llms-groq==0.1.3) (0.21.0)\n",
+      "Requirement already satisfied: safetensors>=0.4.1 in c:\\users\\e1079458\\work\\learn-llamaindex\\llamaindex_using_groq_llms\\.venv\\lib\\site-packages (from transformers<5.0.0,>=4.37.0->llama-index-llms-openai-like<0.2.0,>=0.1.3->llama-index-llms-groq==0.1.3) (0.5.3)\n",
+      "Requirement already satisfied: mypy-extensions>=0.3.0 in c:\\users\\e1079458\\work\\learn-llamaindex\\llamaindex_using_groq_llms\\.venv\\lib\\site-packages (from typing-inspect>=0.8.0->llama-index-core<0.11.0,>=0.10.18->llama-index==0.10.18) (1.0.0)\n",
+      "Requirement already satisfied: marshmallow<4.0.0,>=3.18.0 in c:\\users\\e1079458\\work\\learn-llamaindex\\llamaindex_using_groq_llms\\.venv\\lib\\site-packages (from dataclasses-json->llama-index-core<0.11.0,>=0.10.18->llama-index==0.10.18) (3.26.1)\n",
+      "Requirement already satisfied: python-dateutil>=2.8.2 in c:\\users\\e1079458\\work\\learn-llamaindex\\llamaindex_using_groq_llms\\.venv\\lib\\site-packages (from pandas->llama-index-core<0.11.0,>=0.10.18->llama-index==0.10.18) (2.9.0.post0)\n",
+      "Requirement already satisfied: pytz>=2020.1 in c:\\users\\e1079458\\work\\learn-llamaindex\\llamaindex_using_groq_llms\\.venv\\lib\\site-packages (from pandas->llama-index-core<0.11.0,>=0.10.18->llama-index==0.10.18) (2025.1)\n",
+      "Requirement already satisfied: tzdata>=2022.7 in c:\\users\\e1079458\\work\\learn-llamaindex\\llamaindex_using_groq_llms\\.venv\\lib\\site-packages (from pandas->llama-index-core<0.11.0,>=0.10.18->llama-index==0.10.18) (2025.1)\n",
+      "Requirement already satisfied: threadpoolctl>=3.1.0 in c:\\users\\e1079458\\work\\learn-llamaindex\\llamaindex_using_groq_llms\\.venv\\lib\\site-packages (from scikit-learn->sentence-transformers<3.0.0,>=2.6.1->llama-index-embeddings-huggingface==0.2.0) (3.5.0)\n",
+      "Requirement already satisfied: six>=1.5 in c:\\users\\e1079458\\work\\learn-llamaindex\\llamaindex_using_groq_llms\\.venv\\lib\\site-packages (from python-dateutil>=2.8.2->pandas->llama-index-core<0.11.0,>=0.10.18->llama-index==0.10.18) (1.17.0)\n",
+      "Requirement already satisfied: MarkupSafe>=2.0 in c:\\users\\e1079458\\work\\learn-llamaindex\\llamaindex_using_groq_llms\\.venv\\lib\\site-packages (from jinja2->torch>=1.11.0->sentence-transformers<3.0.0,>=2.6.1->llama-index-embeddings-huggingface==0.2.0) (3.0.2)\n",
+      "Note: you may need to restart the kernel to use updated packages.\n"
+     ]
+    }
+   ],
+   "source": [
+    "%pip install llama-index==0.10.18 llama-index-llms-groq==0.1.3 groq==0.4.2 llama-index-embeddings-huggingface==0.2.0"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## Import libraries"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 1,
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "True"
+      ]
+     },
+     "execution_count": 1,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "import os\n",
+    "from dotenv import load_dotenv\n",
+    "## Load environment variables from .env file\n",
+    "load_dotenv()"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## Imprort libraries"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 2,
+   "metadata": {},
+   "outputs": [
+    {
+     "ename": "TypeError",
+     "evalue": "Plain typing.TypeAlias is not valid as type argument",
+     "output_type": "error",
+     "traceback": [
+      "\u001b[1;31m---------------------------------------------------------------------------\u001b[0m",
+      "\u001b[1;31mTypeError\u001b[0m                                 Traceback (most recent call last)",
+      "Cell \u001b[1;32mIn[2], line 1\u001b[0m\n\u001b[1;32m----> 1\u001b[0m \u001b[38;5;28;01mfrom\u001b[39;00m\u001b[38;5;250m \u001b[39m\u001b[38;5;21;01mllama_index\u001b[39;00m\u001b[38;5;21;01m.\u001b[39;00m\u001b[38;5;21;01mcore\u001b[39;00m\u001b[38;5;250m \u001b[39m\u001b[38;5;28;01mimport\u001b[39;00m (\n\u001b[0;32m      2\u001b[0m     VectorStoreIndex,\n\u001b[0;32m      3\u001b[0m     SimpleDirectoryReader,\n\u001b[0;32m      4\u001b[0m     StorageContext,\n\u001b[0;32m      5\u001b[0m     ServiceContext,\n\u001b[0;32m      6\u001b[0m     load_index_from_storage\n\u001b[0;32m      7\u001b[0m )\n\u001b[0;32m      8\u001b[0m \u001b[38;5;28;01mfrom\u001b[39;00m\u001b[38;5;250m \u001b[39m\u001b[38;5;21;01mllama_index\u001b[39;00m\u001b[38;5;21;01m.\u001b[39;00m\u001b[38;5;21;01membeddings\u001b[39;00m\u001b[38;5;21;01m.\u001b[39;00m\u001b[38;5;21;01mhuggingface\u001b[39;00m\u001b[38;5;250m \u001b[39m\u001b[38;5;28;01mimport\u001b[39;00m HuggingFaceEmbedding\n\u001b[0;32m      9\u001b[0m \u001b[38;5;28;01mfrom\u001b[39;00m\u001b[38;5;250m \u001b[39m\u001b[38;5;21;01mllama_index\u001b[39;00m\u001b[38;5;21;01m.\u001b[39;00m\u001b[38;5;21;01mcore\u001b[39;00m\u001b[38;5;21;01m.\u001b[39;00m\u001b[38;5;21;01mnode_parser\u001b[39;00m\u001b[38;5;250m \u001b[39m\u001b[38;5;28;01mimport\u001b[39;00m SentenceSplitter\n",
+      "File \u001b[1;32mc:\\Users\\e1079458\\work\\learn-llamaindex\\llamaindex_using_groq_llms\\.venv\\lib\\site-packages\\llama_index\\core\\__init__.py:19\u001b[0m\n\u001b[0;32m     15\u001b[0m \u001b[38;5;28;01mfrom\u001b[39;00m\u001b[38;5;250m \u001b[39m\u001b[38;5;21;01mllama_index\u001b[39;00m\u001b[38;5;21;01m.\u001b[39;00m\u001b[38;5;21;01mcore\u001b[39;00m\u001b[38;5;21;01m.\u001b[39;00m\u001b[38;5;21;01membeddings\u001b[39;00m\u001b[38;5;21;01m.\u001b[39;00m\u001b[38;5;21;01mmock_embed_model\u001b[39;00m\u001b[38;5;250m \u001b[39m\u001b[38;5;28;01mimport\u001b[39;00m MockEmbedding\n\u001b[0;32m     17\u001b[0m \u001b[38;5;66;03m# indices\u001b[39;00m\n\u001b[0;32m     18\u001b[0m \u001b[38;5;66;03m# loading\u001b[39;00m\n\u001b[1;32m---> 19\u001b[0m \u001b[38;5;28;01mfrom\u001b[39;00m\u001b[38;5;250m \u001b[39m\u001b[38;5;21;01mllama_index\u001b[39;00m\u001b[38;5;21;01m.\u001b[39;00m\u001b[38;5;21;01mcore\u001b[39;00m\u001b[38;5;21;01m.\u001b[39;00m\u001b[38;5;21;01mindices\u001b[39;00m\u001b[38;5;250m \u001b[39m\u001b[38;5;28;01mimport\u001b[39;00m (\n\u001b[0;32m     20\u001b[0m     ComposableGraph,\n\u001b[0;32m     21\u001b[0m     DocumentSummaryIndex,\n\u001b[0;32m     22\u001b[0m     GPTDocumentSummaryIndex,\n\u001b[0;32m     23\u001b[0m     GPTKeywordTableIndex,\n\u001b[0;32m     24\u001b[0m     GPTListIndex,\n\u001b[0;32m     25\u001b[0m     GPTRAKEKeywordTableIndex,\n\u001b[0;32m     26\u001b[0m     GPTSimpleKeywordTableIndex,\n\u001b[0;32m     27\u001b[0m     GPTTreeIndex,\n\u001b[0;32m     28\u001b[0m     GPTVectorStoreIndex,\n\u001b[0;32m     29\u001b[0m     KeywordTableIndex,\n\u001b[0;32m     30\u001b[0m     KnowledgeGraphIndex,\n\u001b[0;32m     31\u001b[0m     PropertyGraphIndex,\n\u001b[0;32m     32\u001b[0m     ListIndex,\n\u001b[0;32m     33\u001b[0m     RAKEKeywordTableIndex,\n\u001b[0;32m     34\u001b[0m     SimpleKeywordTableIndex,\n\u001b[0;32m     35\u001b[0m     SummaryIndex,\n\u001b[0;32m     36\u001b[0m     TreeIndex,\n\u001b[0;32m     37\u001b[0m     VectorStoreIndex,\n\u001b[0;32m     38\u001b[0m     load_graph_from_storage,\n\u001b[0;32m     39\u001b[0m     load_index_from_storage,\n\u001b[0;32m     40\u001b[0m     load_indices_from_storage,\n\u001b[0;32m     41\u001b[0m )\n\u001b[0;32m     43\u001b[0m \u001b[38;5;66;03m# structured\u001b[39;00m\n\u001b[0;32m     44\u001b[0m \u001b[38;5;28;01mfrom\u001b[39;00m\u001b[38;5;250m \u001b[39m\u001b[38;5;21;01mllama_index\u001b[39;00m\u001b[38;5;21;01m.\u001b[39;00m\u001b[38;5;21;01mcore\u001b[39;00m\u001b[38;5;21;01m.\u001b[39;00m\u001b[38;5;21;01mindices\u001b[39;00m\u001b[38;5;21;01m.\u001b[39;00m\u001b[38;5;21;01mcommon\u001b[39;00m\u001b[38;5;21;01m.\u001b[39;00m\u001b[38;5;21;01mstruct_store\u001b[39;00m\u001b[38;5;21;01m.\u001b[39;00m\u001b[38;5;21;01mbase\u001b[39;00m\u001b[38;5;250m \u001b[39m\u001b[38;5;28;01mimport\u001b[39;00m (\n\u001b[0;32m     45\u001b[0m     SQLDocumentContextBuilder,\n\u001b[0;32m     46\u001b[0m )\n",
+      "File \u001b[1;32mc:\\Users\\e1079458\\work\\learn-llamaindex\\llamaindex_using_groq_llms\\.venv\\lib\\site-packages\\llama_index\\core\\indices\\__init__.py:32\u001b[0m\n\u001b[0;32m     26\u001b[0m \u001b[38;5;28;01mfrom\u001b[39;00m\u001b[38;5;250m \u001b[39m\u001b[38;5;21;01mllama_index\u001b[39;00m\u001b[38;5;21;01m.\u001b[39;00m\u001b[38;5;21;01mcore\u001b[39;00m\u001b[38;5;21;01m.\u001b[39;00m\u001b[38;5;21;01mindices\u001b[39;00m\u001b[38;5;21;01m.\u001b[39;00m\u001b[38;5;21;01mlist\u001b[39;00m\u001b[38;5;250m \u001b[39m\u001b[38;5;28;01mimport\u001b[39;00m GPTListIndex, ListIndex, SummaryIndex\n\u001b[0;32m     27\u001b[0m \u001b[38;5;28;01mfrom\u001b[39;00m\u001b[38;5;250m \u001b[39m\u001b[38;5;21;01mllama_index\u001b[39;00m\u001b[38;5;21;01m.\u001b[39;00m\u001b[38;5;21;01mcore\u001b[39;00m\u001b[38;5;21;01m.\u001b[39;00m\u001b[38;5;21;01mindices\u001b[39;00m\u001b[38;5;21;01m.\u001b[39;00m\u001b[38;5;21;01mlist\u001b[39;00m\u001b[38;5;21;01m.\u001b[39;00m\u001b[38;5;21;01mbase\u001b[39;00m\u001b[38;5;250m \u001b[39m\u001b[38;5;28;01mimport\u001b[39;00m (\n\u001b[0;32m     28\u001b[0m     GPTListIndex,\n\u001b[0;32m     29\u001b[0m     ListIndex,\n\u001b[0;32m     30\u001b[0m     SummaryIndex,\n\u001b[0;32m     31\u001b[0m )\n\u001b[1;32m---> 32\u001b[0m \u001b[38;5;28;01mfrom\u001b[39;00m\u001b[38;5;250m \u001b[39m\u001b[38;5;21;01mllama_index\u001b[39;00m\u001b[38;5;21;01m.\u001b[39;00m\u001b[38;5;21;01mcore\u001b[39;00m\u001b[38;5;21;01m.\u001b[39;00m\u001b[38;5;21;01mindices\u001b[39;00m\u001b[38;5;21;01m.\u001b[39;00m\u001b[38;5;21;01mloading\u001b[39;00m\u001b[38;5;250m \u001b[39m\u001b[38;5;28;01mimport\u001b[39;00m (\n\u001b[0;32m     33\u001b[0m     load_graph_from_storage,\n\u001b[0;32m     34\u001b[0m     load_index_from_storage,\n\u001b[0;32m     35\u001b[0m     load_indices_from_storage,\n\u001b[0;32m     36\u001b[0m )\n\u001b[0;32m     37\u001b[0m \u001b[38;5;28;01mfrom\u001b[39;00m\u001b[38;5;250m \u001b[39m\u001b[38;5;21;01mllama_index\u001b[39;00m\u001b[38;5;21;01m.\u001b[39;00m\u001b[38;5;21;01mcore\u001b[39;00m\u001b[38;5;21;01m.\u001b[39;00m\u001b[38;5;21;01mindices\u001b[39;00m\u001b[38;5;21;01m.\u001b[39;00m\u001b[38;5;21;01mmulti_modal\u001b[39;00m\u001b[38;5;250m \u001b[39m\u001b[38;5;28;01mimport\u001b[39;00m MultiModalVectorStoreIndex\n\u001b[0;32m     38\u001b[0m \u001b[38;5;28;01mfrom\u001b[39;00m\u001b[38;5;250m \u001b[39m\u001b[38;5;21;01mllama_index\u001b[39;00m\u001b[38;5;21;01m.\u001b[39;00m\u001b[38;5;21;01mcore\u001b[39;00m\u001b[38;5;21;01m.\u001b[39;00m\u001b[38;5;21;01mindices\u001b[39;00m\u001b[38;5;21;01m.\u001b[39;00m\u001b[38;5;21;01mstruct_store\u001b[39;00m\u001b[38;5;21;01m.\u001b[39;00m\u001b[38;5;21;01mpandas\u001b[39;00m\u001b[38;5;250m \u001b[39m\u001b[38;5;28;01mimport\u001b[39;00m (\n\u001b[0;32m     39\u001b[0m     GPTPandasIndex,\n\u001b[0;32m     40\u001b[0m     PandasIndex,\n\u001b[0;32m     41\u001b[0m )\n",
+      "File \u001b[1;32mc:\\Users\\e1079458\\work\\learn-llamaindex\\llamaindex_using_groq_llms\\.venv\\lib\\site-packages\\llama_index\\core\\indices\\loading.py:6\u001b[0m\n\u001b[0;32m      4\u001b[0m \u001b[38;5;28;01mfrom\u001b[39;00m\u001b[38;5;250m \u001b[39m\u001b[38;5;21;01mllama_index\u001b[39;00m\u001b[38;5;21;01m.\u001b[39;00m\u001b[38;5;21;01mcore\u001b[39;00m\u001b[38;5;21;01m.\u001b[39;00m\u001b[38;5;21;01mindices\u001b[39;00m\u001b[38;5;21;01m.\u001b[39;00m\u001b[38;5;21;01mbase\u001b[39;00m\u001b[38;5;250m \u001b[39m\u001b[38;5;28;01mimport\u001b[39;00m BaseIndex\n\u001b[0;32m      5\u001b[0m \u001b[38;5;28;01mfrom\u001b[39;00m\u001b[38;5;250m \u001b[39m\u001b[38;5;21;01mllama_index\u001b[39;00m\u001b[38;5;21;01m.\u001b[39;00m\u001b[38;5;21;01mcore\u001b[39;00m\u001b[38;5;21;01m.\u001b[39;00m\u001b[38;5;21;01mindices\u001b[39;00m\u001b[38;5;21;01m.\u001b[39;00m\u001b[38;5;21;01mcomposability\u001b[39;00m\u001b[38;5;21;01m.\u001b[39;00m\u001b[38;5;21;01mgraph\u001b[39;00m\u001b[38;5;250m \u001b[39m\u001b[38;5;28;01mimport\u001b[39;00m ComposableGraph\n\u001b[1;32m----> 6\u001b[0m \u001b[38;5;28;01mfrom\u001b[39;00m\u001b[38;5;250m \u001b[39m\u001b[38;5;21;01mllama_index\u001b[39;00m\u001b[38;5;21;01m.\u001b[39;00m\u001b[38;5;21;01mcore\u001b[39;00m\u001b[38;5;21;01m.\u001b[39;00m\u001b[38;5;21;01mindices\u001b[39;00m\u001b[38;5;21;01m.\u001b[39;00m\u001b[38;5;21;01mregistry\u001b[39;00m\u001b[38;5;250m \u001b[39m\u001b[38;5;28;01mimport\u001b[39;00m INDEX_STRUCT_TYPE_TO_INDEX_CLASS\n\u001b[0;32m      7\u001b[0m \u001b[38;5;28;01mfrom\u001b[39;00m\u001b[38;5;250m \u001b[39m\u001b[38;5;21;01mllama_index\u001b[39;00m\u001b[38;5;21;01m.\u001b[39;00m\u001b[38;5;21;01mcore\u001b[39;00m\u001b[38;5;21;01m.\u001b[39;00m\u001b[38;5;21;01mstorage\u001b[39;00m\u001b[38;5;21;01m.\u001b[39;00m\u001b[38;5;21;01mstorage_context\u001b[39;00m\u001b[38;5;250m \u001b[39m\u001b[38;5;28;01mimport\u001b[39;00m StorageContext\n\u001b[0;32m      9\u001b[0m logger \u001b[38;5;241m=\u001b[39m logging\u001b[38;5;241m.\u001b[39mgetLogger(\u001b[38;5;18m__name__\u001b[39m)\n",
+      "File \u001b[1;32mc:\\Users\\e1079458\\work\\learn-llamaindex\\llamaindex_using_groq_llms\\.venv\\lib\\site-packages\\llama_index\\core\\indices\\registry.py:13\u001b[0m\n\u001b[0;32m     11\u001b[0m \u001b[38;5;28;01mfrom\u001b[39;00m\u001b[38;5;250m \u001b[39m\u001b[38;5;21;01mllama_index\u001b[39;00m\u001b[38;5;21;01m.\u001b[39;00m\u001b[38;5;21;01mcore\u001b[39;00m\u001b[38;5;21;01m.\u001b[39;00m\u001b[38;5;21;01mindices\u001b[39;00m\u001b[38;5;21;01m.\u001b[39;00m\u001b[38;5;21;01mlist\u001b[39;00m\u001b[38;5;21;01m.\u001b[39;00m\u001b[38;5;21;01mbase\u001b[39;00m\u001b[38;5;250m \u001b[39m\u001b[38;5;28;01mimport\u001b[39;00m SummaryIndex\n\u001b[0;32m     12\u001b[0m \u001b[38;5;28;01mfrom\u001b[39;00m\u001b[38;5;250m \u001b[39m\u001b[38;5;21;01mllama_index\u001b[39;00m\u001b[38;5;21;01m.\u001b[39;00m\u001b[38;5;21;01mcore\u001b[39;00m\u001b[38;5;21;01m.\u001b[39;00m\u001b[38;5;21;01mindices\u001b[39;00m\u001b[38;5;21;01m.\u001b[39;00m\u001b[38;5;21;01mmulti_modal\u001b[39;00m\u001b[38;5;250m \u001b[39m\u001b[38;5;28;01mimport\u001b[39;00m MultiModalVectorStoreIndex\n\u001b[1;32m---> 13\u001b[0m \u001b[38;5;28;01mfrom\u001b[39;00m\u001b[38;5;250m \u001b[39m\u001b[38;5;21;01mllama_index\u001b[39;00m\u001b[38;5;21;01m.\u001b[39;00m\u001b[38;5;21;01mcore\u001b[39;00m\u001b[38;5;21;01m.\u001b[39;00m\u001b[38;5;21;01mindices\u001b[39;00m\u001b[38;5;21;01m.\u001b[39;00m\u001b[38;5;21;01mproperty_graph\u001b[39;00m\u001b[38;5;250m \u001b[39m\u001b[38;5;28;01mimport\u001b[39;00m PropertyGraphIndex\n\u001b[0;32m     14\u001b[0m \u001b[38;5;28;01mfrom\u001b[39;00m\u001b[38;5;250m \u001b[39m\u001b[38;5;21;01mllama_index\u001b[39;00m\u001b[38;5;21;01m.\u001b[39;00m\u001b[38;5;21;01mcore\u001b[39;00m\u001b[38;5;21;01m.\u001b[39;00m\u001b[38;5;21;01mindices\u001b[39;00m\u001b[38;5;21;01m.\u001b[39;00m\u001b[38;5;21;01mstruct_store\u001b[39;00m\u001b[38;5;21;01m.\u001b[39;00m\u001b[38;5;21;01mpandas\u001b[39;00m\u001b[38;5;250m \u001b[39m\u001b[38;5;28;01mimport\u001b[39;00m PandasIndex\n\u001b[0;32m     15\u001b[0m \u001b[38;5;28;01mfrom\u001b[39;00m\u001b[38;5;250m \u001b[39m\u001b[38;5;21;01mllama_index\u001b[39;00m\u001b[38;5;21;01m.\u001b[39;00m\u001b[38;5;21;01mcore\u001b[39;00m\u001b[38;5;21;01m.\u001b[39;00m\u001b[38;5;21;01mindices\u001b[39;00m\u001b[38;5;21;01m.\u001b[39;00m\u001b[38;5;21;01mstruct_store\u001b[39;00m\u001b[38;5;21;01m.\u001b[39;00m\u001b[38;5;21;01msql\u001b[39;00m\u001b[38;5;250m \u001b[39m\u001b[38;5;28;01mimport\u001b[39;00m SQLStructStoreIndex\n",
+      "File \u001b[1;32mc:\\Users\\e1079458\\work\\learn-llamaindex\\llamaindex_using_groq_llms\\.venv\\lib\\site-packages\\llama_index\\core\\indices\\property_graph\\__init__.py:1\u001b[0m\n\u001b[1;32m----> 1\u001b[0m \u001b[38;5;28;01mfrom\u001b[39;00m\u001b[38;5;250m \u001b[39m\u001b[38;5;21;01mllama_index\u001b[39;00m\u001b[38;5;21;01m.\u001b[39;00m\u001b[38;5;21;01mcore\u001b[39;00m\u001b[38;5;21;01m.\u001b[39;00m\u001b[38;5;21;01mindices\u001b[39;00m\u001b[38;5;21;01m.\u001b[39;00m\u001b[38;5;21;01mproperty_graph\u001b[39;00m\u001b[38;5;21;01m.\u001b[39;00m\u001b[38;5;21;01mbase\u001b[39;00m\u001b[38;5;250m \u001b[39m\u001b[38;5;28;01mimport\u001b[39;00m PropertyGraphIndex\n\u001b[0;32m      2\u001b[0m \u001b[38;5;28;01mfrom\u001b[39;00m\u001b[38;5;250m \u001b[39m\u001b[38;5;21;01mllama_index\u001b[39;00m\u001b[38;5;21;01m.\u001b[39;00m\u001b[38;5;21;01mcore\u001b[39;00m\u001b[38;5;21;01m.\u001b[39;00m\u001b[38;5;21;01mindices\u001b[39;00m\u001b[38;5;21;01m.\u001b[39;00m\u001b[38;5;21;01mproperty_graph\u001b[39;00m\u001b[38;5;21;01m.\u001b[39;00m\u001b[38;5;21;01mretriever\u001b[39;00m\u001b[38;5;250m \u001b[39m\u001b[38;5;28;01mimport\u001b[39;00m PGRetriever\n\u001b[0;32m      3\u001b[0m \u001b[38;5;28;01mfrom\u001b[39;00m\u001b[38;5;250m \u001b[39m\u001b[38;5;21;01mllama_index\u001b[39;00m\u001b[38;5;21;01m.\u001b[39;00m\u001b[38;5;21;01mcore\u001b[39;00m\u001b[38;5;21;01m.\u001b[39;00m\u001b[38;5;21;01mindices\u001b[39;00m\u001b[38;5;21;01m.\u001b[39;00m\u001b[38;5;21;01mproperty_graph\u001b[39;00m\u001b[38;5;21;01m.\u001b[39;00m\u001b[38;5;21;01msub_retrievers\u001b[39;00m\u001b[38;5;21;01m.\u001b[39;00m\u001b[38;5;21;01mbase\u001b[39;00m\u001b[38;5;250m \u001b[39m\u001b[38;5;28;01mimport\u001b[39;00m BasePGRetriever\n",
+      "File \u001b[1;32mc:\\Users\\e1079458\\work\\learn-llamaindex\\llamaindex_using_groq_llms\\.venv\\lib\\site-packages\\llama_index\\core\\indices\\property_graph\\base.py:17\u001b[0m\n\u001b[0;32m     15\u001b[0m \u001b[38;5;28;01mfrom\u001b[39;00m\u001b[38;5;250m \u001b[39m\u001b[38;5;21;01mllama_index\u001b[39;00m\u001b[38;5;21;01m.\u001b[39;00m\u001b[38;5;21;01mcore\u001b[39;00m\u001b[38;5;21;01m.\u001b[39;00m\u001b[38;5;21;01mvector_stores\u001b[39;00m\u001b[38;5;21;01m.\u001b[39;00m\u001b[38;5;21;01msimple\u001b[39;00m\u001b[38;5;250m \u001b[39m\u001b[38;5;28;01mimport\u001b[39;00m DEFAULT_VECTOR_STORE\n\u001b[0;32m     16\u001b[0m \u001b[38;5;28;01mfrom\u001b[39;00m\u001b[38;5;250m \u001b[39m\u001b[38;5;21;01mllama_index\u001b[39;00m\u001b[38;5;21;01m.\u001b[39;00m\u001b[38;5;21;01mcore\u001b[39;00m\u001b[38;5;21;01m.\u001b[39;00m\u001b[38;5;21;01mindices\u001b[39;00m\u001b[38;5;21;01m.\u001b[39;00m\u001b[38;5;21;01mbase\u001b[39;00m\u001b[38;5;250m \u001b[39m\u001b[38;5;28;01mimport\u001b[39;00m BaseIndex\n\u001b[1;32m---> 17\u001b[0m \u001b[38;5;28;01mfrom\u001b[39;00m\u001b[38;5;250m \u001b[39m\u001b[38;5;21;01mllama_index\u001b[39;00m\u001b[38;5;21;01m.\u001b[39;00m\u001b[38;5;21;01mcore\u001b[39;00m\u001b[38;5;21;01m.\u001b[39;00m\u001b[38;5;21;01mindices\u001b[39;00m\u001b[38;5;21;01m.\u001b[39;00m\u001b[38;5;21;01mproperty_graph\u001b[39;00m\u001b[38;5;21;01m.\u001b[39;00m\u001b[38;5;21;01mtransformations\u001b[39;00m\u001b[38;5;250m \u001b[39m\u001b[38;5;28;01mimport\u001b[39;00m (\n\u001b[0;32m     18\u001b[0m     SimpleLLMPathExtractor,\n\u001b[0;32m     19\u001b[0m     ImplicitPathExtractor,\n\u001b[0;32m     20\u001b[0m )\n\u001b[0;32m     21\u001b[0m \u001b[38;5;28;01mfrom\u001b[39;00m\u001b[38;5;250m \u001b[39m\u001b[38;5;21;01mllama_index\u001b[39;00m\u001b[38;5;21;01m.\u001b[39;00m\u001b[38;5;21;01mcore\u001b[39;00m\u001b[38;5;21;01m.\u001b[39;00m\u001b[38;5;21;01mingestion\u001b[39;00m\u001b[38;5;21;01m.\u001b[39;00m\u001b[38;5;21;01mpipeline\u001b[39;00m\u001b[38;5;250m \u001b[39m\u001b[38;5;28;01mimport\u001b[39;00m (\n\u001b[0;32m     22\u001b[0m     run_transformations,\n\u001b[0;32m     23\u001b[0m     arun_transformations,\n\u001b[0;32m     24\u001b[0m )\n\u001b[0;32m     25\u001b[0m \u001b[38;5;28;01mfrom\u001b[39;00m\u001b[38;5;250m \u001b[39m\u001b[38;5;21;01mllama_index\u001b[39;00m\u001b[38;5;21;01m.\u001b[39;00m\u001b[38;5;21;01mcore\u001b[39;00m\u001b[38;5;21;01m.\u001b[39;00m\u001b[38;5;21;01mgraph_stores\u001b[39;00m\u001b[38;5;21;01m.\u001b[39;00m\u001b[38;5;21;01mtypes\u001b[39;00m\u001b[38;5;250m \u001b[39m\u001b[38;5;28;01mimport\u001b[39;00m (\n\u001b[0;32m     26\u001b[0m     LabelledNode,\n\u001b[0;32m     27\u001b[0m     Relation,\n\u001b[0;32m     28\u001b[0m     PropertyGraphStore,\n\u001b[0;32m     29\u001b[0m     TRIPLET_SOURCE_KEY,\n\u001b[0;32m     30\u001b[0m )\n",
+      "File \u001b[1;32mc:\\Users\\e1079458\\work\\learn-llamaindex\\llamaindex_using_groq_llms\\.venv\\lib\\site-packages\\llama_index\\core\\indices\\property_graph\\transformations\\__init__.py:4\u001b[0m\n\u001b[0;32m      1\u001b[0m \u001b[38;5;28;01mfrom\u001b[39;00m\u001b[38;5;250m \u001b[39m\u001b[38;5;21;01mllama_index\u001b[39;00m\u001b[38;5;21;01m.\u001b[39;00m\u001b[38;5;21;01mcore\u001b[39;00m\u001b[38;5;21;01m.\u001b[39;00m\u001b[38;5;21;01mindices\u001b[39;00m\u001b[38;5;21;01m.\u001b[39;00m\u001b[38;5;21;01mproperty_graph\u001b[39;00m\u001b[38;5;21;01m.\u001b[39;00m\u001b[38;5;21;01mtransformations\u001b[39;00m\u001b[38;5;21;01m.\u001b[39;00m\u001b[38;5;21;01mimplicit\u001b[39;00m\u001b[38;5;250m \u001b[39m\u001b[38;5;28;01mimport\u001b[39;00m (\n\u001b[0;32m      2\u001b[0m     ImplicitPathExtractor,\n\u001b[0;32m      3\u001b[0m )\n\u001b[1;32m----> 4\u001b[0m \u001b[38;5;28;01mfrom\u001b[39;00m\u001b[38;5;250m \u001b[39m\u001b[38;5;21;01mllama_index\u001b[39;00m\u001b[38;5;21;01m.\u001b[39;00m\u001b[38;5;21;01mcore\u001b[39;00m\u001b[38;5;21;01m.\u001b[39;00m\u001b[38;5;21;01mindices\u001b[39;00m\u001b[38;5;21;01m.\u001b[39;00m\u001b[38;5;21;01mproperty_graph\u001b[39;00m\u001b[38;5;21;01m.\u001b[39;00m\u001b[38;5;21;01mtransformations\u001b[39;00m\u001b[38;5;21;01m.\u001b[39;00m\u001b[38;5;21;01mschema_llm\u001b[39;00m\u001b[38;5;250m \u001b[39m\u001b[38;5;28;01mimport\u001b[39;00m (\n\u001b[0;32m      5\u001b[0m     SchemaLLMPathExtractor,\n\u001b[0;32m      6\u001b[0m )\n\u001b[0;32m      7\u001b[0m \u001b[38;5;28;01mfrom\u001b[39;00m\u001b[38;5;250m \u001b[39m\u001b[38;5;21;01mllama_index\u001b[39;00m\u001b[38;5;21;01m.\u001b[39;00m\u001b[38;5;21;01mcore\u001b[39;00m\u001b[38;5;21;01m.\u001b[39;00m\u001b[38;5;21;01mindices\u001b[39;00m\u001b[38;5;21;01m.\u001b[39;00m\u001b[38;5;21;01mproperty_graph\u001b[39;00m\u001b[38;5;21;01m.\u001b[39;00m\u001b[38;5;21;01mtransformations\u001b[39;00m\u001b[38;5;21;01m.\u001b[39;00m\u001b[38;5;21;01msimple_llm\u001b[39;00m\u001b[38;5;250m \u001b[39m\u001b[38;5;28;01mimport\u001b[39;00m (\n\u001b[0;32m      8\u001b[0m     SimpleLLMPathExtractor,\n\u001b[0;32m      9\u001b[0m )\n\u001b[0;32m     10\u001b[0m \u001b[38;5;28;01mfrom\u001b[39;00m\u001b[38;5;250m \u001b[39m\u001b[38;5;21;01mllama_index\u001b[39;00m\u001b[38;5;21;01m.\u001b[39;00m\u001b[38;5;21;01mcore\u001b[39;00m\u001b[38;5;21;01m.\u001b[39;00m\u001b[38;5;21;01mindices\u001b[39;00m\u001b[38;5;21;01m.\u001b[39;00m\u001b[38;5;21;01mproperty_graph\u001b[39;00m\u001b[38;5;21;01m.\u001b[39;00m\u001b[38;5;21;01mtransformations\u001b[39;00m\u001b[38;5;21;01m.\u001b[39;00m\u001b[38;5;21;01mdynamic_llm\u001b[39;00m\u001b[38;5;250m \u001b[39m\u001b[38;5;28;01mimport\u001b[39;00m (\n\u001b[0;32m     11\u001b[0m     DynamicLLMPathExtractor,\n\u001b[0;32m     12\u001b[0m )\n",
+      "File \u001b[1;32mc:\\Users\\e1079458\\work\\learn-llamaindex\\llamaindex_using_groq_llms\\.venv\\lib\\site-packages\\llama_index\\core\\indices\\property_graph\\transformations\\schema_llm.py:95\u001b[0m\n\u001b[0;32m     56\u001b[0m DEFAULT_VALIDATION_SCHEMA: List[Triple] \u001b[38;5;241m=\u001b[39m [\n\u001b[0;32m     57\u001b[0m     (\u001b[38;5;124m\"\u001b[39m\u001b[38;5;124mPRODUCT\u001b[39m\u001b[38;5;124m\"\u001b[39m, \u001b[38;5;124m\"\u001b[39m\u001b[38;5;124mUSED_BY\u001b[39m\u001b[38;5;124m\"\u001b[39m, \u001b[38;5;124m\"\u001b[39m\u001b[38;5;124mPRODUCT\u001b[39m\u001b[38;5;124m\"\u001b[39m),\n\u001b[0;32m     58\u001b[0m     (\u001b[38;5;124m\"\u001b[39m\u001b[38;5;124mPRODUCT\u001b[39m\u001b[38;5;124m\"\u001b[39m, \u001b[38;5;124m\"\u001b[39m\u001b[38;5;124mUSED_FOR\u001b[39m\u001b[38;5;124m\"\u001b[39m, \u001b[38;5;124m\"\u001b[39m\u001b[38;5;124mMARKET\u001b[39m\u001b[38;5;124m\"\u001b[39m),\n\u001b[1;32m   (...)\u001b[0m\n\u001b[0;32m     83\u001b[0m     (\u001b[38;5;124m\"\u001b[39m\u001b[38;5;124mLOCATION\u001b[39m\u001b[38;5;124m\"\u001b[39m, \u001b[38;5;124m\"\u001b[39m\u001b[38;5;124mPART_OF\u001b[39m\u001b[38;5;124m\"\u001b[39m, \u001b[38;5;124m\"\u001b[39m\u001b[38;5;124mLOCATION\u001b[39m\u001b[38;5;124m\"\u001b[39m),\n\u001b[0;32m     84\u001b[0m ]\n\u001b[0;32m     86\u001b[0m DEFAULT_SCHEMA_PATH_EXTRACT_PROMPT \u001b[38;5;241m=\u001b[39m PromptTemplate(\n\u001b[0;32m     87\u001b[0m     \u001b[38;5;124m\"\u001b[39m\u001b[38;5;124mGive the following text, extract the knowledge graph according to the provided schema. \u001b[39m\u001b[38;5;124m\"\u001b[39m\n\u001b[0;32m     88\u001b[0m     \u001b[38;5;124m\"\u001b[39m\u001b[38;5;124mTry to limit to the output \u001b[39m\u001b[38;5;132;01m{max_triplets_per_chunk}\u001b[39;00m\u001b[38;5;124m extracted paths.s\u001b[39m\u001b[38;5;130;01m\\n\u001b[39;00m\u001b[38;5;124m\"\u001b[39m\n\u001b[1;32m   (...)\u001b[0m\n\u001b[0;32m     91\u001b[0m     \u001b[38;5;124m\"\u001b[39m\u001b[38;5;124m-------\u001b[39m\u001b[38;5;130;01m\\n\u001b[39;00m\u001b[38;5;124m\"\u001b[39m\n\u001b[0;32m     92\u001b[0m )\n\u001b[1;32m---> 95\u001b[0m \u001b[38;5;28;01mclass\u001b[39;00m\u001b[38;5;250m \u001b[39m\u001b[38;5;21;01mSchemaLLMPathExtractor\u001b[39;00m(TransformComponent):\n\u001b[0;32m     96\u001b[0m \u001b[38;5;250m    \u001b[39m\u001b[38;5;124;03m\"\"\"\u001b[39;00m\n\u001b[0;32m     97\u001b[0m \u001b[38;5;124;03m    Extract paths from a graph using a schema.\u001b[39;00m\n\u001b[0;32m     98\u001b[0m \n\u001b[1;32m   (...)\u001b[0m\n\u001b[0;32m    124\u001b[0m \u001b[38;5;124;03m            The number of workers to use. Defaults to 4.\u001b[39;00m\n\u001b[0;32m    125\u001b[0m \u001b[38;5;124;03m    \"\"\"\u001b[39;00m\n\u001b[0;32m    127\u001b[0m     llm: LLM\n",
+      "File \u001b[1;32mc:\\Users\\e1079458\\work\\learn-llamaindex\\llamaindex_using_groq_llms\\.venv\\lib\\site-packages\\llama_index\\core\\indices\\property_graph\\transformations\\schema_llm.py:141\u001b[0m, in \u001b[0;36mSchemaLLMPathExtractor\u001b[1;34m()\u001b[0m\n\u001b[0;32m    134\u001b[0m possible_relation_props: Optional[List[\u001b[38;5;28mstr\u001b[39m]]\n\u001b[0;32m    135\u001b[0m strict: \u001b[38;5;28mbool\u001b[39m\n\u001b[0;32m    137\u001b[0m \u001b[38;5;28;01mdef\u001b[39;00m\u001b[38;5;250m \u001b[39m\u001b[38;5;21m__init__\u001b[39m(\n\u001b[0;32m    138\u001b[0m     \u001b[38;5;28mself\u001b[39m,\n\u001b[0;32m    139\u001b[0m     llm: LLM,\n\u001b[0;32m    140\u001b[0m     extract_prompt: Union[PromptTemplate, \u001b[38;5;28mstr\u001b[39m] \u001b[38;5;241m=\u001b[39m \u001b[38;5;28;01mNone\u001b[39;00m,\n\u001b[1;32m--> 141\u001b[0m     possible_entities: \u001b[43mOptional\u001b[49m\u001b[43m[\u001b[49m\u001b[43mTypeAlias\u001b[49m\u001b[43m]\u001b[49m \u001b[38;5;241m=\u001b[39m \u001b[38;5;28;01mNone\u001b[39;00m,\n\u001b[0;32m    142\u001b[0m     possible_entity_props: Optional[Union[List[\u001b[38;5;28mstr\u001b[39m], List[Tuple[\u001b[38;5;28mstr\u001b[39m, \u001b[38;5;28mstr\u001b[39m]]]] \u001b[38;5;241m=\u001b[39m \u001b[38;5;28;01mNone\u001b[39;00m,\n\u001b[0;32m    143\u001b[0m     possible_relations: Optional[TypeAlias] \u001b[38;5;241m=\u001b[39m \u001b[38;5;28;01mNone\u001b[39;00m,\n\u001b[0;32m    144\u001b[0m     possible_relation_props: Optional[\n\u001b[0;32m    145\u001b[0m         Union[List[\u001b[38;5;28mstr\u001b[39m], List[Tuple[\u001b[38;5;28mstr\u001b[39m, \u001b[38;5;28mstr\u001b[39m]]]\n\u001b[0;32m    146\u001b[0m     ] \u001b[38;5;241m=\u001b[39m \u001b[38;5;28;01mNone\u001b[39;00m,\n\u001b[0;32m    147\u001b[0m     strict: \u001b[38;5;28mbool\u001b[39m \u001b[38;5;241m=\u001b[39m \u001b[38;5;28;01mTrue\u001b[39;00m,\n\u001b[0;32m    148\u001b[0m     kg_schema_cls: Any \u001b[38;5;241m=\u001b[39m \u001b[38;5;28;01mNone\u001b[39;00m,\n\u001b[0;32m    149\u001b[0m     kg_validation_schema: Union[Dict[\u001b[38;5;28mstr\u001b[39m, \u001b[38;5;28mstr\u001b[39m], List[Triple]] \u001b[38;5;241m=\u001b[39m \u001b[38;5;28;01mNone\u001b[39;00m,\n\u001b[0;32m    150\u001b[0m     max_triplets_per_chunk: \u001b[38;5;28mint\u001b[39m \u001b[38;5;241m=\u001b[39m \u001b[38;5;241m10\u001b[39m,\n\u001b[0;32m    151\u001b[0m     num_workers: \u001b[38;5;28mint\u001b[39m \u001b[38;5;241m=\u001b[39m \u001b[38;5;241m4\u001b[39m,\n\u001b[0;32m    152\u001b[0m ) \u001b[38;5;241m-\u001b[39m\u001b[38;5;241m>\u001b[39m \u001b[38;5;28;01mNone\u001b[39;00m:\n\u001b[0;32m    153\u001b[0m \u001b[38;5;250m    \u001b[39m\u001b[38;5;124;03m\"\"\"Init params.\"\"\"\u001b[39;00m\n\u001b[0;32m    154\u001b[0m     \u001b[38;5;28;01mif\u001b[39;00m \u001b[38;5;28misinstance\u001b[39m(extract_prompt, \u001b[38;5;28mstr\u001b[39m):\n",
+      "File \u001b[1;32m~\\.pyenv\\pyenv-win\\versions\\3.10.2\\lib\\typing.py:311\u001b[0m, in \u001b[0;36m_tp_cache.<locals>.decorator.<locals>.inner\u001b[1;34m(*args, **kwds)\u001b[0m\n\u001b[0;32m    309\u001b[0m \u001b[38;5;28;01mexcept\u001b[39;00m \u001b[38;5;167;01mTypeError\u001b[39;00m:\n\u001b[0;32m    310\u001b[0m     \u001b[38;5;28;01mpass\u001b[39;00m  \u001b[38;5;66;03m# All real errors (not unhashable args) are raised below.\u001b[39;00m\n\u001b[1;32m--> 311\u001b[0m \u001b[38;5;28;01mreturn\u001b[39;00m func(\u001b[38;5;241m*\u001b[39margs, \u001b[38;5;241m*\u001b[39m\u001b[38;5;241m*\u001b[39mkwds)\n",
+      "File \u001b[1;32m~\\.pyenv\\pyenv-win\\versions\\3.10.2\\lib\\typing.py:402\u001b[0m, in \u001b[0;36m_SpecialForm.__getitem__\u001b[1;34m(self, parameters)\u001b[0m\n\u001b[0;32m    400\u001b[0m \u001b[38;5;129m@_tp_cache\u001b[39m\n\u001b[0;32m    401\u001b[0m \u001b[38;5;28;01mdef\u001b[39;00m\u001b[38;5;250m \u001b[39m\u001b[38;5;21m__getitem__\u001b[39m(\u001b[38;5;28mself\u001b[39m, parameters):\n\u001b[1;32m--> 402\u001b[0m     \u001b[38;5;28;01mreturn\u001b[39;00m \u001b[38;5;28;43mself\u001b[39;49m\u001b[38;5;241;43m.\u001b[39;49m\u001b[43m_getitem\u001b[49m\u001b[43m(\u001b[49m\u001b[38;5;28;43mself\u001b[39;49m\u001b[43m,\u001b[49m\u001b[43m \u001b[49m\u001b[43mparameters\u001b[49m\u001b[43m)\u001b[49m\n",
+      "File \u001b[1;32m~\\.pyenv\\pyenv-win\\versions\\3.10.2\\lib\\typing.py:528\u001b[0m, in \u001b[0;36mOptional\u001b[1;34m(self, parameters)\u001b[0m\n\u001b[0;32m    522\u001b[0m \u001b[38;5;129m@_SpecialForm\u001b[39m\n\u001b[0;32m    523\u001b[0m \u001b[38;5;28;01mdef\u001b[39;00m\u001b[38;5;250m \u001b[39m\u001b[38;5;21mOptional\u001b[39m(\u001b[38;5;28mself\u001b[39m, parameters):\n\u001b[0;32m    524\u001b[0m \u001b[38;5;250m    \u001b[39m\u001b[38;5;124;03m\"\"\"Optional type.\u001b[39;00m\n\u001b[0;32m    525\u001b[0m \n\u001b[0;32m    526\u001b[0m \u001b[38;5;124;03m    Optional[X] is equivalent to Union[X, None].\u001b[39;00m\n\u001b[0;32m    527\u001b[0m \u001b[38;5;124;03m    \"\"\"\u001b[39;00m\n\u001b[1;32m--> 528\u001b[0m     arg \u001b[38;5;241m=\u001b[39m \u001b[43m_type_check\u001b[49m\u001b[43m(\u001b[49m\u001b[43mparameters\u001b[49m\u001b[43m,\u001b[49m\u001b[43m \u001b[49m\u001b[38;5;124;43mf\u001b[39;49m\u001b[38;5;124;43m\"\u001b[39;49m\u001b[38;5;132;43;01m{\u001b[39;49;00m\u001b[38;5;28;43mself\u001b[39;49m\u001b[38;5;132;43;01m}\u001b[39;49;00m\u001b[38;5;124;43m requires a single type.\u001b[39;49m\u001b[38;5;124;43m\"\u001b[39;49m\u001b[43m)\u001b[49m\n\u001b[0;32m    529\u001b[0m     \u001b[38;5;28;01mreturn\u001b[39;00m Union[arg, \u001b[38;5;28mtype\u001b[39m(\u001b[38;5;28;01mNone\u001b[39;00m)]\n",
+      "File \u001b[1;32m~\\.pyenv\\pyenv-win\\versions\\3.10.2\\lib\\typing.py:171\u001b[0m, in \u001b[0;36m_type_check\u001b[1;34m(arg, msg, is_argument, module, is_class)\u001b[0m\n\u001b[0;32m    169\u001b[0m     \u001b[38;5;28;01mreturn\u001b[39;00m arg\n\u001b[0;32m    170\u001b[0m \u001b[38;5;28;01mif\u001b[39;00m \u001b[38;5;28misinstance\u001b[39m(arg, _SpecialForm) \u001b[38;5;129;01mor\u001b[39;00m arg \u001b[38;5;129;01min\u001b[39;00m (Generic, Protocol):\n\u001b[1;32m--> 171\u001b[0m     \u001b[38;5;28;01mraise\u001b[39;00m \u001b[38;5;167;01mTypeError\u001b[39;00m(\u001b[38;5;124mf\u001b[39m\u001b[38;5;124m\"\u001b[39m\u001b[38;5;124mPlain \u001b[39m\u001b[38;5;132;01m{\u001b[39;00marg\u001b[38;5;132;01m}\u001b[39;00m\u001b[38;5;124m is not valid as type argument\u001b[39m\u001b[38;5;124m\"\u001b[39m)\n\u001b[0;32m    172\u001b[0m \u001b[38;5;28;01mif\u001b[39;00m \u001b[38;5;28misinstance\u001b[39m(arg, (\u001b[38;5;28mtype\u001b[39m, TypeVar, ForwardRef, types\u001b[38;5;241m.\u001b[39mUnionType, ParamSpec)):\n\u001b[0;32m    173\u001b[0m     \u001b[38;5;28;01mreturn\u001b[39;00m arg\n",
+      "\u001b[1;31mTypeError\u001b[0m: Plain typing.TypeAlias is not valid as type argument"
+     ]
+    }
+   ],
+   "source": [
+    "from llama_index.core import (\n",
+    "    VectorStoreIndex,\n",
+    "    SimpleDirectoryReader,\n",
+    "    StorageContext,\n",
+    "    ServiceContext,\n",
+    "    load_index_from_storage\n",
+    ")\n",
+    "from llama_index.embeddings.huggingface import HuggingFaceEmbedding\n",
+    "from llama_index.core.node_parser import SentenceSplitter\n",
+    "from llama_index.llms.groq import Groq\n",
+    "# import os\n",
+    "# from dotenv import load_dotenv\n",
+    "# load_dotenv()\n",
+    "import warnings\n",
+    "warnings.filterwarnings('ignore')"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "GROQ_API_KEY = os.getenv(\"GROQ_API_KEY\")"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# data ingestion\n",
+    "reader = SimpleDirectoryReader(input_files=[\"./data/Basics_of_finance.pdf\"])\n",
+    "documents = reader.load_data()"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "documents[4].metadata"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "text_splitter = SentenceSplitter(chunk_size=1024, chunk_overlap=200)\n",
+    "nodes = text_splitter.get_nodes_from_documents(documents, show_progress=True)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "nodes[0].metadata"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## Embedding Model"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "embed_model = HuggingFaceEmbedding(model_name=\"sentence-transformers/all-MiniLM-L6-v2\")"
+   ]
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": ".venv",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.10.2"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 2
+}

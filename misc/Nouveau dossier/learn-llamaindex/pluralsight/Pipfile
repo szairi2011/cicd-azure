@@ -1,0 +1,14 @@
+[[source]]
+url = "https://e1079458:cmVmdGtuOjAxOjE3NzI2OTgxMTU6U1JmM014TFlDRkRreVVsMEZHTE5FNDloRXNm@artifactory.fis.dev/artifactory/api/pypi/apexsecfin-pypi-dev/simple"
+verify_ssl = false
+name = "pip_conf_index_global"
+
+[packages]
+ipykernel = "*"
+
+[dev-packages]
+ipykernel = "*"
+
+[requires]
+python_version = "3.10"
+python_full_version = "3.10.2"

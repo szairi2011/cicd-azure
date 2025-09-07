@@ -1,0 +1,20 @@
+[[source]]
+url = "https://e1079458:cmVmdGtuOjAxOjE3NzI2OTgxMTU6U1JmM014TFlDRkRreVVsMEZHTE5FNDloRXNm@artifactory.fis.dev/artifactory/api/pypi/apexsecfin-pypi-dev/simple"
+verify_ssl = false
+name = "pip_conf_index_global"
+
+[packages]
+ipykernel = "*"
+llama-index = "==0.10.18"
+llama-index-llms-groq = "==0.1.3"
+groq = "==0.4.2"
+llama-index-embeddings-huggingface = "==0.2.0"
+dotenv = "*"
+
+langchain-groq = "0.2.4"
+requests = "*"
+
+[dev-packages]
+
+[requires]
+python_version = "3.9"

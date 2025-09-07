@@ -1,0 +1,6 @@
+
+1. Create a new SNOW ticket using the following path -- https://atyourserviceportal.service-now.com/nav_to.do?uri=%2Fcom.glideapp.servicecatalog_cat_item_view.do%3Fv%3D1%26sysparm_id%3Dd8a953221b08b4d47cb1ed33b24bcb22%26sysparm_link_parent%3Ded6b7885dba4dcd47e090e41ca9619ec%26sysparm_catalog%3D742ce428d7211100f2d224837e61036d%26sysparm_catalog_view%3Dcatalog_technical_catalog%26sysparm_view%3Dtext_search
+
+2. Submit a request for BT level 3
+
+3. Use the ID to contact the local IT

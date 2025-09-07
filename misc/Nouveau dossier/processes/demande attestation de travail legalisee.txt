@@ -1,0 +1,18 @@
+
+ ***** Context ****** 
+Utile pour renouvellement du passeport ou de carte d’identité nationale 
+
+ ***** Process ******
+
+Bonjour Sofien,
+
+1. Faisant suite à ta demande merci d’ouvrir un ticket via Snow :
+https://atyourserviceportal.service-now.com/esc 
+2. Tu mets ton enumber ( avec le e) 
+3. Ensuite, request assistance ( bouton vert) 
+4. Ensuite sous Catalog filters faut choisir General , ensuite General question
+
+Merci de noter que les attestations de travail légalisées (utile pour renouvellement passeport et carte d’identité nationale ) est en  standby car nous sommes en train de mettre à jour notre procédure administratifs.
+
+Merci
+Nouha 

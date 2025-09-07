@@ -1,0 +1,3 @@
+- Server incident process, follow link below:
+
+https://atyourserviceportal.service-now.com/supportall?id=sc_cat_item&sys_id=97f2d158373f47001b765aa543990e3b

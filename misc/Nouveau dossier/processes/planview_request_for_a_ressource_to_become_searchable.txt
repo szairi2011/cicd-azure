@@ -1,0 +1,4 @@
+
+1. Send email to PTSBMOSupport <PTSBMOSupport@fisglobal.com> e.g; 
+	* Asking for a new team member to become searchable in PlanView
+	* To grant access to PlanView SGW projects for a new joiner

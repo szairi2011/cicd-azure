@@ -1,0 +1,47 @@
+- Loging to WD
+
+- Use My team management interface and inside My team hiring , initiate a new create job requesition.
+
+
+[14:26] Belkhouja, Houssem
+you need to initiate the creation of new requition
+
+[14:27] Belkhouja, Houssem
+then precise it's a replacement of salah demni
+
+[14:27] Belkhouja, Houssem
+write a justification that will mention those three information : it's a replacement of salah demni
+
+[14:28] Belkhouja, Houssem
+it's needed because salah is assigned to XXX project committed with client XXX
+
+[14:28] Belkhouja, Houssem
+and we his replacement to maintain committment
+
+[14:28] Zairi, Sofien
+ok Houssem will do
+
+[14:28] Belkhouja, Houssem
+it's a replacement within Tunis location who is a low cost center
+
+[14:28] Belkhouja, Houssem
+than choose Software Engineer I as job profile
+
+[14:29] Belkhouja, Houssem
+for the Bonus precise that TUn location
+
+[14:29] Belkhouja, Houssem
+for the organisation choose FIS technology as location name
+
+[14:30] Belkhouja, Houssem
+in the BUC fields : put 5235 instead of 5233 and 9801 instead of 9822
+
+[14:31] Belkhouja, Houssem
+when you submit you will have another task to precise the BILLTOBU code
+
+[14:31] Belkhouja, Houssem
+you need to enter 4015.520011.9822..0000.N550.1208
+
+[14:31] Belkhouja, Houssem
+witch is the code of STGW
+

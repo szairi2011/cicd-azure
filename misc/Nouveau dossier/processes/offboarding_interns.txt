@@ -1,0 +1,24 @@
+
+1. Browse and login to SNOW on -- https://atyourserviceportal.service-now.com/supportall
+
+2. From the top menu items, click on the link "The people office support center"
+
+3. Click on "Request Assistance" button
+
+4. From the page that loads, select the link "General Question"
+
+5. Fill out the form as follows:
+
+	- In the field "What is the title of your question", write the title "Offboarding of an intern student"
+
+	- In the fields "Please provide details with regrads to your question", type:
+		
+		Hit team,
+
+			Would you please offboard the intern student <<< *** Specify student name *** >>>. His last date with us will be <<< *** Specify end date *** >>>.
+
+			Please assign this ticket to Nouha Sallemi.
+
+		Regards,
+
+		Sofiane

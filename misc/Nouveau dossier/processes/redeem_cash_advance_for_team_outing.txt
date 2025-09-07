@@ -1,0 +1,34 @@
+
+- Login to -- Oracle system 
+	"https://ekfv.fa.us6.oraclecloud.com/fscmUI/faces/FndOverview?fnd=%252FWEB-INF%252Foracle%252Fapps%252Ffinancials%252Fexpenses%252Fentry%252FworkArea%252Fui%252Fflow%252FUIShellMainAreaFlow.xml%2523UIShellMainAreaFlow%3BdefaultTileId%253DPendMyApprovalInfoTileTF%253B%3B%3B%3Bfalse%3B256%3B%3B%3B&fndGlobalItemNodeId=itemNode_my_information_expenses&_adf.ctrl-state=b8f1j8m6u_1&_adf.no-new-window-redirect=true&_afrLoop=62597405518531336&_afrWindowMode=2&_afrWindowId=null&_afrFS=16&_afrMT=screen&_afrMFW=1311&_afrMFH=683&_afrMFDW=1680&_afrMFDH=1050&_afrMFC=8&_afrMFCI=0&_afrMFM=0&_afrMFR=76&_afrMFG=0&_afrMFS=0&_afrMFO=0"
+
+- From the left navbar chosse "Expenses"
+
+- Click on "Create Report"
+
+- For the field Purpose, add the purpose of the outing, e.g. SGW team outing H2 2024
+
+- Click on button "+ Create Item"
+
+- For convenience, and screen capture of a previous report is available under -- redeem_team_outing_expense_report_example.png
+
+- For Date field select the team outing date
+
+- For Type field select "Local Working Meals - Empl/Staff Group > 30" --> NB: This means that the Tunisian site is greater than 30 staff members and not the actual team size; that's how the corporate is structuring requests.
+
+- Feel Description, e.g. SGW team outing, and 
+
+- Merchant Name fields, e.g. The Kitchen
+
+
+- For Account you may leave the default value; Neila will change the code later once the report is submitted --> 4233.501766.9802.651201.0000.0000.3382.0000
+
+- For the Office Meeting Location field, search for Tunisia then select the resulting entry, and click o ok
+
+- Attach the invoice (Facture) + bill (Ticket de caisse) documents
+
+- Click on Save and close 
+
+- In the next screen, tick the box about recognizing the understanding of the policy etc, then submit the form
+
+- You may notify Neila to let her know about the expense report being added to match exact amount

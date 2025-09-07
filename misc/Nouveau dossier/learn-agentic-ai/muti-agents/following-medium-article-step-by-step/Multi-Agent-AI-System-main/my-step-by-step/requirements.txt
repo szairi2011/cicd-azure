@@ -1,0 +1,30 @@
+# Core requirements
+langchain-ollama>=0.0.1
+ollama>=0.1.0
+python-dotenv>=1.0.0
+langgraph>=0.0.20
+langchain>=0.0.300
+langchain-core>=0.1.0
+pydantic>=2.0.0
+typing_extensions>=4.0.0
+
+# Database support
+sqlalchemy>=2.0.0
+requests>=2.0.0
+
+# For swarm agents
+langgraph-swarm>=0.0.1
+
+# For evaluations
+langsmith>=0.0.60
+openevals>=0.0.5
+
+# For notebook support
+ipykernel>=6.0.0
+ipython>=8.0.0
+jupyter>=1.0.0
+notebook>=7.0.0
+
+# For data handling and visualization
+pandas>=2.0.0
+matplotlib>=3.0.0

@@ -1,0 +1,832 @@
+// app.module.ts
+import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+// Angular Material Modules
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
+import { MatCardModule } from '@angular/material/card';
+import { MatListModule } from '@angular/material/list';
+import { MatProgressRingModule } from '@angular/material/progress-ring';
+import { MatBadgeModule } from '@angular/material/badge';
+import { MatGridListModule } from '@angular/material/grid-list';
+import { MatDividerModule } from '@angular/material/divider';
+
+import { AppComponent } from './app.component';
+import { SidebarComponent } from './components/sidebar/sidebar.component';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { TodoListComponent } from './components/todo-list/todo-list.component';
+import { TasksComponent } from './components/tasks/tasks.component';
+import { CalendarComponent } from './components/calendar/calendar.component';
+import { StatsCardComponent } from './components/stats-card/stats-card.component';
+
+@NgModule({
+  declarations: [
+    AppComponent,
+    SidebarComponent,
+    DashboardComponent,
+    TodoListComponent,
+    TasksComponent,
+    CalendarComponent,
+    StatsCardComponent
+  ],
+  imports: [
+    BrowserModule,
+    BrowserAnimationsModule,
+    MatSidenavModule,
+    MatToolbarModule,
+    MatButtonModule,
+    MatIconModule,
+    MatCardModule,
+    MatListModule,
+    MatProgressRingModule,
+    MatBadgeModule,
+    MatGridListModule,
+    MatDividerModule
+  ],
+  providers: [],
+  bootstrap: [AppComponent]
+})
+export class AppModule { }
+
+// app.component.ts
+import { Component } from '@angular/core';
+
+@Component({
+  selector: 'app-root',
+  template: `
+    <div class="app-container">
+      <app-sidebar></app-sidebar>
+      <app-dashboard></app-dashboard>
+    </div>
+  `,
+  styles: [`
+    .app-container {
+      display: flex;
+      height: 100vh;
+      background-color: #f5f3f0;
+    }
+  `]
+})
+export class AppComponent { }
+
+// components/sidebar/sidebar.component.ts
+import { Component } from '@angular/core';
+
+interface MenuItem {
+  icon: string;
+  label: string;
+  active?: boolean;
+}
+
+@Component({
+  selector: 'app-sidebar',
+  template: `
+    <mat-sidenav-container class="sidebar-container">
+      <mat-sidenav opened mode="side" class="sidebar">
+        <div class="sidebar-header">
+          <div class="logo">
+            <div class="logo-icon">A</div>
+            <span class="logo-text">Anigato</span>
+          </div>
+        </div>
+        
+        <mat-nav-list class="nav-list">
+          <mat-list-item 
+            *ngFor="let item of menuItems" 
+            [class.active]="item.active"
+            class="nav-item">
+            <mat-icon matListIcon>{{item.icon}}</mat-icon>
+            <span matLine>{{item.label}}</span>
+          </mat-list-item>
+        </mat-nav-list>
+        
+        <div class="sidebar-footer">
+          <mat-list-item class="nav-item">
+            <mat-icon matListIcon>contact_mail</mat-icon>
+            <span matLine>Contact</span>
+          </mat-list-item>
+        </div>
+      </mat-sidenav>
+    </mat-sidenav-container>
+  `,
+  styles: [`
+    .sidebar-container {
+      width: 280px;
+      height: 100vh;
+    }
+    
+    .sidebar {
+      width: 280px;
+      background-color: #4a4a4a;
+      color: white;
+      padding: 0;
+    }
+    
+    .sidebar-header {
+      padding: 24px 16px;
+      border-bottom: 1px solid #5a5a5a;
+    }
+    
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    
+    .logo-icon {
+      width: 32px;
+      height: 32px;
+      background-color: #66bb6a;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      font-size: 16px;
+    }
+    
+    .logo-text {
+      font-size: 18px;
+      font-weight: 500;
+    }
+    
+    .nav-list {
+      padding: 16px 0;
+    }
+    
+    .nav-item {
+      color: #b0b0b0;
+      margin: 4px 16px;
+      border-radius: 8px;
+      transition: all 0.2s;
+    }
+    
+    .nav-item:hover {
+      background-color: #5a5a5a;
+      color: white;
+    }
+    
+    .nav-item.active {
+      background-color: #333;
+      color: white;
+    }
+    
+    .sidebar-footer {
+      position: absolute;
+      bottom: 16px;
+      left: 0;
+      right: 0;
+    }
+    
+    ::ng-deep .mat-list-item-content {
+      padding: 8px 16px !important;
+    }
+    
+    ::ng-deep .mat-list-icon {
+      color: inherit;
+    }
+  `]
+})
+export class SidebarComponent {
+  menuItems: MenuItem[] = [
+    { icon: 'today', label: 'Today', active: true },
+    { icon: 'menu', label: 'Menu' },
+    { icon: 'check_circle', label: 'Sessions' },
+    { icon: 'settings', label: 'Options' },
+    { icon: 'folder', label: 'Projects' },
+    { icon: 'star', label: 'Categories' },
+    { icon: 'list', label: 'Lists' }
+  ];
+}
+
+// components/dashboard/dashboard.component.ts
+import { Component } from '@angular/core';
+
+@Component({
+  selector: 'app-dashboard',
+  template: `
+    <div class="dashboard">
+      <div class="dashboard-content">
+        <div class="left-column">
+          <app-todo-list></app-todo-list>
+          <app-tasks></app-tasks>
+        </div>
+        <div class="right-column">
+          <app-stats-card></app-stats-card>
+          <app-calendar></app-calendar>
+        </div>
+      </div>
+    </div>
+  `,
+  styles: [`
+    .dashboard {
+      flex: 1;
+      padding: 24px;
+      overflow-y: auto;
+    }
+    
+    .dashboard-content {
+      display: grid;
+      grid-template-columns: 1fr 320px;
+      gap: 24px;
+      max-width: 1400px;
+    }
+    
+    .left-column {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+    
+    .right-column {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+  `]
+})
+export class DashboardComponent { }
+
+// components/todo-list/todo-list.component.ts
+import { Component } from '@angular/core';
+
+interface TodoItem {
+  id: string;
+  label: string;
+  color: string;
+  icon?: string;
+}
+
+@Component({
+  selector: 'app-todo-list',
+  template: `
+    <mat-card class="todo-card">
+      <mat-card-header>
+        <mat-icon mat-card-avatar class="header-icon">assignment</mat-icon>
+        <mat-card-title>Todo List</mat-card-title>
+      </mat-card-header>
+      
+      <mat-card-content>
+        <mat-list class="todo-list">
+          <mat-list-item *ngFor="let item of todoItems" class="todo-item">
+            <div class="todo-avatar" [style.background-color]="item.color">
+              {{item.id}}
+            </div>
+            <div class="todo-content">
+              <span class="todo-label">{{item.label}}</span>
+            </div>
+            <div class="todo-actions">
+              <mat-icon *ngIf="item.icon">{{item.icon}}</mat-icon>
+              <mat-icon *ngIf="!item.icon">keyboard_arrow_down</mat-icon>
+            </div>
+          </mat-list-item>
+        </mat-list>
+      </mat-card-content>
+    </mat-card>
+  `,
+  styles: [`
+    .todo-card {
+      background: white;
+      border-radius: 16px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    
+    .header-icon {
+      background-color: #f5f5f5;
+      color: #666;
+    }
+    
+    .todo-list {
+      padding: 0;
+    }
+    
+    .todo-item {
+      padding: 12px 0;
+      border-bottom: 1px solid #f0f0f0;
+    }
+    
+    .todo-item:last-child {
+      border-bottom: none;
+    }
+    
+    .todo-avatar {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-weight: bold;
+      font-size: 12px;
+      margin-right: 16px;
+    }
+    
+    .todo-content {
+      flex: 1;
+    }
+    
+    .todo-label {
+      font-size: 14px;
+      color: #333;
+    }
+    
+    .todo-actions {
+      color: #999;
+    }
+    
+    ::ng-deep .mat-list-item-content {
+      padding: 0 !important;
+      align-items: center;
+    }
+  `]
+})
+export class TodoListComponent {
+  todoItems: TodoItem[] = [
+    { id: 'TL', label: 'Todo List', color: '#42a5f5' },
+    { id: 'CL', label: 'Complete Audio End Tasks', color: '#66bb6a', icon: 'play_arrow' },
+    { id: 'FP', label: 'File for Client Proposals', color: '#ff7043' }
+  ];
+}
+
+// components/tasks/tasks.component.ts
+import { Component } from '@angular/core';
+
+interface Task {
+  id: string;
+  label: string;
+  color: string;
+  icon?: string;
+  priority?: string;
+}
+
+@Component({
+  selector: 'app-tasks',
+  template: `
+    <mat-card class="tasks-card">
+      <mat-card-header>
+        <mat-icon mat-card-avatar class="header-icon">bar_chart</mat-icon>
+        <mat-card-title>Tasks</mat-card-title>
+      </mat-card-header>
+      
+      <mat-card-content>
+        <mat-list class="tasks-list">
+          <mat-list-item *ngFor="let task of tasks" class="task-item">
+            <div class="task-avatar" [style.background-color]="task.color">
+              {{task.id}}
+            </div>
+            <div class="task-content">
+              <span class="task-label">{{task.label}}</span>
+            </div>
+            <div class="task-actions">
+              <mat-icon *ngIf="task.icon">{{task.icon}}</mat-icon>
+              <mat-icon *ngIf="task.priority === 'high'">keyboard_arrow_up</mat-icon>
+              <mat-icon *ngIf="!task.icon && task.priority !== 'high'">keyboard_arrow_down</mat-icon>
+              <span *ngIf="task.priority === 'normal'" class="priority-dot"></span>
+            </div>
+          </mat-list-item>
+        </mat-list>
+      </mat-card-content>
+    </mat-card>
+  `,
+  styles: [`
+    .tasks-card {
+      background: white;
+      border-radius: 16px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    
+    .header-icon {
+      background-color: #f5f5f5;
+      color: #666;
+    }
+    
+    .tasks-list {
+      padding: 0;
+    }
+    
+    .task-item {
+      padding: 12px 0;
+      border-bottom: 1px solid #f0f0f0;
+    }
+    
+    .task-item:last-child {
+      border-bottom: none;
+    }
+    
+    .task-avatar {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-weight: bold;
+      font-size: 11px;
+      margin-right: 16px;
+    }
+    
+    .task-content {
+      flex: 1;
+    }
+    
+    .task-label {
+      font-size: 14px;
+      color: #333;
+    }
+    
+    .task-actions {
+      color: #999;
+      display: flex;
+      align-items: center;
+    }
+    
+    .priority-dot {
+      width: 8px;
+      height: 8px;
+      background-color: #66bb6a;
+      border-radius: 50%;
+    }
+    
+    ::ng-deep .mat-list-item-content {
+      padding: 0 !important;
+      align-items: center;
+    }
+  `]
+})
+export class TasksComponent {
+  tasks: Task[] = [
+    { id: 'DW', label: 'Daily at Work-you Tasks', color: '#9c27b0', priority: 'high' },
+    { id: 'NV', label: 'Review New Policy', color: '#00acc1', priority: 'normal' },
+    { id: 'CS', label: 'Client Sprint Day', color: '#5c6bc0' },
+    { id: 'CT', label: 'End Client Toe', color: '#42a5f5' },
+    { id: 'CM', label: 'Calendar Manager', color: '#ff7043', icon: 'play_arrow' },
+    { id: 'VM', label: 'Visit Ops Majors', color: '#8bc34a' }
+  ];
+}
+
+// components/stats-card/stats-card.component.ts
+import { Component } from '@angular/core';
+
+@Component({
+  selector: 'app-stats-card',
+  template: `
+    <mat-card class="stats-card">
+      <mat-card-content>
+        <div class="stats-header">
+          <div class="progress-circle">
+            <svg viewBox="0 0 100 100">
+              <circle cx="50" cy="50" r="45" fill="none" stroke="#f0f0f0" stroke-width="8"/>
+              <circle cx="50" cy="50" r="45" fill="none" stroke="#ff7043" stroke-width="8"
+                      stroke-dasharray="283" stroke-dashoffset="85" stroke-linecap="round"/>
+            </svg>
+            <div class="progress-text">
+              <span class="progress-value">65.0</span>
+              <span class="progress-label">Tasks</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="stats-row">
+          <div class="stat-item">
+            <span class="stat-number">12</span>
+            <span class="stat-label">Open</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number">8</span>
+            <span class="stat-label">In Progress</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number">25</span>
+            <span class="stat-label">Done</span>
+          </div>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  `,
+  styles: [`
+    .stats-card {
+      background: white;
+      border-radius: 16px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    
+    .stats-header {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 24px;
+    }
+    
+    .progress-circle {
+      position: relative;
+      width: 120px;
+      height: 120px;
+    }
+    
+    .progress-circle svg {
+      width: 100%;
+      height: 100%;
+      transform: rotate(-90deg);
+    }
+    
+    .progress-text {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+    }
+    
+    .progress-value {
+      display: block;
+      font-size: 24px;
+      font-weight: bold;
+      color: #333;
+      line-height: 1;
+    }
+    
+    .progress-label {
+      font-size: 12px;
+      color: #666;
+    }
+    
+    .stats-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+    }
+    
+    .stat-item {
+      flex: 1;
+      text-align: center;
+    }
+    
+    .stat-number {
+      display: block;
+      font-size: 20px;
+      font-weight: bold;
+      color: #333;
+      line-height: 1.2;
+    }
+    
+    .stat-label {
+      font-size: 11px;
+      color: #666;
+      text-transform: uppercase;
+    }
+  `]
+})
+export class StatsCardComponent { }
+
+// components/calendar/calendar.component.ts
+import { Component } from '@angular/core';
+
+@Component({
+  selector: 'app-calendar',
+  template: `
+    <div class="calendar-section">
+      <mat-card class="calendar-card">
+        <mat-card-header>
+          <mat-icon mat-card-avatar class="header-icon">calendar_today</mat-icon>
+          <mat-card-title>Calendar Manager</mat-card-title>
+        </mat-card-header>
+        
+        <mat-card-content>
+          <div class="calendar-grid">
+            <div class="calendar-header">
+              <div class="day-header" *ngFor="let day of dayHeaders">{{day}}</div>
+            </div>
+            <div class="calendar-days">
+              <div 
+                class="calendar-day"
+                *ngFor="let day of calendarDays"
+                [class.today]="day.isToday"
+                [class.selected]="day.isSelected"
+                [class.other-month]="day.isOtherMonth">
+                {{day.date}}
+              </div>
+            </div>
+          </div>
+        </mat-card-content>
+      </mat-card>
+      
+      <mat-card class="calendar-summary">
+        <mat-card-header>
+          <mat-icon mat-card-avatar class="header-icon">event</mat-icon>
+          <mat-card-title>Calendar</mat-card-title>
+        </mat-card-header>
+        
+        <mat-card-content>
+          <div class="summary-row">
+            <div class="summary-item">
+              <span class="summary-number">5</span>
+              <span class="summary-label">Events Today</span>
+            </div>
+            <div class="summary-item">
+              <span class="summary-number">18 Jul</span>
+              <span class="summary-label">Next Meeting</span>
+            </div>
+            <div class="summary-item">
+              <span class="summary-number">85%</span>
+              <span class="summary-label">Schedule</span>
+            </div>
+          </div>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  `,
+  styles: [`
+    .calendar-section {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    
+    .calendar-card, .calendar-summary {
+      background: white;
+      border-radius: 16px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    
+    .header-icon {
+      background-color: #f5f5f5;
+      color: #666;
+    }
+    
+    .calendar-grid {
+      font-size: 12px;
+    }
+    
+    .calendar-header {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      gap: 4px;
+      margin-bottom: 8px;
+    }
+    
+    .day-header {
+      text-align: center;
+      font-weight: 500;
+      color: #666;
+      padding: 8px 4px;
+    }
+    
+    .calendar-days {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      gap: 4px;
+    }
+    
+    .calendar-day {
+      text-align: center;
+      padding: 8px 4px;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background-color 0.2s;
+    }
+    
+    .calendar-day:hover {
+      background-color: #f5f5f5;
+    }
+    
+    .calendar-day.today {
+      background-color: #ff7043;
+      color: white;
+    }
+    
+    .calendar-day.selected {
+      background-color: #42a5f5;
+      color: white;
+    }
+    
+    .calendar-day.other-month {
+      color: #ccc;
+    }
+    
+    .summary-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+    }
+    
+    .summary-item {
+      flex: 1;
+      text-align: center;
+    }
+    
+    .summary-number {
+      display: block;
+      font-size: 14px;
+      font-weight: bold;
+      color: #333;
+      line-height: 1.2;
+    }
+    
+    .summary-label {
+      font-size: 10px;
+      color: #666;
+    }
+  `]
+})
+export class CalendarComponent {
+  dayHeaders = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+  
+  calendarDays = [
+    // Previous month days
+    { date: 28, isOtherMonth: true },
+    { date: 29, isOtherMonth: true },
+    { date: 30, isOtherMonth: true },
+    { date: 31, isOtherMonth: true },
+    
+    // Current month days
+    { date: 1 },
+    { date: 2 },
+    { date: 3 },
+    { date: 4 },
+    { date: 5 },
+    { date: 6, isToday: true },
+    { date: 7 },
+    { date: 8 },
+    { date: 9 },
+    { date: 10 },
+    { date: 11 },
+    { date: 12 },
+    { date: 13 },
+    { date: 14, isSelected: true },
+    { date: 15 },
+    { date: 16 },
+    { date: 17, isSelected: true },
+    { date: 18 },
+    { date: 19 },
+    { date: 20 },
+    { date: 21 },
+    { date: 22 },
+    { date: 23 },
+    { date: 24 },
+    { date: 25, isSelected: true },
+    { date: 26 },
+    { date: 27 },
+    { date: 28 },
+    { date: 29 },
+    { date: 30 },
+    { date: 31 }
+  ];
+}
+
+// styles.css (Global styles)
+/* Add to your global styles.css */
+@import '~@angular/material/prebuilt-themes/indigo-pink.css';
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #f5f3f0;
+}
+
+.mat-card {
+  border-radius: 16px !important;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1) !important;
+}
+
+.mat-card-header .mat-card-title {
+  font-size: 16px !important;
+  font-weight: 500 !important;
+  margin-bottom: 0 !important;
+}
+
+.mat-list-item {
+  height: auto !important;
+}
+
+.mat-sidenav {
+  border-radius: 0 !important;
+}
+
+// package.json dependencies to add:
+{
+  "dependencies": {
+    "@angular/animations": "^13.0.0",
+    "@angular/cdk": "^13.0.0",
+    "@angular/common": "^13.0.0",
+    "@angular/compiler": "^13.0.0",
+    "@angular/core": "^13.0.0",
+    "@angular/forms": "^13.0.0",
+    "@angular/material": "^13.0.0",
+    "@angular/platform-browser": "^13.0.0",
+    "@angular/platform-browser-dynamic": "^13.0.0",
+    "@angular/router": "^13.0.0",
+    "rxjs": "~7.4.0",
+    "tslib": "^2.3.0",
+    "zone.js": "~0.11.4"
+  }
+}

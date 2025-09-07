@@ -1,0 +1,35 @@
+<div class="scheduler-container">
+  <div class="scheduler-title">Task Scheduler</div>
+
+  <form class="task-form" [formGroup]="taskForm" (ngSubmit)="onSubmit()">
+    <mat-form-field appearance="outline">
+      <mat-label>Task Name</mat-label>
+      <input matInput formControlName="name" placeholder="Enter task name" required>
+      <mat-error *ngIf="taskForm.get('name')?.errors?.['required']">Task name is required</mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Task Description</mat-label>
+      <textarea matInput formControlName="description" rows="4" placeholder="Enter task description" required></textarea>
+      <mat-error *ngIf="taskForm.get('description')?.errors?.['required']">Description is required</mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Date & Time</mat-label>
+      <input matInput formControlName="date" type="datetime-local" required>
+      <mat-error *ngIf="taskForm.get('date')?.errors?.['required']">Date and time are required</mat-error>
+    </mat-form-field>
+
+    <button mat-raised-button color="primary" type="submit" [disabled]="taskForm.invalid">Save Task</button>
+  </form>
+
+  <div class="task-list">
+    <div *ngFor="let task of tasks" class="task-item">
+      <div class="task-name">{{ task.name }}</div>
+      <div class="task-actions">
+        <button mat-button color="primary" (click)="editTask(task)">Edit</button>
+        <button mat-button color="warn" (click)="deleteTask(task.id)">Delete</button>
+      </div>
+    </div>
+  </div>
+</div>

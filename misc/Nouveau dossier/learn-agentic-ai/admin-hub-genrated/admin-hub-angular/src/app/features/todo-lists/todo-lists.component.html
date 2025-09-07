@@ -1,0 +1,42 @@
+<div class="todo-container">
+  <div class="todo-header">
+    <div class="todo-title">Todo Lists</div>
+    <button mat-raised-button color="primary" class="add-todo" (click)="toggleForm()">Add Todo</button>
+  </div>
+
+  <form class="todo-form" [class.active]="showForm" (ngSubmit)="saveTodo()">
+    <mat-form-field appearance="outline">
+      <mat-label>Todo title</mat-label>
+      <input matInput placeholder="Enter todo title" [(ngModel)]="newTodoTitle" name="title" required>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Description (optional)</mat-label>
+      <textarea matInput placeholder="Enter description" [(ngModel)]="newTodoDescription" name="description" rows="3"></textarea>
+    </mat-form-field>
+
+    <div class="form-actions">
+      <button mat-raised-button color="primary" type="submit" class="save-todo">Save</button>
+      <button mat-raised-button color="warn" type="button" class="cancel-todo" (click)="toggleForm()">Cancel</button>
+    </div>
+  </form>
+
+  <div class="todo-list">
+    <div *ngFor="let todo of todoItems" class="todo-item">
+      <mat-checkbox
+        class="todo-checkbox"
+        [checked]="todo.completed"
+        (change)="toggleComplete(todo)">
+      </mat-checkbox>
+      <div class="todo-content" [class.completed]="todo.completed">{{ todo.title }}</div>
+      <div class="todo-actions">
+        <button mat-icon-button>
+          <mat-icon>edit</mat-icon>
+        </button>
+        <button mat-icon-button>
+          <mat-icon>delete</mat-icon>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

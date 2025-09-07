@@ -1,0 +1,24 @@
+// Main layout styles based on the original HTML application
+
+.app-container {
+  width: 1200px;
+  height: 700px; // Reverting back to original height
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(20px);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  display: flex;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  margin: 0 auto;
+}
+
+.main-content {
+  flex: 1;
+  padding: 30px;
+  // display: flex;
+  gap: 20px;
+  overflow: auto;
+  justify-content: flex-start;
+  align-items: flex-start;
+}

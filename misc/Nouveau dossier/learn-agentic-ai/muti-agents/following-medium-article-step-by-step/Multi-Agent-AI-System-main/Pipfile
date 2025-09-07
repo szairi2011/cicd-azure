@@ -1,0 +1,47 @@
+[[source]]
+url = "https://e1079458:AKCp5emRHn5rVXe2RJV71TbNYQ8mA1Ty9Lm6xLfqLtzik4RMW26MdUvC5rcSWRtKK1ZqfPZnm@artifactory.fis.dev/artifactory/api/pypi/apexsecfin-pypi-dev/simple"
+verify_ssl = false
+name = "pip_conf_index_global"
+
+[packages]
+langgraph = "*"
+langgraph-sdk = "*"
+langgraph-checkpoint-sqlite = "*"
+langsmith = "*"
+langchain-community = "*"
+langchain-core = "*"
+langchain-openai = "*"
+langchain-experimental = "*"
+langchainhub = "*"
+notebook = "*"
+python-dotenv = "*"
+langchain-chroma = "*"
+azure-identity = "*"
+scikit-learn = "*"
+openevals = "*"
+openai = "*"
+ipython = "*"
+pyppeteer = "*"
+langgraph-supervisor = "*"
+langgraph-cli = {extras = ["inmem"], version = "*"}
+langchain-anthropic = "*"
+langchain-google-vertexai = "*"
+langgraph-swarm = "*"
+langchain-together = "*"
+# Ollama-related dependencies
+ollama = "*"
+langchain-ollama = "*"
+# Jupyter-related dependencies
+jupyter = "*"
+jupyterlab = "*"
+ipykernel = "*"
+ipywidgets = "*"
+matplotlib = "*"
+pandas = "*"
+requests = "*"
+
+[dev-packages]
+
+[requires]
+python_version = "3.10"
+python_full_version = "3.10.2"

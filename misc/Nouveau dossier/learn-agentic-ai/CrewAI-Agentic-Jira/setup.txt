@@ -1,0 +1,1 @@
+pipenv install crewai crewai_tools langchain_community jira streamlit streamlit-chat black python-dotenv

@@ -1,0 +1,19 @@
+{
+  "name": "agentic-todo-app-monorepo",
+  "version": "1.0.0",
+  "private": true,
+  "workspaces": [
+    "frontend",
+    "backend"
+  ],
+  "scripts": {
+    "start": "concurrently \"npm start --prefix frontend\" \"npm start --prefix backend\"",
+    "stop-frontend": "npx nodemon --quit frontend/server.js",
+    "stop-backend": "npx nodemon --quit backend/server.js",
+    "stop-all": "concurrently \"npm run stop-frontend\" \"npm run stop-backend\""
+  },
+  "devDependencies": {
+    "concurrently": "^6.5.1",
+    "fkill-cli": "^1.0.0"
+  }
+}

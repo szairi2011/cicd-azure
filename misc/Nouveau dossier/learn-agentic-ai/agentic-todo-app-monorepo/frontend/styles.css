@@ -1,0 +1,27 @@
+.todo-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border: 1px solid #ccc;
+    margin-bottom: 5px;
+    border-radius: 5px;
+}
+
+.todo-item.selected {
+    border: 2px solid #007bff;
+    background-color: #e7f1ff;
+}
+
+.todo-item.completed {
+    background-color: #d4edda;
+    text-decoration: line-through;
+}
+
+.todo-item.pending {
+    background-color: #f8d7da;
+}
+
+.todo-item button {
+    margin-left: 10px;
+}

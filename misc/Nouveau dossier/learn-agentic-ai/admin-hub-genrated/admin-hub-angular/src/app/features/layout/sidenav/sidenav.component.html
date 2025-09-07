@@ -1,0 +1,14 @@
+<div class="sidebar">
+  <div class="logo">
+    <div class="logo-icon">A</div>
+    AdminHub
+  </div>
+  
+  <a *ngFor="let item of navItems" 
+     [routerLink]="item.route" 
+     routerLinkActive="active"
+     class="nav-item">
+    <mat-icon class="nav-icon">{{ item.icon }}</mat-icon>
+    {{ item.name }}
+  </a>
+</div>

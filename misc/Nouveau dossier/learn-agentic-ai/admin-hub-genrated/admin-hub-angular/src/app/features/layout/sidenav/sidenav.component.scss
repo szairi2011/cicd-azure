@@ -1,0 +1,60 @@
+// Sidenav styles based on the original HTML application
+
+.sidebar {
+  width: 260px;
+  background: rgba(60, 60, 60, 0.9);
+  backdrop-filter: blur(10px);
+  color: white;
+  padding: 20px 0;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.logo {
+  padding: 0 20px 30px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.logo-icon {
+  width: 24px;
+  height: 24px;
+  background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.nav-item {
+  padding: 12px 20px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 14px;
+  color: white;
+  text-decoration: none;
+}
+
+.nav-item:hover, .nav-item.active {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.nav-item.active {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.nav-icon {
+  width: 16px;
+  height: 16px;
+  opacity: 0.7;
+}

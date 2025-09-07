@@ -1,0 +1,32 @@
+/* Add to your global styles.css */
+@import '~@angular/material/prebuilt-themes/indigo-pink.css';
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #f5f3f0;
+}
+
+.mat-card {
+  border-radius: 16px !important;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1) !important;
+}
+
+.mat-card-header .mat-card-title {
+  font-size: 16px !important;
+  font-weight: 500 !important;
+  margin-bottom: 0 !important;
+}
+
+.mat-list-item {
+  height: auto !important;
+}
+
+.mat-sidenav {
+  border-radius: 0 !important;
+}

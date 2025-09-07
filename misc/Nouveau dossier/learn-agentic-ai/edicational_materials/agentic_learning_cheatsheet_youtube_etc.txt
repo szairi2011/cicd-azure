@@ -1,0 +1,23 @@
+Youtube video about n8n agents:
+- Create a an AI agent that can learn about a user, and keep a long-term memory throughout the lifespan of the conversation, which would improve the context and hence the conversational aspect:  
+	- Youtube UR: https://www.youtube.com/watch?v=g0IStM5DIp0
+
+- Google search query: build ai agents with n8n on a self-hosted environment
+	- Youtube URL: https://www.youtube.com/watch?v=lSwMtsm6oDU
+		Description of the video: Videoo provided by Carter, that shows: 
+			- How to self-host n8n locally
+			- Create automated agentic workflows using ReAct Ai agent
+			- Create an agentic RAG pipeline using n8n
+
+- Abobve videos are also part of a well structured educational skool.com community called ai-foundation:
+	- AI foundation Skool community URL: https://www.skool.com/ai-foundations/about
+
+- Generate images with n8n AI automation (Set up free flux.schnell AI Image Generator n8n Workflow Template):
+	- Youtube URL: https://www.youtube.com/watch?v=Rv_1jt5WvtY
+	
+- Few RAG ideas with N8N not using Google Drive (Subject to corporate restrictions)
+	- URL: https://blog.n8n.io/rag-chatbot/
+	
+- Building RAG pipeleine by uploading files to Supabase vector database
+	- URL: https://www.bing.com/videos/riverview/relatedvideo?&q=n8n+using+rag+with+s3+bucket&qpvt=n8n+using+rag+with+s3+bucket&mid=8666C8388D856D8D9B798666C8388D856D8D9B79&&FORM=VRDGAR
+	- Keyword search: n8n using rag with s3 bucket

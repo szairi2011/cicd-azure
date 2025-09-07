@@ -1,0 +1,69 @@
+.scheduler-container {
+  flex: 1;
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px);
+  border-radius: 16px;
+  padding: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+.scheduler-title {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 16px;
+  color: #333;
+}
+
+.task-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.task-list {
+  margin-top: 20px;
+}
+
+.task-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.task-item:last-child {
+  border-bottom: none;
+}
+
+.task-item .task-name {
+  font-size: 14px;
+  color: #555;
+}
+
+.task-item .task-actions button {
+  color: #039be5;
+}
+
+.task-item .task-actions button:hover {
+  color: #0277bd;
+}
+
+// Angular Material customization
+::ng-deep .mat-form-field-wrapper {
+  margin-bottom: 0;
+}
+
+::ng-deep .mat-raised-button.mat-primary {
+  background-color: #4fc3f7;
+}
+
+::ng-deep .mat-button.mat-warn {
+  color: #ef5350;
+}
+
+::ng-deep .mat-button.mat-primary {
+  color: #4fc3f7;
+}

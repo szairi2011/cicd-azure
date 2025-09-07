@@ -1,1 +1,73 @@
-/cicd-vm_ssh_key.pem
+# =========================
+# Python (recursive)
+# =========================
+**/__pycache__/
+**/*.py[cod]
+**/*.so
+**/*.egg
+**/*.egg-info/
+**/dist/
+**/build/
+**/*.log
+**/.env
+**/.venv/
+**/venv/
+**/pip-wheel-metadata/
+**/*.sqlite3
+**/.ipynb_checkpoints/
+
+# =========================
+# Java (recursive)
+# =========================
+**/*.class
+**/*.jar
+**/*.war
+**/*.ear
+**/*.log
+**/*.iml
+**/*.ipr
+**/*.iws
+**/target/
+**/bin/
+**/out/
+**/.mvn/
+**/.settings/
+**/.idea/
+**/*.project
+**/*.classpath
+**/.gradle/
+**/build/
+
+# =========================
+# Node.js / Angular (recursive)
+# =========================
+**/node_modules/
+**/npm-debug.log*
+**/yarn-debug.log*
+**/yarn-error.log*
+**/dist/
+**/tmp/
+**/temp/
+**/*.tgz
+**/package-lock.json
+**/yarn.lock
+**/.angular/
+**/.angular-cache/
+**/*.js.map
+**/*.tsbuildinfo
+
+# =========================
+# OS / Editor Junk (recursive)
+# =========================
+**/.DS_Store
+**/Thumbs.db
+**/*.swp
+**/*.swo
+**/*.bak
+**/*.tmp
+
+# =========================
+# Git metadata
+# =========================
+.git/
+.gitignore

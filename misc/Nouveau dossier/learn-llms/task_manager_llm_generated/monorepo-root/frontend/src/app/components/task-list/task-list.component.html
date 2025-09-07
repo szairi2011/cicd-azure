@@ -1,0 +1,44 @@
+<div class="task-container">
+  <div class="header">
+    <h2>Todo List</h2>
+    <button class="expand-btn"><i class="icon-expand"></i></button>
+  </div>
+  
+  <div class="task-groups">
+    <div class="task-group">
+      <div class="task-item">
+        <div class="icon task-icon">T</div>
+        <span>Todo List</span>
+        <i class="icon-dropdown"></i>
+      </div>
+    </div>
+    
+    <div class="task-group" *ngFor="let task of tasks">
+      <div class="task-item">
+        <div class="avatar" *ngIf="task.assignee?.avatar">
+          <img [src]="task.assignee.avatar" [alt]="task.assignee.name">
+        </div>
+        <div class="avatar" *ngIf="!task.assignee?.avatar">
+          {{ getInitials(task.assignee?.name) }}
+        </div>
+        <span>{{ task.title }}</span>
+        <i class="icon-dropdown"></i>
+      </div>
+    </div>
+  </div>
+  
+  <div class="tasks-section">
+    <h3>Tasks:</h3>
+    <div class="task-list">
+      <div class="task" *ngFor="let task of activeTasks">
+        <div class="task-avatar">
+          <img [src]="task.assignee?.avatar || 'assets/default-avatar.png'" [alt]="task.assignee?.name">
+        </div>
+        <div class="task-content">
+          <div class="task-title">{{ task.title }}</div>
+        </div>
+        <i class="icon-expand"></i>
+      </div>
+    </div>
+  </div>
+</div>

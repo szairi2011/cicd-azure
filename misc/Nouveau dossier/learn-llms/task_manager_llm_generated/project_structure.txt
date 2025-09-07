@@ -1,0 +1,33 @@
+# Project Structure
+├── README.md
+├── docker-compose.yml
+├── frontend/
+│   ├── angular.json
+│   ├── package.json
+│   ├── src/
+│   │   ├── app/
+│   │   │   ├── components/
+│   │   │   │   ├── calendar-manager/
+│   │   │   │   ├── navigation/
+│   │   │   │   ├── task-list/
+│   │   │   │   └── progress-chart/
+│   │   │   ├── models/
+│   │   │   ├── services/
+│   │   │   └── app.component.ts
+│   │   ├── assets/
+│   │   └── styles/
+│   └── README.md
+└── backend/
+    ├── pom.xml
+    ├── src/
+    │   ├── main/
+    │   │   ├── java/com/anigaita/taskmanagement/
+    │   │   │   ├── controllers/
+    │   │   │   ├── models/
+    │   │   │   ├── repositories/
+    │   │   │   ├── services/
+    │   │   │   └── TaskManagementApplication.java
+    │   │   └── resources/
+    │   │       └── application.properties
+    │   └── test/
+    └── README.md

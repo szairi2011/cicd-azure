@@ -1,0 +1,32 @@
+<div class="calendar-container">
+  <h3>Calendar Manager</h3>
+  
+  <div class="calendar">
+    <div class="weekdays">
+      <div *ngFor="let day of weekdays">{{ day }}</div>
+    </div>
+    
+    <div class="days">
+      <div 
+        *ngFor="let day of calendarDays" 
+        class="day" 
+        [class.active]="day.active"
+        [class.has-events]="day.hasEvents"
+        [class.today]="day.isToday"
+        [class.other-month]="!day.currentMonth">
+        {{ day.number }}
+      </div>
+    </div>
+  </div>
+  
+  <div class="calendar-footer">
+    <div class="event">
+      <div class="event-dot"></div>
+      <span>30 June</span>
+    </div>
+    <div class="current-time">
+      <span class="time">20:17</span>
+      <span class="location">Eindhoven</span>
+    </div>
+  </div>
+</div>

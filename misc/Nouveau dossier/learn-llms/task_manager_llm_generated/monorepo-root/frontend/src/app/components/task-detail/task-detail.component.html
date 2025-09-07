@@ -1,0 +1,63 @@
+<div class="task-detail-container" *ngIf="task">
+  <div class="header">
+    <button class="back-btn" (click)="goBack()">← Back</button>
+    <h2>{{ isNewTask ? 'Create Task' : 'Edit Task' }}</h2>
+    <div class="actions">
+      <button class="delete-btn" *ngIf="!isNewTask" (click)="deleteTask()">Delete</button>
+      <button class="save-btn" (click)="saveTask()">Save</button>
+    </div>
+  </div>
+  
+  <form [formGroup]="taskForm" class="task-form">
+    <div class="form-group">
+      <label for="title">Title</label>
+      <input type="text" id="title" formControlName="title" class="form-control">
+      <div class="error" *ngIf="taskForm.get('title')?.invalid && taskForm.get('title')?.touched">
+        Title is required
+      </div>
+    </div>
+    
+    <div class="form-group">
+      <label for="description">Description</label>
+      <textarea id="description" formControlName="description" class="form-control"></textarea>
+    </div>
+    
+    <div class="form-group">
+      <label for="category">Category</label>
+      <select id="category" formControlName="category" class="form-control">
+        <option value="">Select Category</option>
+        <option value="Design">Design</option>
+        <option value="Development">Development</option>
+        <option value="Meetings">Meetings</option>
+        <option value="Planning">Planning</option>
+        <option value="Office">Office</option>
+        <option value="Strategy">Strategy</option>
+        <option value="Content">Content</option>
+        <option value="Audio">Audio</option>
+      </select>
+    </div>
+    
+    <div class="form-group">
+      <label for="dueDate">Due Date</label>
+      <input type="datetime-local" id="dueDate" formControlName="dueDate" class="form-control">
+    </div>
+    
+    <div class="form-group">
+      <label for="assignee">Assignee</label>
+      <select id="assignee" formControlName="assigneeId" class="form-control">
+        <option value="">Select Assignee</option>
+        <option [value]="1">John Doe</option>
+        <option [value]="2">Jane Smith</option>
+        <option [value]="3">Robert Brown</option>
+        <option [value]="4">Emily Davis</option>
+      </select>
+    </div>
+    
+    <div class="form-group checkbox">
+      <label>
+        <input type="checkbox" formControlName="completed">
+        Mark as completed
+      </label>
+    </div>
+  </form>
+</div>

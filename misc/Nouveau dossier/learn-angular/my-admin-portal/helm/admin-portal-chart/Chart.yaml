@@ -1,0 +1,26 @@
+apiVersion: v2
+name: admin-portal
+description: First draft of the chart with embedded backend API & DB, i.e. http-json server
+version: 1.2.1 # The chart structue has changed by moving to an umbrella structure so upgrading the chart version
+appVersion: "1.0.1"
+type: application
+keywords:
+  - "Admin portal"
+  - "Angular admin portal"
+
+###### To deploy this helm chart, run below commands:
+# 1. > helm repo add ingress-nginx https://kubernetes.github.io/ingress-nginx
+# 2. > helm install ingress-nginx ingress-nginx/ingress-nginx --version 4.0.18 --namespace ingress-nginx --create-namespace --set controller.admissionWebhooks.enabled=false --debug
+# 3. > helm install admin-portal .\helm\admin-portal-chart --namespace misc --debug
+
+###### To delete the chart release, we either delete the namespace,
+# or only uninstall the helm chart release:
+# helm uninstall admin-portal -n misc
+
+###### To package a new version of the chart in a sub-folder called packaged, follow below steps:
+# 1. Run > helm package .\helm\admin-portal-chart\ -d .\helm\admin-portal-chart\packaged
+# 2. Add the chart repository index file > helm repo index
+# 3. Copy both files, index.yaml and the new release package to the C:\Users\e1079458\work\learn_cloud_comp\helm-charts\admin-portal-helm
+# 4. Commit the new changes to the helm github repository, under Git branch `gh-pages`
+# 5. We can search for the published helm chart usng either `helm repo search` or in ArtifactoryHub.io
+    # NB: Allow few minutes for the ArtifactoryHub.io to sync the new committed release from the GitHub Helm repo

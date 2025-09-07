@@ -1,0 +1,12 @@
+
+<section class="todoapp">
+  <app-todo-new (add)="addToDo($event)"></app-todo-new>
+  <section class="main" *ngIf="todos?.length > 0">
+    <app-todo-list
+      [todos]="todos"
+      (toggleTodoStatus)="toggleToDoCompleteChange($event)"
+      (removeToDo)="deleteToDo($event)"></app-todo-list>
+  </section>
+  <app-footer [todos]="todos"></app-footer>
+</section>
+

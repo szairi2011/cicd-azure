@@ -1,0 +1,52 @@
+<div class="user-calendar">
+  <div class="user-calendar-sidebar">
+    <div class="user-calendar-sidebar-section">
+      <!-- Calendar Features instructions -->
+      <h2>Instructions</h2>
+      <ul>
+        <li>Select a date to create a new event</li>
+        <li>Drag & drop an event to move it to didfferent date</li>
+        <li>Similarly you can resize an event inside time grid views ...</li>
+        <li>Click an event to delete it</li>
+      </ul>
+    </div>
+    <!-- Toggle calendar visibility on/off -->
+    <div class="user-calendar-sidebar-section">
+      <label>
+        <input
+          type="checkbox"
+          [checked]="calendarVisible"
+          (change)="handleCalendarToggle()"
+        />
+        Toggle calendar on/off
+      </label>
+    </div>
+    <!-- Toggle wekends visibility -->
+    <div class="user-calendar-sidebar-section">
+      <label>
+        <input
+          type="checkbox"
+          [checked]="calendarOptions.weekends"
+          (change)="handleWeekendsToggle()"
+        />
+        Toggle weekends on/off
+      </label>
+    </div>
+    <!-- List of all calendar events -->
+    <div class="user-calendar-sidebar-section">
+      <h2>Scheduled events (Total: {{ currentEvents?.length }})</h2>
+      <ul>
+        <li *ngFor="let event of currentEvents">
+          <b>{{ event.startStr }}</b>
+          <i>{{ event.title }}</i>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <!-- calendar view -->
+  <div class="user-calendar-main">
+    <full-calendar *ngIf="calendarVisible"
+      [options]="calendarOptions">
+    </full-calendar>
+  </div>
+</div>

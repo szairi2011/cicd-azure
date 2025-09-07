@@ -1,0 +1,53 @@
+@import "src/app/styles/colors";
+// @import 'src/app/styles/font';
+@import "src/app/styles/variables";
+
+.user-tasks-card {
+  box-sizing: border-box;
+  height: 100%;
+
+  & .user-tasks-title-wrapper {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+
+    & .user-tasks-title {
+      margin-bottom: 0;
+    }
+  }
+
+  & .user-task-wrapper {
+    border-bottom: 1px solid hsla(0, 0%, 84.7%, 0.5019607843137255);
+    justify-content: space-between;
+    padding: 16px 0;
+
+    align-items: center;
+    display: flex;
+
+    & .inner-user-task-wrapper {
+      align-items: center;
+      display: flex;
+
+      & .task-time {
+        font-size: 10px;
+        font-weight: 500;
+        line-height: 20px;
+        margin: 0;
+      }
+
+      & .task-done {
+        color: hsla(0, 0%, 43.1%, 0.6);
+        text-decoration-line: line-through;
+      }
+
+      & .task-text {
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 20px;
+        margin: 0 0 0 8px;
+      }
+    }
+  }
+}
+
+

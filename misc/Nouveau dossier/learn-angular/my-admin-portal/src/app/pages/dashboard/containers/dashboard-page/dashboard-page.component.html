@@ -1,0 +1,29 @@
+<app-layout>
+  <mat-toolbar class="page-header" role="heading">
+    <h1>Dashboard</h1>
+    <button mat-flat-button color="warn">Latest Reports</button>
+  </mat-toolbar>
+
+  <div class="charts-wrapper">
+    <div class="chart">
+      <app-visits-score-card [visitsChartData]="visitsChartData$ | async"></app-visits-score-card>
+    </div>
+    <div class="chart">
+      <app-performance-score-card [performanceChartData]="performanceChartData$ | async"></app-performance-score-card>
+    </div>
+    <div class="chart">
+      <app-server-score-card [serverChartData]="serverChartData$ | async"></app-server-score-card>
+    </div>
+    <div class="chart">
+      <app-revenue-pie-chart [revenueChartData]="revenueChartData$ | async"></app-revenue-pie-chart>
+    </div>
+  </div>
+
+  <!-- <app-daily-line-chart [dailyLineChartData]="dailyLineChartData$ | async"></app-daily-line-chart> -->
+
+  <!-- <app-project-stat-chart [projectsStatsData]="projectsStatsData$ | async"></app-project-stat-chart> -->
+
+  <!-- <app-support-requests [supportRequestData]="supportRequestData$ | async"></app-support-requests> -->
+
+  <!-- <app-footer></app-footer> -->
+</app-layout>

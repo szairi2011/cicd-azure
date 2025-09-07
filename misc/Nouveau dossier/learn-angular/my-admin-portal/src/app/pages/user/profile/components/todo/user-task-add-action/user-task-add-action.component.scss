@@ -1,0 +1,50 @@
+@import 'src/app/styles/colors';
+// @import 'src/app/styles/font';
+@import 'src/app/styles/variables';
+
+.add-card {
+  height: 100%;
+  // margin-top: 24px;
+}
+
+.add-content {
+  display: flex;
+  justify-content: space-between;
+}
+
+.first-buttons-wrapper {
+  display: flex;
+}
+
+.add-button {
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  padding: 6px 16px;
+}
+
+.mat-success {
+  background-color: #31c2a0;
+  border-color: #31c2a0!important;
+  color: #fff;
+}
+
+.mat-flat-button, .mat-raised-button {
+  letter-spacing: .02857em;
+  text-transform: uppercase;
+}
+
+.button-inert-wrapper {
+  align-items: center;
+  display: flex;
+}
+
+.material-icons {
+  font-size: 24px;
+}
+
+.button-text {
+  margin: 0 0 0 8px;
+  font-size: 16px;
+  color: #fff; // Included here as mat-card-itle has overriden property
+}

@@ -1,0 +1,18 @@
+### Define the Angular app nodeport/loadbalancer Service desired state
+apiVersion: v1
+kind: Service
+metadata:
+  name:  frontend-service
+  # namespace: misc
+  annotations:
+    metallb.universe.tf/allow-shared-ip: "key-to-share-10.7.158.149"
+spec:
+  loadBalancerIP: 10.7.158.149
+  selector:
+    app:  my-admin-frontend
+  type:  LoadBalancer # Switch to Loadbalancer sevice if we are deploying to a cloud provider or if we have a cluster-level loadbalancing capability
+  ports:
+  - protocol: TCP # Default is TCP anyway
+    #port:  31066
+    port: 8081
+    targetPort:  80

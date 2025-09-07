@@ -1,0 +1,19 @@
+@import "src/app/styles/colors";
+@import "src/app/styles/variables";
+
+.form-item {
+  display: block;
+  margin: 16px 0;
+  width: 100%;
+}
+
+.next-button {
+  float: right;
+  text-transform: uppercase;
+}
+
+.buttons-wrapper {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30px;
+}

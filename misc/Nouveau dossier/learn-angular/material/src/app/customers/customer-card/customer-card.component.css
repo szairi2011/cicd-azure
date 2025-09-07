@@ -1,0 +1,17 @@
+.mat-card {
+  max-width: 300px;
+  margin: auto;
+}
+
+.mat-card-avatar {
+  background-image: url('/assets/images/shiba1.jpg');
+  background-size: cover;
+}
+
+.mat-card-actions {
+  display: flex;
+}
+
+.mat-card-actions .flex-spacer {
+  width: 100%;
+}

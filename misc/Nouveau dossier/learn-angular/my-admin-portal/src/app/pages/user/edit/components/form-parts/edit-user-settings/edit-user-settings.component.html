@@ -1,0 +1,41 @@
+<div class="edit-form-wrapper">
+
+  <h3>Settings</h3>
+
+  <form [formGroup]="editSettingsForm">
+    <mat-form-field class="form-item" appearance="outline">
+      <select matNativeControl formControlName="role" [(value)]="selectedRole">
+        <option *ngFor="let userRole of userRoles" [value]="userRole.value">{{userRole.viewName}}</option>
+      </select>
+    </mat-form-field>
+
+    <div class="settings-item-wrapper first-setting">
+      <h3 class="settings-subtitle">Communication:</h3>
+      <!-- <mat-checkbox [checked]="true" color="warn" formControlName="email_channel" class="checkbox">Email</mat-checkbox> -->
+      <mat-checkbox color="warn" class="checkbox" formControlName="email_channel">Email</mat-checkbox>
+      <mat-checkbox color="warn" class="checkbox" formControlName="message_channel">Messages</mat-checkbox>
+      <mat-checkbox color="warn" class="checkbox" formControlName="phone_channel">Phone</mat-checkbox>
+    </div>
+
+    <div class="settings-item-wrapper">
+      <h3 class="settings-subtitle">Email notification:</h3>
+      <mat-slide-toggle color="warn" formControlName="notify"></mat-slide-toggle>
+    </div>
+
+    <div class="settings-item-wrapper">
+      <h3 class="settings-subtitle">Send copy to personal email:</h3>
+      <mat-slide-toggle color="warn"></mat-slide-toggle>
+    </div>
+
+    <!-- <mat-form-field class="form-item" appearance="outline">
+        <mat-label>Username</mat-label>
+        <input matInput placeholder="Username" type="text" formControlName="username" required>
+      </mat-form-field> -->
+
+    <div class="button-wrapper">
+      <button class="reset-button" mat-stroked-button>Reset</button>
+      <button class="save-button" mat-flat-button type="button" (click)="updateSettings()">Save</button>
+    </div>
+  </form>
+
+</div>

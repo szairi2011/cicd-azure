@@ -1,0 +1,77 @@
+@import 'src/app/styles/colors';
+// @import 'src/app/styles/font';
+@import 'src/app/styles/variables';
+
+.add-card {
+  height: 100px;
+  margin-top: 24px;
+}
+
+.add-content {
+  display: flex;
+  justify-content: space-between;
+}
+
+.first-buttons-wrapper {
+  display: flex;
+}
+
+.add-button {
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  padding: 6px 16px;
+}
+
+.mat-success {
+  background-color: #31c2a0;
+  border-color: #31c2a0!important;
+  color: #fff;
+}
+
+.mat-flat-button, .mat-raised-button {
+  letter-spacing: .02857em;
+  text-transform: uppercase;
+}
+
+.button-inert-wrapper {
+  align-items: center;
+  display: flex;
+}
+
+.material-icons {
+  font-size: 24px;
+}
+
+.button-text {
+  margin: 0 0 0 8px;
+}
+
+.download-button, .filters-button {
+  box-shadow: none;
+  display: block;
+  padding: 5px 15px;
+  text-transform: uppercase;
+  width: fit-content;
+}
+
+.filters-button {
+  height: fit-content;
+  margin: 0 0 0 16px;
+}
+
+// Second wrapper to the right
+.second-buttons-wrapper {
+  align-items: flex-end;
+  display: flex;
+  flex-direction: column;
+}
+
+.mat-tooltip.tooltip {
+  background-color: darkblue;
+  font-size: 12px;
+}
+
+.download-button {
+  margin-bottom: 8px;
+}

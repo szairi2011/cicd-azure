@@ -1,0 +1,6 @@
+apiVersion: v2
+name: backend
+description: A seperate chart for the backend nested inside an umbrella chart, i.e. admin-portal 
+version: 1.0.0 # THe first version of the backend chart
+appVersion: "1.0" # Codebase did not change for the backend since te last commit
+type: application

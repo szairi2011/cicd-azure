@@ -1,0 +1,55 @@
+version: '3.7'
+
+services:
+  frontend-service:
+    container_name: angular-nginx
+    image: soulou2019/angular-nginx
+    build:
+      context: .
+      dockerfile: nginx.prod.dockerfile
+    environment:
+      NODE_ENV: production
+      FRONTEND_NAME: admin-portal-prod
+      USERS_BACKEND_URL_SUFFIX: /api/users/
+      TASKS_BACKEND_URL_SUFFIX: /api/tasks/
+      APP_FRONTEND_VERSION: 1.0.1
+    ports:
+      - 8082:80 # Port-forwarding to nginx container who is listening on port 80
+      - 443:443
+    depends_on:
+      # - node_server
+      - backend-service
+    networks:
+      - myadmin-portal-network
+   # command: ["node", "--inspect=0.0.0.0:9229", "index.js"]
+
+  # node_server:
+  backend-service:
+    container_name: node-server
+    image: soulou2019/node-server
+    build:
+      context: ./server
+      dockerfile: node.server.dockerfile
+    ports:
+      # - 80:3000
+      - 80:80
+    networks:
+      - myadmin-portal-network
+
+  # Disabled in case someone is running this on Windows (OK to uncomment if on Mac/Linux)
+  # cadvisor:
+  #   container_name: cadvisor
+  #   image: google/cadvisor
+  #   volumes:
+  #     - /:/rootfs:ro
+  #     - /var/run:/var/run:rw
+  #     - /sys:/sys:ro
+  #     - /var/lib/docker/:/var/lib/docker:ro
+  #   ports:
+  #     - "8081:8080"
+  #   networks:
+  #     - myadmin-portal-network
+
+networks:
+  myadmin-portal-network:
+    driver: bridge

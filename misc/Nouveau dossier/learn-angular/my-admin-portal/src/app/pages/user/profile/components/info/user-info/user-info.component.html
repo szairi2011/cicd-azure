@@ -1,0 +1,38 @@
+<mat-card class="user-card">
+  <mat-card-content class="user-card-content">
+    <div class="user-avatar">
+      <div class="avatar-wrapper">
+        <img src="./assets/user/profile/avatar.png" alt="avatar" class="avatar-img">
+      </div>
+      <mat-chip-list class="avatar-badge-wrapper" >
+          <mat-chip color="warn" selected="" class="avatar-badge">
+            Pro
+          </mat-chip>
+      </mat-chip-list>
+    </div>
+    <div class="user-info-wrapper" *ngIf="userInfo$ | async as user;">
+      <mat-card-title class="user-name">{{user.firstname}} {{user.lastname}}</mat-card-title>
+      <p class="user-position">{{user.role}}</p>
+      <a href="#" class="user-site">{{user.company}}</a>
+      <div class="user-skills-wrapper">
+        <mat-chip-list>
+          <mat-chip *ngFor="let skill of user.skills; index as idx;" role="option" selected=""
+            [ngClass]="['user-skill', badge_colors[idx]]">{{skill}}</mat-chip>
+
+          <!-- <mat-chip role="option" selected="" class="user-skill blue">UI/UX</mat-chip>
+          <mat-chip role="option" selected="" class="user-skill orange">Angular material</mat-chip>
+          <mat-chip role="option" selected="" class="user-skill pink">Design</mat-chip>
+          <mat-chip role="option" selected="" class="user-skill green">Illustration</mat-chip>
+          <mat-chip role="option" selected="" class="user-skill blue">Mobile</mat-chip> -->
+        </mat-chip-list>
+      </div>
+      <div class="icons-wrapper">
+        <a href="#"><img href="" src="./assets/user/profile/facebook-logo.svg" class="icon"></a>
+        <a href="#"><img src="./assets/user/profile/medium-logo.svg" class="icon"></a>
+        <a href="#"><img src="./assets/user/profile/basket.svg" class="icon"></a>
+        <a href="#"><img src="./assets/user/profile/Be.svg" class="icon"></a>
+        <a href="#"><img src="./assets/user/profile/insta-logo.svg" class="icon"></a>
+      </div>
+    </div>
+  </mat-card-content>
+</mat-card>

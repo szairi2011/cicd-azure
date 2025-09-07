@@ -1,0 +1,51 @@
+@import "src/app/styles/colors";
+// @import 'src/app/styles/font';
+@import "src/app/styles/variables";
+
+div.main-content-wrapper {
+  display: flex;
+  margin-top: 36px;
+  width: 100%;
+
+  & div.left-content-wrapper {
+    box-sizing: border-box;
+    padding-right: 18px;
+    width: 40%;
+
+    & div.inner-left-content-wrapper {
+      display: flex;
+      margin-top: 36px;
+      width: 100%;
+    }
+  }
+
+  & div.right-content-wrapper {
+    box-sizing: border-box;
+    padding-right: 18px;
+    width: 60%;
+
+    & div.bottom-right-content-wrapper {
+      display: flex;
+      height: fit-content;
+      margin-top: 36px;
+
+      & .user-tasks {
+        margin-right: 18px;
+        width: 60%;
+      }
+
+      & div.right-bottom-right-content-wrapper {
+        height: fit-content;
+        margin-left: 18px;
+        width: 40%;
+
+        & div.calendar-wrapper {
+        }
+        & div.views-wrapper {
+        }
+        & div.update-wrapper {
+        }
+      }
+    }
+  }
+}

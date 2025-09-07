@@ -1,0 +1,91 @@
+
+@import "../../../../src/app/styles/theme";
+
+.full-width {
+  width: 50%;
+}
+
+.shipping-card {
+  min-width: 120px;
+  margin: 20px auto;
+}
+
+.mat-radio-button {
+  display: block;
+  margin: 5px 0;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+}
+
+.col {
+  flex: 1;
+  margin-right: 20px;
+}
+
+.col:last-child {
+  margin-right: 0;
+}
+
+
+.mat-stepper-horizontal-line {
+  border-top-width: 2px;
+  border-top-color: mat-color($primary);
+  border-top-style: solid;
+}
+
+.mat-horizontal-stepper-header {
+  &[ng-reflect-active="false"] + .mat-stepper-horizontal-line {
+    border-top-width: 2px;
+    border-top-style: dashed;
+  }
+
+  &[ng-reflect-selected="true"] + .mat-stepper-horizontal-line {
+    border-top-width: 2px;
+    border-top-style: dashed;
+  }
+}
+
+// Completed step and its label
+$success: green;
+$primary: map-get($custom_theme, primary);
+
+.mat-step-header .mat-step-icon-state-done {
+  background-color: $success !important;
+  color: white;
+  + .mat-step-label {
+    color: $success !important;
+  }
+}
+
+// Selected/Edited step and its label
+.mat-step-header .mat-step-icon-selected,
+.mat-step-header .mat-step-icon-state-edit {
+  background-color: mat-color($primary);
+  // background-color: transparent !important;
+  color: white;
+  + .mat-step-label {
+    color: mat-color($primary) !important;
+  }
+}
+
+
+/* mat form field border and appearance */
+.mat-form-field-appearance-outline .mat-form-field-outline {
+  color: rgb(230, 223, 223);
+}
+
+.mat-form-field-appearance-outline:active .mat-form-field-outline {
+  color: mat-color($primary);
+}
+
+.mat-form-field-appearance-outline:hover .mat-form-field-outline {
+  color: black;
+}
+
+// Include vertical spacer between form fields, the etepper-form class is introduced simply to fix a broken styles for mat-table in other templates !!!
+.stepper-form .mat-form-field-wrapper  {
+  padding: 20px;
+}

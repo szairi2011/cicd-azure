@@ -1,0 +1,20 @@
+<mat-list>
+  <mat-list-item [routerLink]="routes.USER_PROFILE_PAGE" routerLinkActive="active">
+    <mat-icon>person</mat-icon> Profile
+  </mat-list-item>
+  <mat-list-item [routerLink]="routes.DASHBOARD_PAGE" routerLinkActive="active">
+    <mat-icon>home</mat-icon> Dashboard
+  </mat-list-item>
+
+  <mat-list-item [routerLink]="routes.CALENDAR_PAGE" routerLinkActive="active">
+    <!-- <mat-icon>calendar_today</mat-icon> Calendar -->
+    <mat-icon>perm_contact_calendar</mat-icon> Calendar
+  </mat-list-item>
+
+  <app-tree-menu-item parent="User" [children]="[
+          {label:'User List', path:'list'},
+          {label:'Add User', path:'add'},
+          {label:'Edit User', path:'edit'}]">
+  </app-tree-menu-item>
+
+</mat-list>

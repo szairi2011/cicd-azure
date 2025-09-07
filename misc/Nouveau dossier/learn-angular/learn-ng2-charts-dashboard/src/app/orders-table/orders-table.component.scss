@@ -1,0 +1,52 @@
+.full-width-table {
+  width: 100%;
+  overflow-x: scroll !important;
+  overflow-y: scroll;
+  // max-height: 600px;
+}
+
+.small-table{
+  overflow-x: scroll !important;
+  max-height: 600px; // Make sure table will not overflow ourside the outer mat-card container for large paginations
+}
+
+.mat-header-cell, .mat-cell{
+  // border-bottom-style: none;
+  padding: 20px;
+}
+
+.mat-cell {
+  text-align: left; // Keep the cell content aligned with the header title
+}
+
+.mat-standard-chip {
+  border-radius: 4px;
+}
+
+/* .no-results {
+  display: flex;
+  justify-content: center;
+  padding: 14px;
+  font-size: 14px;
+  font-style: italic;
+} */
+
+// .mat-select-value {
+//   overflow: visible;
+// }
+
+/* .mat-select-value {
+  display: table-cell;
+  // max-width: 0;
+  width: 100%;
+  overflow: visible;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.mat-paginator .mat-select-value-text {
+  font-size: 16px;
+  font-weight: 400;
+  color: #4A4A4A;
+  overflow: visible;
+} */

@@ -1,0 +1,26 @@
+<form class="form" [formGroup]="signupForm" (ngSubmit)="signup()">
+  <mat-form-field class="form__input">
+    <input matInput placeholder="First name" formControlName="firstname" required>
+  </mat-form-field>
+
+  <mat-form-field class="form__input">
+    <input matInput placeholder="last name" formControlName="lastname" required>
+  </mat-form-field>
+
+  <!-- The username is the also the email for the user -->
+  <mat-form-field class="form__input">
+    <input matInput placeholder="Email Address" type="email" formControlName="username" required>
+  </mat-form-field>
+
+  <mat-form-field class="form__input">
+    <input matInput placeholder="Password" type="password" formControlName="password" required>
+  </mat-form-field>
+
+  <mat-form-field class="form__input">
+    <input matInput placeholder="Affiliation (i.e. Company, Org, etc)" formControlName="company">
+  </mat-form-field>
+
+  <div class="form-actions">
+    <button class="form-actions__create" mat-raised-button color="primary" type="submit">Create your new account</button>
+  </div>
+</form>

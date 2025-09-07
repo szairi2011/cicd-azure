@@ -1,0 +1,39 @@
+<div class="edit-form-wrapper">
+  <h3>Profile</h3>
+
+  <button class="upload-button" mat-flat-button color="primary">Upload an image</button>
+  <p>.PNG, .JPG, .JPEG</p>
+
+  <form [formGroup]="editProfileForm" (ngSubmit)="updateProfile()">
+  <!-- <form [formGroup]="editAccountForm"> -->
+    <mat-form-field class="form-item" appearance="outline">
+      <mat-label>Firstname</mat-label>
+      <input matInput placeholder="Firstname" type="text" formControlName="firstname" required>
+    </mat-form-field>
+
+    <mat-form-field class="form-item" appearance="outline">
+      <mat-label>Lastname</mat-label>
+      <input matInput placeholder="Lastname" type="text" formControlName="lastname">
+    </mat-form-field>
+
+    <mat-form-field class="form-item" appearance="outline">
+      <mat-label>Company</mat-label>
+      <input matInput placeholder="Company" type="text" formControlName="company">
+    </mat-form-field>
+
+    <!-- <mat-form-field class="form-item" appearance="outline">
+      <mat-label>User role</mat-label>
+      <select matNativeControl required formControlName="role" [(value)]="selectedRole">
+        <option *ngFor="let userRole of userRoles" [value]="userRole.value">{{userRole.viewName}}</option>
+      </select>
+    </mat-form-field> -->
+
+    <div class="button-wrapper">
+      <button class="reset-button" mat-stroked-button (click)="editProfileForm.reset()">Reset</button>
+      <button class="save-button" mat-flat-button
+        type="submit" [disabled] = "!editProfileForm.valid">Save</button>
+      <!-- <button class="save-button" mat-flat-button [disabled]="!editAccountForm.valid"
+        (click)="updateAccount()" [routerLink] = "['/user']">Save</button> -->
+    </div>
+  </form>
+</div>

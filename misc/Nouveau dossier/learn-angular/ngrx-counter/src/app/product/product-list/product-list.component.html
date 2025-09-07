@@ -1,0 +1,14 @@
+<table class="table table-hover" *ngIf="products | async">
+<thead>
+<tr>
+    <td>Product Name</td>
+    <td>Product Price</td>
+</tr>
+</thead>
+<tbody>
+    <tr *ngFor="let product of products | async">
+        <td>{{product.name}}</td>
+        <td>{{product.price}}</td>
+    </tr>
+</tbody>
+</table>

@@ -1,0 +1,40 @@
+<mat-card>
+  <mat-card-title>New customer</mat-card-title>
+  <mat-card-content>
+    <form [formGroup]="matForm1">
+      <mat-form-field class="full-width">
+        <input matInput placeholder="Email" formControlName="emailFormCtrl" required>
+        <mat-hint align="end">Hint: email@domain.com</mat-hint>
+        <mat-error align="end" *ngIf="matForm1.get('emailFormCtrl').hasError('email')">
+          Please enter a valid email address
+        </mat-error>
+        <mat-error align="end" *ngIf="matForm1.get('emailFormCtrl').hasError('required')">
+          Please enter an email address
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field class="full-width">
+        <input matInput placeholder="First name">
+      </mat-form-field>
+      <mat-form-field class="full-width">
+        <input matInput placeholder="Last name">
+      </mat-form-field>
+      <mat-form-field class="full-width">
+        <textarea matInput placeholder="address"></textarea>
+      </mat-form-field>
+      <mat-form-field class="full-width">
+        <span matPrefix>+216</span>
+        <span class="phone-spacer"></span>
+        <input matInput placeholder="Phone">
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput placeholder="Fax">
+        <button mat-icon-button matSuffix (click)="matForm1.reset()">
+          <mat-icon>phone</mat-icon>
+        </button>
+      </mat-form-field>
+    </form>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-raised-button color="primary" (click)="onUndoSnackBar()" #tooltip matTooltip="Will trigger undo snackbar" [matTooltipClass]="tooltip">Save</button>
+  </mat-card-actions>
+</mat-card>

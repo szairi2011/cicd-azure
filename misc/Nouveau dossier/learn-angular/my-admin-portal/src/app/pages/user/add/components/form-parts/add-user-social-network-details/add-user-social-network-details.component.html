@@ -1,0 +1,41 @@
+<ng-template #social_network_details>
+  <div class="add-form-wrapper">
+
+    <form [formGroup]="addSocialNetworkForm">
+      <!-- Facebook link -->
+      <mat-form-field class="form-item" appearance="outline">
+        <mat-label>Facebook</mat-label>
+        <input matInput type="text" formControlName="facebook">
+        <mat-hint>Enter your facebook link</mat-hint>
+      </mat-form-field>
+      <!-- Twitter link -->
+      <mat-form-field class="form-item" appearance="outline">
+        <mat-label>Twitter</mat-label>
+        <input matInput type="text" formControlName="twitter">
+        <mat-hint>Enter your Twitter link</mat-hint>
+      </mat-form-field>
+      <!-- Instagram link -->
+      <mat-form-field class="form-item" appearance="outline">
+        <mat-label>Instagram</mat-label>
+        <input matInput type="text" formControlName="instagram">
+        <mat-hint>Enter your Instagram link</mat-hint>
+      </mat-form-field>
+      <!-- Company contact -->
+      <mat-form-field class="form-item" appearance="outline">
+        <mat-label>Company Contact</mat-label>
+        <input matInput type="text" formControlName="company_contact">
+        <mat-hint>Enter your company contact</mat-hint>
+      </mat-form-field>
+      <!-- GitHub -->
+      <mat-form-field class="form-item" appearance="outline">
+        <mat-label>GitHub</mat-label>
+        <input matInput type="text" formControlName="github">
+        <mat-hint>Enter your GitHub link</mat-hint>
+      </mat-form-field>
+      <div class="buttons-wrapper">
+        <button mat-stroked-button color="primary" (click)="stepper.previous()">BACK</button>
+        <button mat-flat-button color="primary" (click)="submit()">FINISH</button>
+      </div>
+    </form>
+  </div>
+</ng-template>

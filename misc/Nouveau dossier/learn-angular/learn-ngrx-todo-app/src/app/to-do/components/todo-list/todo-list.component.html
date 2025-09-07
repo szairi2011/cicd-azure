@@ -1,0 +1,9 @@
+<ul class="todo-list">
+  <li *ngFor="let todo of todos, index as todo_idx" [class.completed] = "todo.isComplete">
+    <app-todo-list-item
+      [todo]="todo"
+      [todo_idx]="todo_idx"
+      (toggleTodoStatus)="toggleToDoCompleteChange($event)"
+      (removeToDo)="deleteToDo($event)"></app-todo-list-item>
+  </li>
+</ul>

@@ -1,0 +1,9 @@
+config:
+  frontend_name: "admin-portal-prod"
+  frontend_version: "1.0.2"
+  users_backend_url_suffix: "/api/users/"
+  tasks_backend_url_suffix: "/api/tasks/"
+
+# backend:
+#   backend.enabled: true
+#   api: true

@@ -1,0 +1,14 @@
+apiVersion: v2
+name: frontend
+description: A seperate chart for the Angular app nested inside an umbrella chart, i.e. admin-portal
+version: 1.0.0 # The first version of the frontend chart
+appVersion: "1.0.1"
+type: application
+
+# dependencies:
+#   - name: backend
+#     version: "1.0.x"
+#     repository: http://localhost:8080
+#     condition: backend.enabled
+#     tags:
+#       - "api"

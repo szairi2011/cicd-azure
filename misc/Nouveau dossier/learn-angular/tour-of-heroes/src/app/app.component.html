@@ -1,0 +1,22 @@
+<section class="todoapp">
+  <header class="header">
+    <h1>Welcome to todo-app!</h1>
+    <input class="new-todo" placeholder="Create a new ToDo" autofocus="" 
+      [(ngModel)] = "newToDo" (keyUpEnter) = "addToDo(newToDo)">
+  </header>
+  <section class="main" *ngIf = "todos?.length > 0">
+    <ul class="todo-list">
+      <li *ngFor = "let todo of todos" [class.completed]="todo.complete">
+        <div class="view">
+          <input type="checkbox" class="toggle" [checked]="todo.complete" 
+            (click) = "toggleToDoComplete(todo)" >
+          <label>{{todo.title}}</label>
+          <button class="destroy" (click) = "deleteToDo(todo)" ></button>
+        </div>
+      </li>
+    </ul>
+  </section>
+    <footer class="footer" *ngIf = "todos?.length > 0">
+      <span class="todo-count"><strong>{{todos.length}}</strong></span> todo {{todos.length == 1 ? 'item':'items'}} left
+    </footer>
+  </section>

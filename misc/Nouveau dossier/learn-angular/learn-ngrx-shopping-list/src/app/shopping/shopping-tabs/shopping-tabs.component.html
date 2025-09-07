@@ -1,0 +1,41 @@
+<mat-tab-group>
+  <mat-tab >
+    <ng-template matTabLabel *ngIf="(availableItems$ | async) as availableItems;">
+      <span matBadge="{{availableItems.length}}" matBadgeColor="primary" matBadgeOverlap="false">Available</span>
+    </ng-template>
+    <p>Eager fetching ...</p>
+    <p>New orders go here ...</p>
+    <app-shopping-list-mat-table-ds></app-shopping-list-mat-table-ds>
+  </mat-tab>
+
+  <mat-tab>
+    <!-- lazy loading of the template -->
+    <ng-template matTabLabel *ngIf="(favoriteItems$ | async) as favoriteItems;">
+      <span matBadge="{{favoriteItems.length}}" matBadgeColor="warn" matBadgeOverlap="false">Favorite</span>
+    </ng-template>
+    <ng-template matTabContent>
+      <ul *ngIf="favoriteItems$ | async">
+        <li *ngFor="let item of (favoriteItems$ | async); index as idx;">
+          <app-shopping-card
+            [id]="item.id">
+        </app-shopping-card>
+        </li>
+      </ul>
+    </ng-template>
+  </mat-tab>
+
+  <mat-tab >
+    <ng-template matTabLabel *ngIf="(purchasedItems$ | async) as purchasedItems;">
+      <span matBadge="{{purchasedItems.length}}" matBadgeColor="accent" matBadgeOverlap="false">Purchased</span>
+    </ng-template>
+    <ng-template matTabContent>
+      <ul *ngIf="purchasedItems$ | async">
+        <li *ngFor="let item of (purchasedItems$ | async); index as idx;">
+          <app-shopping-card
+            [id]="item.id">
+        </app-shopping-card>
+        </li>
+      </ul>
+    </ng-template>
+  </mat-tab>
+</mat-tab-group>

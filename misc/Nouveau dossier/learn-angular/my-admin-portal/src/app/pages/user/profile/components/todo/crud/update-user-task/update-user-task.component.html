@@ -1,0 +1,28 @@
+<div class="container">
+  <h3 mat-dialog-title>Update User Task</h3>
+  <form mat-dialog-content [formGroup]="updateForm" (ngSubmit)="update()" >
+
+    <!-- Update todo title -->
+    <div class="form">
+      <mat-form-field color="primary">
+        <mat-label>Title</mat-label>
+        <input matInput placeholder="title" formControlName="title" >
+        <mat-error *ngIf="updateForm.controls.title.invalid">Title field is required</mat-error>
+      </mat-form-field>
+    </div>
+
+    <!-- Update todo description  -->
+    <div class="form">
+      <mat-form-field color="primary">
+        <mat-label>Description</mat-label>
+        <textarea matInput matInput placeholder="description" formControlName="description" maxlength="500"></textarea>
+        <mat-error *ngIf="updateForm.controls.description.invalid">Max length is 500 chars</mat-error>
+      </mat-form-field>
+    </div>
+
+    <div mat-dialog-actions>
+      <button mat-button type="submit" [disabled]="!updateForm.valid" [mat-dialog-close]="1">Update</button>
+      <button mat-button type="button" (click)='cancel()'>Cancel</button>
+    </div>
+  </form>
+</div>

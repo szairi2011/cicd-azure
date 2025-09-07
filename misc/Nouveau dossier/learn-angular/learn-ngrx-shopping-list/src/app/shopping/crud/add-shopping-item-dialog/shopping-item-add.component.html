@@ -1,0 +1,59 @@
+<div class="container">
+  <h3 mat-dialog-title>Add new Shpping item</h3>
+
+  <form class="mat-dialog-content" (ngSubmit)="submit()" #formControl="ngForm">
+
+    <div class="form">
+      <mat-form-field color="accent">
+        <mat-label>Id</mat-label>
+        <input matInput #input class="form-control" placeholder="Id" [(ngModel)]="data.id" name="id" required disabled>
+        <mat-error *ngIf="formControl.invalid">{{getErrorMessage()}}</mat-error>
+      </mat-form-field>
+    </div>
+
+    <!--Textarea for demo purposes-->
+    <div class="form">
+      <mat-form-field color="accent">
+        <input matInput #itemName class="form-control" placeholder="Name" [(ngModel)]="data.name" name="name" required maxlength="15">
+        <mat-error *ngIf="formControl.invalid">{{getErrorMessage()}}</mat-error>
+        <mat-hint align="end">{{itemName.value?.length || 0}}/15</mat-hint>
+      </mat-form-field>
+    </div>
+
+    <!--Contains mat-hint for characters count and has maxLengt set-->
+    <div class="form">
+      <mat-form-field color="accent">
+        <input matInput #itemDescription class="form-control" placeholder="Description" [(ngModel)]="data.description" name="desription" maxlength="50" >
+        <mat-error *ngIf="formControl.invalid">{{getErrorMessage()}}</mat-error>
+        <mat-hint align="end">{{itemDescription.value?.length || 0}}/50</mat-hint>
+      </mat-form-field>
+    </div>
+
+    <div class="form">
+      <mat-form-field color="accent">
+        <mat-select matInput #isFavorite class="form-control" placeholder="Favorite" [(ngModel)]="data.isFavorite" name="isFavorite">
+          <mat-option value="true">True</mat-option>
+          <mat-option value="false">False</mat-option>
+        </mat-select>
+        <mat-error *ngIf="formControl.invalid">{{getErrorMessage()}}</mat-error>
+        <mat-hint align="end">{{isFavorite.value?.length || 0}}/50</mat-hint>
+      </mat-form-field>
+    </div>
+
+    <div class="form">
+      <mat-form-field color="accent">
+        <mat-select matInput #isPurchased class="form-control" placeholder="Purchased" [(ngModel)]="data.isPurchased" name="isPurchased">
+          <mat-option value="true">True</mat-option>
+          <mat-option value="false">False</mat-option>
+        </mat-select>
+        <mat-error *ngIf="formControl.invalid">{{getErrorMessage()}}</mat-error>
+        <mat-hint align="end">{{isPurchased.value?.length || 0}}/50</mat-hint>
+      </mat-form-field>
+    </div>
+
+    <div mat-dialog-actions>
+      <button mat-button type="submit" [disabled]="!formControl.valid" [mat-dialog-close]="1" >Save</button>
+      <button mat-button type="button" (click)="onCancel()" tabindex="-1">Cancel</button>
+    </div>
+  </form>
+</div>

@@ -1,0 +1,27 @@
+<ng-template #add_business_details>
+  <div class="add-form-wrapper">
+
+    <form [formGroup]="addBusinessDetailsForm">
+      <!-- Company -->
+      <mat-form-field class="form-item" appearance="outline">
+        <mat-label>Company Name</mat-label>
+        <input matInput type="text" formControlName="company" required>
+        <mat-hint>Enter your business affiliation name</mat-hint>
+      </mat-form-field>
+      <mat-form-field class="form-item" appearance="outline">
+        <mat-label>Company Email</mat-label>
+        <input matInput type="text" formControlName="business_email">
+        <mat-hint>Enter your company email</mat-hint>
+      </mat-form-field>
+      <mat-form-field class="form-item" appearance="outline">
+        <mat-label>Business Phone Number</mat-label>
+        <input matInput type="text" formControlName="business_phone">
+        <mat-hint>Enter your company contact number</mat-hint>
+      </mat-form-field>
+      <div class="buttons-wrapper">
+        <button mat-stroked-button color="primary" (click)="stepper.previous()">BACK</button>
+        <button mat-flat-button color="primary" (click)="addBusinessInfo()">NEXT</button>
+      </div>
+    </form>
+  </div>
+</ng-template>

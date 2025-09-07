@@ -1,0 +1,44 @@
+@import "src/app/styles/colors";
+@import "src/app/styles/variables";
+
+.settings-button {
+  box-shadow: none;
+  background-color: $settings-button-background-color;
+  color: $settings-button-color;
+
+  &:hover {
+    background-color: $blue;
+    color: $settings-button-color-hover;
+  }
+
+  &__icon, & {
+    // color: inherit;
+
+    align-items: center;
+    border-radius: 50%;
+    color: #b9b9b9;
+    cursor: pointer;
+    display: flex;
+    font-size: 21px;
+    height: 25px;
+    justify-content: center;
+    padding: 0;
+    width: 25px;
+  }
+}
+
+.settings-menu {
+  position: absolute;
+
+  &__item {
+    color: $dark-grey;
+
+    &:hover {
+      background-color: $settings-menu-background-color-hover;
+    }
+
+    &:disabled {
+      color: $light-grey;
+    }
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "shopping": [
+    {
+      "isFavorite": "false",
+      "isPurchased": "false",
+      "id": "42b58496-cca5-4b9b-869b-49c55b9f5ae5",
+      "name": "Orangina++",
+      "description": "Orangina drink updated from modal box"
+    },
+    {
+      "isFavorite": "false",
+      "isPurchased": "false",
+      "id": "cf068bfd-8beb-4ef0-9b74-c07c5b2d4f6b",
+      "name": "Shark drink",
+      "description": "Update shark drink ...!!"
+    },
+    {
+      "id": "794c86e3-30e8-4a1f-a43a-965e814c6332",
+      "name": "Pepsi cola",
+      "description": "Pepsi cola is a great drink ..."
+    },
+    {
+      "isFavorite": "true",
+      "isPurchased": "true",
+      "id": "ed4bfd9e-92f1-458d-b4bb-861e20a1e390",
+      "name": "Fizzy+",
+      "description": "Another fozzy drink not too good"
+    },
+    {
+      "id": "c772cda2-d6a8-4a06-bdb9-52d504a0f849",
+      "name": "Boga Cidre",
+      "description": "An interesting taste"
+    }
+  ]
+}

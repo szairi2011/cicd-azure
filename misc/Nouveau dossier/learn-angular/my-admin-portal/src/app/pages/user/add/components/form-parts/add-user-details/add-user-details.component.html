@@ -1,0 +1,51 @@
+<ng-template #add_user_details>
+  <div class="add-form-wrapper">
+
+    <p class="upload-image-text">Photo</p>
+    <button class="upload-image-button" mat-flat-button color="primary">Upload an image</button>
+    <p class="upload-image-text">.PNG, .JPG, .JPEG</p>
+
+    <form [formGroup]="addUserDetailsForm">
+      <!-- *Firstname -->
+      <mat-form-field class="form-item" appearance="outline">
+        <mat-label>Firstname</mat-label>
+        <input matInput placeholder="Firtsname" type="text" formControlName="firstname" required>
+        <mat-hint>Enter your firstname</mat-hint>
+      </mat-form-field>
+      <!-- *Lastname -->
+      <mat-form-field class="form-item" appearance="outline">
+        <mat-label>Lastname</mat-label>
+        <input matInput placeholder="Lastname" type="text" formControlName="lastname" required>
+        <mat-hint>Enter your lastname</mat-hint>
+      </mat-form-field>
+      <!-- Phone -->
+      <mat-form-field class="form-item" appearance="outline">
+        <mat-label>Contact number</mat-label>
+        <input matInput placeholder="Phone Number ..." type="text" formControlName="contact_number">
+        <mat-hint>Enter your phone number</mat-hint>
+      </mat-form-field>
+      <!-- *Email -->
+      <mat-form-field class="form-item" appearance="outline">
+        <mat-label>Email</mat-label>
+        <input matInput placeholder="Email" type="text" formControlName="email" required>
+        <mat-hint>Enter your email</mat-hint>
+      </mat-form-field>
+      <!-- Country -->
+      <mat-form-field class="form-item" appearance="outline">
+        <mat-label>Country</mat-label>
+        <input matInput placeholder="Country" type="text" formControlName="country">
+        <mat-hint>Enter your country</mat-hint>
+      </mat-form-field>
+      <!-- Address -->
+      <mat-form-field class="form-item" appearance="outline">
+        <mat-label>Address</mat-label>
+        <input matInput placeholder="Address" type="text" formControlName="address">
+        <mat-hint>Enter your address</mat-hint>
+      </mat-form-field>
+      <div class="buttons-wrapper">
+        <button mat-stroked-button color="primary" (click)="stepper.previous()">BACK</button>
+        <button mat-flat-button color="primary" (click)="stepper.next()">NEXT</button>
+      </div>
+    </form>
+  </div>
+</ng-template>

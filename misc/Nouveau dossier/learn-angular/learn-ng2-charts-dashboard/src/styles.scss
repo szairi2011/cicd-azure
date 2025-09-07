@@ -1,0 +1,41 @@
+@import "~@angular/material/theming";
+
+@import "./app/styles/theme";
+
+@include mat-core();
+
+// $primary: mat-palette($mat-indigo);
+// $accent: mat-palette($mat-yellow);
+// $warn: mat-palette($mat-red);
+
+// $theme: mat-light-theme($primary, $accent, $warn);
+
+@include angular-material-theme($custom_theme);
+
+/* You can add global styles to this file, and also import other style files */
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+// Charts styles -- common for all charts
+.chartContainer canvas {
+  max-height: 250px;
+  width: auto;
+}
+
+.chartContainer {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+
+

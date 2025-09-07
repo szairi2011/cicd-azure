@@ -1,0 +1,44 @@
+<div class="edit-form-wrapper">
+  <h3>Password</h3>
+
+  <form [formGroup]="editCredsForm">
+    <mat-form-field class="form-item" appearance="outline">
+      <mat-label>Current password</mat-label>
+      <input matInput placeholder="Current password" (keyup)="checkCurrentCreds()"
+        [type]="hide_current ? 'password' : 'text'" formControlName="current_password" required>
+      <button mat-icon-button matSuffix (click)="hide_current = !hide_current">
+        <mat-icon>{{hide_current ? 'visibility_off' : 'visibility'}}</mat-icon>
+      </button>
+      <mat-error *ngIf="this.editCredsForm.controls['current_password'].getError('incorrect')">
+        Wrong password provided ...
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="form-item" appearance="outline">
+      <mat-label>New password</mat-label>
+      <input matInput placeholder="New password" (keyup)="checkNewCreds()" type="password"
+        formControlName="new_password" required>
+      <mat-error *ngIf="this.editCredsForm.controls['new_password'].getError('incorrect')">
+        New password must be different than current one ...
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="form-item" appearance="outline">
+      <mat-label>Verify password</mat-label>
+      <input matInput placeholder="Verify password" (keyup)="checkVerifyCreds()" type="password" formControlName="verify_password" required>
+      <mat-error *ngIf="this.editCredsForm.controls['new_password'].getError('incorrect')">
+        Same password as the new one should be provided ...
+      </mat-error>
+    </mat-form-field>
+
+    <div class="button-wrapper">
+      <button class="reset-button" mat-stroked-button (click)="editCredsForm.reset()">Reset</button>
+      <button class="save-button" mat-flat-button (click)="updateCreds()"
+        [disabled]="!editCredsForm.valid || !isValid()">Save</button>
+      <!-- <button class="save-button" mat-flat-button type="submit"
+        [disabled]="!editCredsForm.valid || !isValid()">Save</button> -->
+      <!-- <button class="save-button" mat-flat-button [disabled]="!editAccountForm.valid"
+        (click)="updateAccount()" [routerLink] = "['/user']">Save</button> -->
+    </div>
+  </form>
+</div>

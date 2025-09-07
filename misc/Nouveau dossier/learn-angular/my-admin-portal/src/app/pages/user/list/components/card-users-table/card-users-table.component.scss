@@ -1,0 +1,59 @@
+@import "src/app/styles/colors";
+@import "src/app/styles/variables";
+
+.users-table-card {
+  margin-top: 24px;
+}
+
+.table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.table {
+  width: 100%;
+}
+
+// A comon style for both table.body and table.header
+table-common {
+  padding: 14px 30px 14px 15px;
+  color: #4a4a4a;
+  font-size: 14px;
+}
+
+.table-row {
+  @extend table-common;
+  font-weight: 400;
+}
+
+.table-header {
+  @extend table-common;
+  width: max-content;
+  font-weight: 500;
+}
+
+.table-header-id {
+  width: 5%;
+  // max-height: 50%;
+}
+
+tr.mat-row:hover,
+tr.mat-header-row:hover {
+  background-color: #f7f7f4;
+}
+
+.name-wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.user-avatar {
+  margin-right: 8px;
+  border-radius: 50%;
+  width: 34px;
+  height: 34px;
+}
+
+.user-fullname {
+  margin-bottom: 0;
+}

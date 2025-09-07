@@ -1,0 +1,98 @@
+mat-form-field{
+    margin: 15px;
+}
+
+label{
+    margin: 1%;
+}
+
+button{
+    padding-left: 30px;
+    padding-right: 28px;
+}
+.card{
+    margin-left: 20px;
+    margin-top: 80px;
+    margin-bottom: 30px;
+    padding-left: 20px;
+}
+
+i{
+    color:green;
+    margin:12px;
+}
+.bi-x-lg{
+    color:red;
+    padding:10px;
+    margin: 2%;
+}
+.mat-cell{
+    padding: 0px;
+}
+textarea{
+    width:100%;
+    height:99%;
+    outline: none;
+    border-color:greenyellow;
+}
+
+.icon{
+   position: sticky;
+   position: relative;
+   display: block;
+  
+ }
+
+ .example-container {
+  height: 450px;
+  overflow: auto;
+  position: relative;
+  display: block;
+}
+
+table {
+  width: 100%;
+
+}
+
+th{
+  background-color:#ff5722;
+  color:white;
+  font-size: large;
+  height: fit-content;
+}
+
+section {
+    display: table;
+  }
+  
+  .example-label {
+    display: table-cell;
+    font-size: 14px;
+    margin-left: 8px;
+    min-width: 120px;
+  }
+  
+  .example-button-row {
+    display: table-cell;
+    
+  }
+  
+  .example-button-row .mat-button-base {
+    margin: 8px 8px 8px 0;
+  }
+  
+  .example-flex-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  
+  .example-button-container {
+    display: flex;
+    justify-content: center;
+    width: 120px;
+  }
+  .mat-raised-button{
+      width: 300px;;
+  }

@@ -1,0 +1,77 @@
+@import "src/app/styles/colors";
+// @import 'src/app/styles/font';
+@import "src/app/styles/variables";
+
+.edit-form-wrapper {
+  margin-top: 14px;
+  margin-bottom: 14px;
+  width: 44%;
+  padding-left: 28%;
+  padding-right: 28%;
+  // width: 600px;
+}
+
+.form-item {
+  display: block;
+  margin-bottom: 16px;
+  // width: 600px;
+  width: 100%;
+}
+
+/* .form-select-item {
+  width: 100%;
+  // border: none;
+} */
+
+
+.button-wrapper {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 24px;
+}
+
+.reset-button {
+  text-transform: uppercase;
+  border-color: $primary !important;
+  color: #536dfe;
+}
+
+.save-button {
+  text-transform: uppercase;
+  border-color: $success;
+  background-color: $success;
+  color: $white;
+}
+
+
+
+/* Trying some styling; this is superfluous content ... */
+.booking-facility-styles {
+  font-family: "Nunito Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  letter-spacing: 1px;
+  font-size: 22px;
+  color: #55595C;
+}
+
+.booking-facility {
+  // label
+  @extend .booking-facility-styles;
+
+  // label
+  .mat-form-field-label {
+    @extend .booking-facility-styles;
+    color: #BBB !important;
+  }
+
+  .mat-select-value-text {
+    // select
+    @extend .booking-facility-styles;
+  }
+}
+
+.booking-facility-select .mat-option {
+  // options
+  @extend .booking-facility-styles;
+  font-size: 16px !important;
+}

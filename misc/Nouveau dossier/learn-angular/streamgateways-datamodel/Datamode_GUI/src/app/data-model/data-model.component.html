@@ -1,0 +1,106 @@
+<html>
+
+<body>
+    <div class="card">
+        <div class="card-body">
+            <div class="form-group row">
+                <div class="form-inline  form-group">
+                    <mat-form-field appearance="fill">
+                        <mat-label>Functional Area</mat-label>
+                        <mat-select [formControl]="functionalAreaControl" [(value)]="functionalArea" required
+                            ngDefaultControl>
+                            <mat-option>--</mat-option>
+                            <mat-option *ngFor="let functionalArea of functionalAreas" [value]="functionalArea">
+                                {{functionalArea}}
+                            </mat-option>
+                        </mat-select>
+                        <mat-error *ngIf="functionalAreaControl.hasError('required')">Please choose a Value</mat-error>
+                    </mat-form-field>
+                    <mat-form-field appearance="fill">
+                        <mat-label>Validation Model</mat-label>
+                        <mat-select [formControl]="validationModelControl" [(value)]="validationModel" required
+                            ngDefaultControl>
+                            <mat-option>--</mat-option>
+                            <mat-option *ngFor="let validationModel of validationModels" [value]="validationModel">
+                                {{validationModel.name}}
+                            </mat-option>
+                        </mat-select>
+                        <mat-error *ngIf="validationModelControl.hasError('required')">Please choose a Value</mat-error>
+                    </mat-form-field>
+                    <mat-form-field appearance="fill">
+                        <mat-label>Model Mode</mat-label>
+                        <mat-select [formControl]="modelModeControl" [(value)]="modelMode" required ngDefaultControl>
+                            <mat-option>--</mat-option>
+                            <mat-option *ngFor="let modelMode of modelModes" [value]="modelMode">
+                                {{modelMode.val}}
+                            </mat-option>
+                        </mat-select>
+                        <mat-error *ngIf="modelModeControl.hasError('required')">Please choose a Value</mat-error>
+                    </mat-form-field>
+                    <mat-form-field appearance="fill">
+                        <mat-label>Market</mat-label>
+                        <mat-select [formControl]="marketControl" [(value)]="market" required ngDefaultControl>
+                            <mat-option>--</mat-option>
+                            <mat-option *ngFor="let market of markets" [value]="market">
+                                {{market}}
+                            </mat-option>
+                        </mat-select>
+                        <mat-error *ngIf="marketControl.hasError('required')">Please choose a Value</mat-error>
+                    </mat-form-field>
+                    <mat-form-field appearance="fill">
+                        <mat-label>Output</mat-label>
+                        <mat-select [formControl]="outputControl" [(value)]="output" required ngDefaultControl>
+                            <mat-option>--</mat-option>
+                            <mat-option *ngFor="let output of outputs" [value]="output" (change)="formValidation()">
+                                {{output.val}}
+                            </mat-option>
+                        </mat-select>
+                        <mat-error *ngIf="outputControl.hasError('required')">Please choose a Value</mat-error>
+                    </mat-form-field>
+                    <section>
+                        <div class="example-label"></div>
+                        <div class="example-button-row">
+                          <button mat-raised-button [disabled]="(marketControl.hasError('required') || outputControl.hasError('required') ||validationModelControl.hasError('required')|| modelModeControl.hasError('required')||functionalAreaControl.hasError('required') )" (click)="fetchData()" color="primary">Fetch Data</button>
+                          <button mat-raised-button color="warn">Generate CSV</button>
+                          <button mat-raised-button color="accent">Generate PDF</button>
+                        </div>
+                      </section>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="example-header">
+        <mat-form-field>
+            <input matInput [(ngModel)]="filterValue" (keyup)="applyFilter(filterValue)" placeholder="Filter">
+        </mat-form-field>
+        <button mat-raised-button style="margin-left: 70%; width: fit-content;" color="primary" (click)="openDialog()">Add Row</button>
+    </div>
+    <div class="example-container mat-elevation-z8 ">
+        <table class="table" *ngIf="show" mat-table #table [dataSource]="dataSource" matSort matTableFilter
+            multiTemplateDataRows>
+
+            <!--- Note that these columns can be defined in any order.
+              The actual rendered columns are set as a property on the row definition" -->
+
+            <ng-container *ngFor="let col of displayedColumns" matColumnDef={{col}}>
+                <th class="thead-dark" mat-header-cell mat-sort-header mat-filter-header *matHeaderCellDef>{{col}} </th>
+                <td mat-cell *matCellDef="let element">
+                    <i *ngIf="col =='   '" title="update row" class="bi bi-check-square-fill"
+                        (click)="updateDataModel(element.ID,element)"></i>
+                    <i *ngIf="col =='   '" title="delete row" class="bi bi-x-lg"
+                        (click)="deleteDataModel(element.ID)"></i>
+                    <p *ngIf="!(selectedrow === element.ID)">{{element[col]}}</p>
+                    <textarea *ngIf="selectedrow === element.ID && !(col =='   ')"
+                        [(ngModel)]="element[col]"></textarea>
+                </td>
+            </ng-container>
+            <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"
+                [ngClass]="{hovered: row.hovered, highlighted: row.highlighted}"
+                (click)="row.highlighted = !row.highlighted; selected(row) ">
+            </tr>
+        </table>
+    </div>
+</body>
+
+</html>

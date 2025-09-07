@@ -1,0 +1,21 @@
+@import "src/app/styles/colors";
+// @import 'src/app/styles/font';
+@import "src/app/styles/variables";
+
+div.main-content-wrapper {
+  display: flex;
+  margin-top: 36px;
+  width: 100%;
+
+  & div.left-content-wrapper {
+    box-sizing: border-box;
+    padding-right: 18px;
+    width: 40%;
+  }
+
+  & div.right-content-wrapper {
+    box-sizing: border-box;
+    padding-right: 18px;
+    width: 60%;
+  }
+}

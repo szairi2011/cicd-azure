@@ -1,0 +1,15 @@
+<form>
+    <label for="file">Choose File</label><br />
+    <input type="file" id="file" multiple (change)="handleFileInput($event.target.files)">
+    <button (click)="handleFileUpload($event)">Upload file</button>
+</form>
+
+<div class="uploadfilecontainer" (click)="fileInput.click()" appDragDrop (fileDropped)="handleFileInput($event)">
+    <input hidden type="file" #fileInput (change)="handleFileInput($event.target.files)">
+</div>
+<div class="files-list" *ngFor="let file of selectedFiles; let i = index">
+    <p>{{ file.name }}</p>
+    <button class="delete-file" (click)="deleteAttachment(i)">
+        <img src="../../assets/images/Recycle_Bin_Full.png">
+    </button>
+</div>

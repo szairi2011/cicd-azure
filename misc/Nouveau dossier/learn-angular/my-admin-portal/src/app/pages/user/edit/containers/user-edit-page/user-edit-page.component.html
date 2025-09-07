@@ -1,0 +1,19 @@
+<app-layout>
+  <app-breadcrumb></app-breadcrumb>
+  <mat-card class="edit-user-nav-card">
+    <mat-card-content>
+      <app-edit-nav-bar (editTabChanged)="setFormPartIdx($event)"></app-edit-nav-bar>
+    </mat-card-content>
+  </mat-card>
+  <mat-card class="edit-user-form-card">
+    <mat-card-content>
+      <app-edit-user-form-part-loader></app-edit-user-form-part-loader>
+    </mat-card-content>
+  </mat-card>
+
+  <!-- <app-edit-user-form-part-loader [editFormPartIdx]="formPartIdx$ | async"></app-edit-user-form-part-loader> -->
+
+  <!-- <app-card-add-user></app-card-add-user> -->
+
+
+</app-layout>

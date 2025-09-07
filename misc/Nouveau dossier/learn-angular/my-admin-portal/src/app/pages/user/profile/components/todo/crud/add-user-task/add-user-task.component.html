@@ -1,0 +1,28 @@
+<div class="container">
+  <h3 mat-dialog-title>Create a new User Task</h3>
+  <form mat-dialog-content [formGroup]="addTaskForm" (ngSubmit)="addTask()" >
+
+    <!-- Update todo title -->
+    <div class="form">
+      <mat-form-field color="primary">
+        <mat-label>Title</mat-label>
+        <input matInput placeholder="title" formControlName="title" >
+        <mat-error *ngIf="addTaskForm.controls.title.invalid">Title field is required</mat-error>
+      </mat-form-field>
+    </div>
+
+    <!-- Update todo description  -->
+    <div class="form">
+      <mat-form-field color="primary">
+        <mat-label>Description</mat-label>
+        <textarea matInput matInput placeholder="description" formControlName="description" ></textarea>
+        <mat-error *ngIf="addTaskForm.controls.description.invalid">Max length is 500 chars</mat-error>
+      </mat-form-field>
+    </div>
+
+    <div mat-dialog-actions>
+      <button mat-button type="submit" [disabled]="!addTaskForm.valid" [mat-dialog-close]="1">Create</button>
+      <button mat-button type="button" (click)='cancel()'>Cancel</button>
+    </div>
+  </form>
+</div>

@@ -1,0 +1,14 @@
+## WIP as we don't have a local dockerised env for Dev yet
+
+version: '3.4'
+
+services:
+  myadminportal:
+    image: myadminportal
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    environment:
+      NODE_ENV: production
+    ports:
+      - 3000:3000

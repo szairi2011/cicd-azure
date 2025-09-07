@@ -1,0 +1,103 @@
+@import "src/app/styles/colors";
+// @import "src/app/styles/font";
+@import "src/app/styles/variables";
+
+.sidenav-container {
+  height: 100%;
+}
+
+.sidenav {
+  width: 200px;
+}
+
+.sidenav .mat-toolbar {
+  background: inherit;
+}
+
+// Toolbar will be always visible when scrolling page content
+.mat-toolbar.mat-primary {
+  // position: sticky;
+  // top: 0;
+  // z-index: 1;
+
+  position: fixed;
+  z-index: 100;
+  width: 100%  !important;
+}
+
+.avatar-icon > a {
+  margin: 15px
+}
+
+// Testing some css from admin portal
+.mat-list-base {
+  border-bottom: 1px solid $gray-80;
+  width: $sidebar-width;
+  padding-bottom: 16px;
+
+  & .mat-list-item {
+    display: flex;
+    cursor: pointer;
+    color: $sidebar-font-color;
+    width: auto;
+    padding-left: 4px;
+
+    &.active {
+      color: $sidebar-font-color-active;
+      background-color: $sidebar-background-color-active;
+      outline: none;
+
+      & .mat-icon {
+        color: $sidebar-icon-color-active;
+      }
+
+      & .circle {
+        background-color: $sidebar-icon-color-active;
+      }
+    }
+
+    &:hover {
+      background-color: $sidebar-background-color-hover;
+    }
+
+    &:focus {
+      outline: none;
+    }
+  }
+}
+
+// Styling the leftnav icons
+.mat-list-item .mat-icon {
+  margin-right: 15px;
+  color: $sidebar-icon-color;
+}
+
+
+
+// Styling the scroll bars.
+// NB: to target sidenav sidebars use .mat-drawer-inner-container::-webkit-scrollbar selector instead
+::-webkit-scrollbar {
+  height: 6px; // Disable horizontal scroll bar
+  width: 6px; // Control vertical scroll bar width
+  overflow-y: scroll;
+  background: rgb(252, 251, 251);
+  box-shadow: inset 0 0 4px #faf9f9;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgb(185, 184, 184); // Control the scrollbar color
+  border-radius: 10px;
+}
+
+// With a top margin, the mat-toolbar will no longer clip the top of the pages content.
+//  With a padding, the sides of the page content is no longer sticking to the container box limits
+mat-sidenav-content {
+  // margin-top: 64px;
+  // margin-bottom: 64px;
+  height: calc(100% - 100px);
+  padding-top: 64px;
+  /* min-height:100%;
+  padding-top: 60px;
+  padding-bottom: 60px;
+  overflow:scroll; */
+}

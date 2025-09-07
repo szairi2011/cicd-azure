@@ -1,0 +1,102 @@
+# Deploy to a separate namespace to simplify dev operations and visibility
+# Create namespace if it does not exist
+apiVersion: v1
+kind: Namespace
+metadata:
+  name:  misc
+  labels:
+    name:  misc
+
+---
+
+# Angular app Deployment desired state
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: my-admin-portal-frontend
+  namespace: misc # Deploy all child artifacts (pod, rs, etc) to 'misc' ns
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: my-admin-frontend
+  template:
+    metadata:
+      #name: my-admin-frontend
+      labels:
+        app: my-admin-frontend
+    spec:
+      containers:
+      - name: my-admin-frontend
+        image: soulou2019/angular-nginx
+        imagePullPolicy: Always
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m" # i.e. 500 millicpu => 50% max of cpu resource usage allowed per container of this type
+        ports:
+        - containerPort: 80
+---
+### Define the Angular app nodeport/loadbalancer Service desired state
+apiVersion: v1
+kind: Service
+metadata:
+  name:  frontend-service
+  namespace: misc
+  annotations:
+    metallb.universe.tf/allow-shared-ip: "key-to-share-10.7.158.149"
+spec:
+  loadBalancerIP: 10.7.158.149
+  selector:
+    app:  my-admin-frontend
+  type:  LoadBalancer # Switch to Loadbalancer sevice if we are deploying to a cloud provider or if we have a cluster-level loadbalancing capability
+  ports:
+  - protocol: TCP # Default is TCP anyway
+    #port:  31066
+    port: 8081
+    targetPort:  80
+
+---
+### Define the desured state for the backend http-json Deployment
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: json-server-backend
+  namespace: misc
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: backend
+  template:
+    metadata:
+      labels:
+        app: backend
+    spec:
+      containers:
+      - name: node-server
+        image: soulou2019/node-server
+        imagePullPolicy: Always
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m" # i.e. 500 millicpu => 50% max of cpu resource usage allowed per container of this type
+        ports:
+          # - containerPort: 3000
+          - containerPort: 80
+
+---
+# Define the backend service desired state
+kind: Service
+apiVersion: v1
+metadata:
+  name:  backend-service
+  namespace: misc
+spec:
+  selector:
+    app:  backend
+  type:  ClusterIP
+  ports:
+  - port:  80
+    # targetPort:  3000
+    targetPort:  80

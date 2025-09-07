@@ -1,0 +1,123 @@
+@import "src/app/styles/colors";
+// @import 'src/app/styles/font';
+@import "src/app/styles/variables";
+
+.user-card {
+  padding: 27px 24px;
+
+  & .user-card-content {
+    display: flex;
+    justify-content: space-between;
+
+    & .user-avatar {
+      align-items: center;
+      display: flex;
+      flex-direction: column;
+      margin-right: 18px;
+      width: 50%;
+
+      & .avatar-wrapper {
+        align-items: center;
+        border: 3px dotted #ff4081;
+        border-radius: 50%;
+        display: flex;
+        height: 185px;
+        justify-content: center;
+        width: 185px;
+
+        & .avatar-img {
+          border-radius: 50%;
+          height: 164px;
+          width: 164px;
+        }
+      }
+
+      & .avatar-badge-wrapper {
+        margin-top: 22px;
+
+        & .avatar-badge {
+          font-size: 14px;
+          font-weight: 600;
+          height: 21px;
+          line-height: 16px;
+          min-height: 21px;
+          width: 44px;
+        }
+      }
+    }
+
+    & .user-info-wrapper {
+      width: 50%;
+
+      & .user-name {
+        font-size: 30px;
+        font-weight: 600;
+        line-height: 38px;
+        margin-bottom: 14px;
+      }
+
+      & .user-position {
+        color: #27282c;
+        font-size: 15px;
+        font-weight: 500;
+        line-height: 14px;
+        margin-bottom: 4px;
+        opacity: 0.5;
+      }
+
+      & .user-site {
+        color: #536dfe;
+        font-size: 18px;
+        font-weight: 400;
+        line-height: 19px;
+        text-decoration: none;
+      }
+
+      & .user-skills-wrapper {
+        margin-top: 27px;
+        width: 183px;
+      }
+    }
+  }
+}
+
+.user-skill {
+  border-radius: 2px;
+  font-size: 13.2px;
+  font-weight: 600;
+  height: 19px;
+  letter-spacing: 0.6px;
+  line-height: 14px;
+  min-height: 19px;
+  padding: 12px;
+  width: auto;
+
+  &.mat-primary.blue {
+    background-color: rgba(83, 109, 254, 0.2);
+    color: #536dfe;
+  }
+  &.mat-primary.orange {
+    background-color: rgba(255, 194, 96, 0.25);
+    color: #fa9e09;
+  }
+  &.mat-primary.pink {
+    background-color: rgba(255, 92, 147, 0.2);
+    color: #ff4081;
+  }
+  &.mat-primary.green {
+    background-color: rgba(60, 212, 160, 0.2);
+    color: #31c2a0;
+  }
+}
+
+.icons-wrapper {
+  display: flex;
+  margin-top: 42px;
+
+  & .icon {
+    color: #9b9b9b;
+    font-size: 16px;
+    padding: 10px;
+
+  }
+}

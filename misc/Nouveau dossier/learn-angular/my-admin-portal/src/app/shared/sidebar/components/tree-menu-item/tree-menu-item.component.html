@@ -1,0 +1,13 @@
+<mat-list-item (click)="showSubmenu = !showSubmenu" class="parent">
+  <span class="full-width" >{{parent}}</span>
+  <mat-icon mat-list-icon>person</mat-icon>
+  <mat-icon class="menu-button" [ngClass]="{'rotated' : showSubmenu}" >expand_more</mat-icon>
+</mat-list-item>
+
+<mat-list *ngIf="showSubmenu && children.length > 0" class="submenu" [ngClass]="{'expanded' : showSubmenu}" >
+  <mat-list-item *ngFor="let child of children" >
+    <span routerLink="/{{parent | lowercase}}/{{child.path}}" routerLinkActive="active" >
+      {{child.label}}
+    </span>
+  </mat-list-item>
+</mat-list>

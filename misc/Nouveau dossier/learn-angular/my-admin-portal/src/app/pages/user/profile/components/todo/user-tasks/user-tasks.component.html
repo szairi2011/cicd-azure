@@ -1,0 +1,36 @@
+<mat-card class="user-tasks-card">
+  <mat-card-title class="user-tasks-title-wrapper">
+    <app-user-tasks-filter-action (userTaskFilterEvent)="filterTasks($event)"></app-user-tasks-filter-action>
+    <p class="user-tasks-title">Tasks</p>
+    <app-user-task-add-action ></app-user-task-add-action>
+
+    <!-- <app-date-menu></app-date-menu> -->
+  </mat-card-title>
+  <mat-card-content>
+    <mat-tab-group color="warn">
+      <mat-tab label="Today">
+        <!-- <div class="user-task-wrapper">
+          <div class="inner-user-task-wrapper">
+            <p class="task-time task-done">10:21</p>
+            <div class="task-circle"></div>
+            <p class="task-text task-done">Get back to Walid about Oumeima stay extension</p>
+          </div>
+          <app-user-task-actions-menu></app-user-task-actions-menu>
+        </div> -->
+
+        <div class="user-task-wrapper" *ngFor="let task of filteredTasks | userTaskSort">
+          <div class="inner-user-task-wrapper">
+            <p [ngClass]="{'task-time': true,'task-done': task.isComplete}">{{task.time}}</p>
+            <div class="task-circle"></div>
+            <p [ngClass]="{'task-text': true,'task-done': task.isComplete}">{{task.title}}</p>
+          </div>
+          <app-user-task-actions-menu
+            [task] = "task">
+          </app-user-task-actions-menu>
+        </div>
+      </mat-tab>
+      <mat-tab label="This Week">This Week content</mat-tab>
+      <mat-tab label="This Month">This Month</mat-tab>
+    </mat-tab-group>
+  </mat-card-content>
+</mat-card>

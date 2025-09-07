@@ -1,0 +1,26 @@
+### Define the desured state for the backend http-json Deployment
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: json-server-backend
+  # namespace: misc
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: backend
+  template:
+    metadata:
+      labels:
+        app: backend
+    spec:
+      containers:
+      - name: node-server
+        image: soulou2019/node-server
+        imagePullPolicy: Always
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m" # i.e. 500 millicpu => 50% max of cpu resource usage allowed per container of this type
+        ports:
+          - containerPort: 80

@@ -1,0 +1,21 @@
+@import "src/app/styles/colors";
+@import "src/app/styles/variables";
+
+.add-user-step-icon {
+  padding-right: 10px;
+  transform: scale(0.9);
+}
+
+:host ::ng-deep .mat-horizontal-content-container {
+  padding: 0 !important;
+}
+
+:host ::ng-deep .mat-horizontal-stepper-header {
+  height: 30px;
+}
+
+// justify the icon content to appear right in the center
+:host ::ng-deep .mat-icon {
+  padding-right: 0;
+  padding-bottom: 0;
+}

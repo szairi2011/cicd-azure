@@ -1,0 +1,19 @@
+<app-layout>
+  <app-breadcrumb></app-breadcrumb>
+
+  <mat-card class="add-user-form-stepper-card">
+    <mat-card-content>
+      <!-- <app-add-user-form-stepper [accountForm]="accountForm" [userDetailsForm]="userDetailsForm"> -->
+        <app-add-user-form-stepper [stepForms]="stepForms">
+      </app-add-user-form-stepper>
+    </mat-card-content>
+  </mat-card>
+
+  <!-- <mat-card class="add-user-form-part-loader-card">
+    <mat-card-content class="content"> -->
+      <app-add-user-form-part-loader [stepper]="stepper"></app-add-user-form-part-loader>
+    <!-- </mat-card-content>
+  </mat-card> -->
+
+
+</app-layout>

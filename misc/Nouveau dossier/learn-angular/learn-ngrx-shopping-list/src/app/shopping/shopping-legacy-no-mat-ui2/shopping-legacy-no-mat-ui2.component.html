@@ -1,0 +1,22 @@
+<div id="wrapper">
+  <div [class.loading]="loading$ | async" id="shopping-list" *ngIf="!(error$ | async); else errors">
+    <h2>Shopping list</h2>
+    <ul *ngIf="(shoppingItems$ | async); else noItems">
+      <li *ngFor="let shoppingItem of shoppingItems$ | async" (click)="deleteItem(shoppingItem.id)">
+        <span>{{shoppingItem.name}}</span>
+      </li>
+    </ul>
+    <ng-template #noItems>
+      <ul>
+        <li style="max-width:250px;margin:0 auto;">No items found. You may add items using form <em>below</em> you want?</li>
+      </ul>
+    </ng-template>
+  </div>
+  <form (ngSubmit)="addItem()" >
+    <input type="text" [(ngModel)]="newShoppingItem.name" placeholder="Add item" name="add_item" />
+    <button type="submit">+</button>
+  </form>
+  <ng-template #errors>
+    <h2>{{(error$ | async)?.message}}</h2>
+  </ng-template>
+</div>

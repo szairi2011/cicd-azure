@@ -1,0 +1,21 @@
+@import "src/app/styles/colors";
+@import "src/app/styles/variables";
+@import "src/app/styles/edit-user";
+
+.settings-item-wrapper {
+  &.first-setting {
+    margin-top: -16px;
+  }
+  margin-top: 24px;
+}
+
+.settings-subtitle {
+  color: #4a4a4a;
+  font-size: 16px;
+  font-weight: 400;
+  margin: 0;
+}
+
+.checkbox {
+  margin-left: 16px;
+}

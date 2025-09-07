@@ -1,0 +1,18 @@
+<button mat-mini-fab class="notification-button" [matMenuTriggerFor]="bell_menu">
+  <mat-icon matBadge="4" matBadgeColor="warn" class="notification-button__icon">notifications_none</mat-icon>
+</button>
+<mat-menu #bell_menu="matMenu" xPosition="before" class="notification-menu">
+  <!-- May add an *ngFor over the menu items if to be loaded dynamically -->
+  <button mat-menu-item class="notification-menu__button">
+    <mat-icon class="notification-menu__icon_pink">local_offer</mat-icon>Check out this awesome ticket
+  </button>
+  <button mat-menu-item class="notification-menu__button">
+    <mat-icon class="notification-menu__icon_green">thumb_up</mat-icon>What is the best way to get ...
+  </button>
+  <button mat-menu-item class="notification-menu__button">
+    <mat-icon class="notification-menu__icon_blue">notifications_none</mat-icon>This is just a simple notification
+  </button>
+  <button mat-menu-item class="notification-menu__button">
+    <mat-icon class="notification-menu__icon_yellow">local_grocery_store</mat-icon>12 new orders has arrived today
+  </button>
+</mat-menu>

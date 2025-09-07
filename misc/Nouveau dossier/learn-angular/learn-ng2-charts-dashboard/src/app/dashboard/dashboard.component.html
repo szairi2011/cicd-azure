@@ -1,0 +1,58 @@
+<div class="grid-container">
+  <h1 class="mat-h1">Dashboard</h1>
+  <mat-grid-list cols="{{(cardLayout$ | async)?.columns}}" rowHeight="200px">
+    <!-- Score cards grid -->
+    <mat-grid-tile *ngFor="let sc of score_cards"
+      [colspan]="(cardLayout$ | async)?.cards.cols"
+      [rowspan]="(cardLayout$ | async)?.cards.rows">
+      <app-score-card
+        [title] = sc.title
+        [icon] = sc.icon
+        [isCurrency] = sc.isCurrency
+        [value] = sc.value
+        [color] = sc.color
+        [isIncrease] = sc.isIncrease
+        [percentValue] = sc.percentValue
+        [duration] = sc.duration></app-score-card>>
+    </mat-grid-tile>
+    <!-- Charts grid -->
+    <mat-grid-tile
+      [colspan]="(cardLayout$ | async)?.charts.cols"
+      [rowspan]="(cardLayout$ | async)?.charts.rows">
+      <app-card title = "Product sales">
+        <app-product-sales-radar-chart></app-product-sales-radar-chart>
+      </app-card>
+    </mat-grid-tile>
+    <mat-grid-tile
+      [colspan]="(cardLayout$ | async)?.charts.cols"
+      [rowspan]="(cardLayout$ | async)?.charts.rows">
+      <app-card title = "Monthly Sales">
+        <app-annual-sales-line-chart></app-annual-sales-line-chart>
+      </app-card>
+    </mat-grid-tile>
+    <mat-grid-tile
+      [colspan]="(cardLayout$ | async)?.charts.cols"
+      [rowspan]="(cardLayout$ | async)?.charts.rows">
+      <app-card title = "Sales by traffic source">
+        <app-sales-traffic-chart></app-sales-traffic-chart>
+      </app-card>
+    </mat-grid-tile>
+    <mat-grid-tile
+      [colspan]="(cardLayout$ | async)?.charts.cols"
+      [rowspan]="(cardLayout$ | async)?.charts.rows">
+      <app-card title = "Online store sessions by traffic">
+        <app-store-sessions-bar-chart></app-store-sessions-bar-chart>
+      </app-card>
+    </mat-grid-tile>
+    <!-- Table grid -->
+    <mat-grid-tile
+      [colspan]="(cardLayout$ | async)?.table.cols"
+      [rowspan]="(cardLayout$ | async)?.table.rows">
+      <app-card title = "Latest orders">
+        <mat-card-content>
+          <app-orders-table></app-orders-table>
+        </mat-card-content>
+      </app-card>
+    </mat-grid-tile>
+  </mat-grid-list>
+</div>

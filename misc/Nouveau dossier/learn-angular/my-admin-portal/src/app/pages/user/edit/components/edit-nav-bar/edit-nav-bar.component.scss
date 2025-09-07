@@ -1,0 +1,24 @@
+@import "src/app/styles/colors";
+// @import 'src/app/styles/font';
+@import "src/app/styles/variables";
+
+
+.nav-items-group {
+  padding: 8px;
+}
+
+.edit-user-tab-icon {
+  padding-right: 10px;
+  transform: scale(0.9);
+}
+
+.remove-border-bottom ::ng-deep .mat-tab-header {
+  border-bottom: none;
+}
+
+// By setting the width of the tab lbel, we set the width of the tab group; this worked so I kept this solution ...
+::ng-deep mat-tab-header .mat-tab-label, .mat-tab-link {
+  // width: 185px;
+  width: 11%;
+  min-width: 120px
+}

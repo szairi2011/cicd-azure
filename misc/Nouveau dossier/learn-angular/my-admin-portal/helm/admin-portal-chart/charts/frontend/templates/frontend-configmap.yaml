@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+    name: {{ .Release.Name }}-{{ .Chart.Name }}-config
+data:
+    frontend_name: {{.Values.config.frontend_name}}
+    users_backend_url_suffix: {{.Values.config.users_backend_url_suffix}}
+    tasks_backend_url_suffix: {{.Values.config.tasks_backend_url_suffix}}
+    app_frontend_version: {{ .Values.config.frontend_version }}

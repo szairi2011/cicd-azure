@@ -1,0 +1,37 @@
+@import "src/app/styles/variables";
+
+.breadcrumb-card {
+
+  // width: 100%;
+  padding: 0;
+
+  & .breadcrumb-list {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    padding: 0;
+
+    & .breadcrumb-list-item {
+      // color: #6e6e6e;
+      cursor: pointer;
+      font-size: 18px;
+      outline: none;
+      width: auto;
+
+      & .active {
+        color: $breadcrumb-list-item-active;
+      }
+
+      & .text-margin {
+        margin-left: -32px;
+      }
+
+      & .text-first-upper {
+        &:first-letter {
+          text-transform: uppercase;
+        }
+      }
+
+    }
+  }
+}

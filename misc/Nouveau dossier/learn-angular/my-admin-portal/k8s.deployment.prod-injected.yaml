@@ -1,0 +1,451 @@
+# Deploy to a separate namespace to simplify dev operations and visibility
+# Create namespace if it does not exist
+apiVersion: v1
+kind: Namespace
+metadata:
+  name:  misc
+  labels:
+    name:  misc
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  name: my-admin-portal-frontend
+  namespace: misc
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: my-admin-frontend
+  strategy: {}
+  template:
+    metadata:
+      annotations:
+        kubectl.kubernetes.io/default-container: my-admin-frontend
+        kubectl.kubernetes.io/default-logs-container: my-admin-frontend
+        prometheus.io/path: /stats/prometheus
+        prometheus.io/port: "15020"
+        prometheus.io/scrape: "true"
+        sidecar.istio.io/status: '{"initContainers":["istio-init"],"containers":["istio-proxy"],"volumes":["istio-envoy","istio-data","istio-podinfo","istio-token","istiod-ca-cert"],"imagePullSecrets":null,"revision":"default"}'
+      creationTimestamp: null
+      labels:
+        app: my-admin-frontend
+        security.istio.io/tlsMode: istio
+        service.istio.io/canonical-name: my-admin-frontend
+        service.istio.io/canonical-revision: latest
+    spec:
+      containers:
+      - image: soulou2019/angular-nginx
+        imagePullPolicy: Always
+        name: my-admin-frontend
+        ports:
+        - containerPort: 80
+        resources:
+          limits:
+            cpu: 500m
+            memory: 128Mi
+      - args:
+        - proxy
+        - sidecar
+        - --domain
+        - $(POD_NAMESPACE).svc.cluster.local
+        - --proxyLogLevel=warning
+        - --proxyComponentLogLevel=misc:error
+        - --log_output_level=default:info
+        - --concurrency
+        - "2"
+        env:
+        - name: JWT_POLICY
+          value: third-party-jwt
+        - name: PILOT_CERT_PROVIDER
+          value: istiod
+        - name: CA_ADDR
+          value: istiod.istio-system.svc:15012
+        - name: POD_NAME
+          valueFrom:
+            fieldRef:
+              fieldPath: metadata.name
+        - name: POD_NAMESPACE
+          valueFrom:
+            fieldRef:
+              fieldPath: metadata.namespace
+        - name: INSTANCE_IP
+          valueFrom:
+            fieldRef:
+              fieldPath: status.podIP
+        - name: SERVICE_ACCOUNT
+          valueFrom:
+            fieldRef:
+              fieldPath: spec.serviceAccountName
+        - name: HOST_IP
+          valueFrom:
+            fieldRef:
+              fieldPath: status.hostIP
+        - name: PROXY_CONFIG
+          value: |
+            {}
+        - name: ISTIO_META_POD_PORTS
+          value: |-
+            [
+                {"containerPort":80}
+            ]
+        - name: ISTIO_META_APP_CONTAINERS
+          value: my-admin-frontend
+        - name: ISTIO_META_CLUSTER_ID
+          value: Kubernetes
+        - name: ISTIO_META_INTERCEPTION_MODE
+          value: REDIRECT
+        - name: ISTIO_META_MESH_ID
+          value: cluster.local
+        - name: TRUST_DOMAIN
+          value: cluster.local
+        image: docker.io/istio/proxyv2:1.13.2
+        name: istio-proxy
+        ports:
+        - containerPort: 15090
+          name: http-envoy-prom
+          protocol: TCP
+        readinessProbe:
+          failureThreshold: 30
+          httpGet:
+            path: /healthz/ready
+            port: 15021
+          initialDelaySeconds: 1
+          periodSeconds: 2
+          timeoutSeconds: 3
+        resources:
+          limits:
+            cpu: "2"
+            memory: 1Gi
+          requests:
+            cpu: 100m
+            memory: 128Mi
+        securityContext:
+          allowPrivilegeEscalation: false
+          capabilities:
+            drop:
+            - ALL
+          privileged: false
+          readOnlyRootFilesystem: true
+          runAsGroup: 1337
+          runAsNonRoot: true
+          runAsUser: 1337
+        volumeMounts:
+        - mountPath: /var/run/secrets/istio
+          name: istiod-ca-cert
+        - mountPath: /var/lib/istio/data
+          name: istio-data
+        - mountPath: /etc/istio/proxy
+          name: istio-envoy
+        - mountPath: /var/run/secrets/tokens
+          name: istio-token
+        - mountPath: /etc/istio/pod
+          name: istio-podinfo
+      initContainers:
+      - args:
+        - istio-iptables
+        - -p
+        - "15001"
+        - -z
+        - "15006"
+        - -u
+        - "1337"
+        - -m
+        - REDIRECT
+        - -i
+        - '*'
+        - -x
+        - ""
+        - -b
+        - '*'
+        - -d
+        - 15090,15021,15020
+        image: docker.io/istio/proxyv2:1.13.2
+        name: istio-init
+        resources:
+          limits:
+            cpu: "2"
+            memory: 1Gi
+          requests:
+            cpu: 100m
+            memory: 128Mi
+        securityContext:
+          allowPrivilegeEscalation: false
+          capabilities:
+            add:
+            - NET_ADMIN
+            - NET_RAW
+            drop:
+            - ALL
+          privileged: false
+          readOnlyRootFilesystem: false
+          runAsGroup: 0
+          runAsNonRoot: false
+          runAsUser: 0
+      volumes:
+      - emptyDir:
+          medium: Memory
+        name: istio-envoy
+      - emptyDir: {}
+        name: istio-data
+      - downwardAPI:
+          items:
+          - fieldRef:
+              fieldPath: metadata.labels
+            path: labels
+          - fieldRef:
+              fieldPath: metadata.annotations
+            path: annotations
+        name: istio-podinfo
+      - name: istio-token
+        projected:
+          sources:
+          - serviceAccountToken:
+              audience: istio-ca
+              expirationSeconds: 43200
+              path: istio-token
+      - configMap:
+          name: istio-ca-root-cert
+        name: istiod-ca-cert
+status: {}
+---
+### Define the Angular app nodeport/loadbalancer Service desired state
+apiVersion: v1
+kind: Service
+metadata:
+  name:  frontend-service
+  namespace: misc
+  annotations:
+    metallb.universe.tf/allow-shared-ip: "key-to-share-10.7.158.149"
+spec:
+  loadBalancerIP: 10.7.158.149
+  selector:
+    app:  my-admin-frontend
+  type:  LoadBalancer # Switch to Loadbalancer sevice if we are deploying to a cloud provider or if we have a cluster-level loadbalancing capability
+  ports:
+  - protocol: TCP # Default is TCP anyway
+    #port:  31066
+    port: 8081
+    targetPort:  80
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  name: json-server-backend
+  namespace: misc
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: backend
+  strategy: {}
+  template:
+    metadata:
+      annotations:
+        kubectl.kubernetes.io/default-container: node-server
+        kubectl.kubernetes.io/default-logs-container: node-server
+        prometheus.io/path: /stats/prometheus
+        prometheus.io/port: "15020"
+        prometheus.io/scrape: "true"
+        sidecar.istio.io/status: '{"initContainers":["istio-init"],"containers":["istio-proxy"],"volumes":["istio-envoy","istio-data","istio-podinfo","istio-token","istiod-ca-cert"],"imagePullSecrets":null,"revision":"default"}'
+      creationTimestamp: null
+      labels:
+        app: backend
+        security.istio.io/tlsMode: istio
+        service.istio.io/canonical-name: backend
+        service.istio.io/canonical-revision: latest
+    spec:
+      containers:
+      - image: soulou2019/node-server
+        imagePullPolicy: Always
+        name: node-server
+        ports:
+        - containerPort: 80
+        resources:
+          limits:
+            cpu: 500m
+            memory: 128Mi
+      - args:
+        - proxy
+        - sidecar
+        - --domain
+        - $(POD_NAMESPACE).svc.cluster.local
+        - --proxyLogLevel=warning
+        - --proxyComponentLogLevel=misc:error
+        - --log_output_level=default:info
+        - --concurrency
+        - "2"
+        env:
+        - name: JWT_POLICY
+          value: third-party-jwt
+        - name: PILOT_CERT_PROVIDER
+          value: istiod
+        - name: CA_ADDR
+          value: istiod.istio-system.svc:15012
+        - name: POD_NAME
+          valueFrom:
+            fieldRef:
+              fieldPath: metadata.name
+        - name: POD_NAMESPACE
+          valueFrom:
+            fieldRef:
+              fieldPath: metadata.namespace
+        - name: INSTANCE_IP
+          valueFrom:
+            fieldRef:
+              fieldPath: status.podIP
+        - name: SERVICE_ACCOUNT
+          valueFrom:
+            fieldRef:
+              fieldPath: spec.serviceAccountName
+        - name: HOST_IP
+          valueFrom:
+            fieldRef:
+              fieldPath: status.hostIP
+        - name: PROXY_CONFIG
+          value: |
+            {}
+        - name: ISTIO_META_POD_PORTS
+          value: |-
+            [
+                {"containerPort":80}
+            ]
+        - name: ISTIO_META_APP_CONTAINERS
+          value: node-server
+        - name: ISTIO_META_CLUSTER_ID
+          value: Kubernetes
+        - name: ISTIO_META_INTERCEPTION_MODE
+          value: REDIRECT
+        - name: ISTIO_META_MESH_ID
+          value: cluster.local
+        - name: TRUST_DOMAIN
+          value: cluster.local
+        image: docker.io/istio/proxyv2:1.13.2
+        name: istio-proxy
+        ports:
+        - containerPort: 15090
+          name: http-envoy-prom
+          protocol: TCP
+        readinessProbe:
+          failureThreshold: 30
+          httpGet:
+            path: /healthz/ready
+            port: 15021
+          initialDelaySeconds: 1
+          periodSeconds: 2
+          timeoutSeconds: 3
+        resources:
+          limits:
+            cpu: "2"
+            memory: 1Gi
+          requests:
+            cpu: 100m
+            memory: 128Mi
+        securityContext:
+          allowPrivilegeEscalation: false
+          capabilities:
+            drop:
+            - ALL
+          privileged: false
+          readOnlyRootFilesystem: true
+          runAsGroup: 1337
+          runAsNonRoot: true
+          runAsUser: 1337
+        volumeMounts:
+        - mountPath: /var/run/secrets/istio
+          name: istiod-ca-cert
+        - mountPath: /var/lib/istio/data
+          name: istio-data
+        - mountPath: /etc/istio/proxy
+          name: istio-envoy
+        - mountPath: /var/run/secrets/tokens
+          name: istio-token
+        - mountPath: /etc/istio/pod
+          name: istio-podinfo
+      initContainers:
+      - args:
+        - istio-iptables
+        - -p
+        - "15001"
+        - -z
+        - "15006"
+        - -u
+        - "1337"
+        - -m
+        - REDIRECT
+        - -i
+        - '*'
+        - -x
+        - ""
+        - -b
+        - '*'
+        - -d
+        - 15090,15021,15020
+        image: docker.io/istio/proxyv2:1.13.2
+        name: istio-init
+        resources:
+          limits:
+            cpu: "2"
+            memory: 1Gi
+          requests:
+            cpu: 100m
+            memory: 128Mi
+        securityContext:
+          allowPrivilegeEscalation: false
+          capabilities:
+            add:
+            - NET_ADMIN
+            - NET_RAW
+            drop:
+            - ALL
+          privileged: false
+          readOnlyRootFilesystem: false
+          runAsGroup: 0
+          runAsNonRoot: false
+          runAsUser: 0
+      volumes:
+      - emptyDir:
+          medium: Memory
+        name: istio-envoy
+      - emptyDir: {}
+        name: istio-data
+      - downwardAPI:
+          items:
+          - fieldRef:
+              fieldPath: metadata.labels
+            path: labels
+          - fieldRef:
+              fieldPath: metadata.annotations
+            path: annotations
+        name: istio-podinfo
+      - name: istio-token
+        projected:
+          sources:
+          - serviceAccountToken:
+              audience: istio-ca
+              expirationSeconds: 43200
+              path: istio-token
+      - configMap:
+          name: istio-ca-root-cert
+        name: istiod-ca-cert
+status: {}
+---
+# Define the backend service desired state
+kind: Service
+apiVersion: v1
+metadata:
+  name:  backend-service
+  namespace: misc
+spec:
+  selector:
+    app:  backend
+  type:  ClusterIP
+  ports:
+  - port:  80
+    # targetPort:  3000
+    targetPort:  80
+---

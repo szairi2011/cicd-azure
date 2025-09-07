@@ -1,0 +1,106 @@
+#version: "4"
+version: "3.4"
+services:
+  mysql:
+#    image: mysql
+    image: soulou2000/mysql:8.2.0
+    build:
+      context: ./docker/mysql
+      dockerfile: Dockerfile-mysql
+#    container_name: mysqldb
+    command: --default-authentication-plugin=mysql_native_password
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: admin
+    ports:
+      - "3316:3306"
+    volumes:
+      - mysql-data:/var/lib/mysql
+#      - /docker/mysql:/docker-entrypoint-initdb.d
+
+  tempo:
+    image: soulou2000/tempo:2.2.2
+    build:
+      context: ./docker/tempo
+      dockerfile: Dockerfile-tempo
+#    command: [ "-config.file=/etc/tempo.yaml" ]
+    volumes:
+#      - /docker/tempo/tempo.yml:/etc/tempo.yaml:ro
+      - tempo-data:/tmp/tempo
+    ports:
+      - "3110:3200"  # Tempo
+      - "9411:9411" # zipkin
+
+  loki:
+    image: grafana/loki:main
+    command: [ "-config.file=/etc/loki/local-config.yaml" ]
+    ports:
+      - "3100:3100"
+
+  prometheus:
+    image: soulou2000/prometheus:v2.46.0
+    build:
+      context: ./docker/prometheus
+      dockerfile: Dockerfile-prometheus
+#    command:
+#      - --enable-feature=exemplar-storage
+#      - --config.file=/etc/prometheus/prometheus.yml
+    volumes:
+#      - ./prometheus:/etc/prometheus
+      - prometheus_data:/docker/prometheus
+    ports:
+      - "9090:9090"
+
+  grafana:
+    image: soulou2000/grafana:10.1.0
+    build:
+      context: ./docker/grafana
+      dockerfile: Dockerfile-grafana
+    volumes:
+      - grafana-data:/etc/grafana/provisioning/datasources:ro
+    environment:
+      - GF_AUTH_ANONYMOUS_ENABLED=true
+      - GF_AUTH_ANONYMOUS_ORG_ROLE=Admin
+      - GF_AUTH_DISABLE_LOGIN_FORM=true
+    ports:
+      - "3000:3000"
+
+#  zipkin:
+#    image: openzipkin/zipkin:latest
+#    ports:
+#      - "9411:9411"
+#    command: --logging.level.zipkin2=TRACE
+
+  fraud-detection-service:
+    image: soulou2000/fraud-detection-service:1.0.0
+    build:
+      context: ./fraud-detection-service
+      dockerfile: Dockerfile
+    depends_on:
+      - mysql
+#      - zipkin
+      - tempo
+      - loki
+    ports:
+      - "9071:8081"
+
+  loan-service:
+    image: soulou2000/loan-service:1.0.0
+    build:
+      context: ./loan-service
+      dockerfile: Dockerfile
+    depends_on:
+      - mysql
+#      - zipkin
+      - tempo
+      - loki
+    ports:
+      - "9070:8080"
+
+volumes:
+  mysql-data:
+  grafana-data:
+  tempo-data:
+  prometheus_data:
+#  loki-data:
+

@@ -1,0 +1,21 @@
+
+
+ToDo list:
+
+- Done -- Schedule a meeting with Patricia
+
+- Done -- Schedule a meeting to introduce Ramla Ben Mamia to the Varalaksmi and the rest of the team
+
+- Check Oracle redeem payment issue
+
+- Done -- Check with Sandeep
+
+- Done -- Contact OCC about the Encore connectivity
+
+- Contact OCC about the Ovation platform access without GUI
+
+- Continue with the cloud migration and Paris data center exit plan
+
+- Initiate the GitHub Enterprise SGW migration process
+
+- Done -- Verify with Xiao from TIRS team if the proxy white listing is set up for the Github Copilot access from SDL VMs

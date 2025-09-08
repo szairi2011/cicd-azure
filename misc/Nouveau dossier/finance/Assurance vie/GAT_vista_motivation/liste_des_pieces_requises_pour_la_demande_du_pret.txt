@@ -1,0 +1,5 @@
+- Attestation de salaire
+- Attestation de travail
+- Fiche de paie
+- Extrait banquaire presentant le mentant du dernier mois
+- CIN 

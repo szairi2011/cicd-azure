@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<purchaseOrder
+        xmlns="http://www.jesperdj.com/ps-jaxb"
+        xmlns:inv="http://www.jesperdj.com/ps-jaxb/inventory"
+        xmlns:sales="http://www.jesperdj.com/ps-jaxb/sales"
+        orderDate="2017-11-04T09:10:13.657+01:00">
+    <items>
+        <item>
+            <productName>Ballpoint Pen</productName>
+            <quantity>20</quantity>
+            <price>8.95</price>
+            <comment>Blue ink</comment>
+        </item>
+        <item>
+            <productName>Pencil</productName>
+            <quantity>10</quantity>
+            <price>2.95</price>
+        </item>
+    </items>
+    <customer>
+        <name>John Doe</name>
+        <shippingAddress>
+            <street>123 Main Street</street>
+            <city>Exampleville</city>
+            <postalCode>12345</postalCode>
+            <country>USA</country>
+        </shippingAddress>
+        <billingAddress>
+            <street>123 Main Street</street>
+            <city>Exampleville</city>
+            <postalCode>12345</postalCode>
+            <country>USA</country>
+        </billingAddress>
+        <loyalty>SILVER</loyalty>
+    </customer>
+    <extra>
+        <inv:productStock>
+            <inv:productName>Ballpoint Pen</inv:productName>
+            <inv:stock>3588</inv:stock>
+            <inv:date>2017-11-01</inv:date>
+        </inv:productStock>
+        <sales:promotion>10% discount</sales:promotion>
+    </extra>
+</purchaseOrder>

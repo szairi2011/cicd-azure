@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<po:purchaseOrder xmlns:po="http://www.jesperdj.com/ps/jaxb" orderDate="2017-09-10">
+    <po:items>
+        <po:item>
+            <po:productName>Ballpoint Pen</po:productName>
+            <po:quantity>20</po:quantity>
+            <po:price>8.95</po:price>
+            <po:comment>Blue ink</po:comment>
+        </po:item>
+        <po:item>
+            <po:productName>Pencil</po:productName>
+            <po:quantity>10</po:quantity>
+            <po:price>2.95</po:price>
+        </po:item>
+    </po:items>
+    <po:customer>
+        <po:name>John Doe</po:name>
+        <po:shippingAddress>
+            <po:street>123 Main Street</po:street>
+            <po:city>Exampleville</po:city>
+            <po:postalCode>12345</po:postalCode>
+            <po:country>USA</po:country>
+        </po:shippingAddress>
+        <po:billingAddress>
+            <po:street>123 Main Street</po:street>
+            <po:city>Exampleville</po:city>
+            <po:postalCode>12345</po:postalCode>
+            <po:country>USA</po:country>
+        </po:billingAddress>
+        <po:loyalty>SILVER</po:loyalty>
+    </po:customer>
+</po:purchaseOrder>

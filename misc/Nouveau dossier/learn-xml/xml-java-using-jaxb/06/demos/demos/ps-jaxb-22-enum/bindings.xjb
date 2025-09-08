@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jaxb:bindings xmlns:jaxb="http://java.sun.com/xml/ns/jaxb"
+               xmlns:xs="http://www.w3.org/2001/XMLSchema"
+               version="2.0">
+    <jaxb:globalBindings typesafeEnumBase="xs:string xs:int"/>
+
+    <jaxb:bindings schemaLocation="purchaseOrder.xsd">
+        <jaxb:schemaBindings>
+            <jaxb:package name="com.jesperdj.jaxb.domain"/>
+        </jaxb:schemaBindings>
+
+        <jaxb:bindings node="/xs:schema/xs:simpleType[@name='loyalty']">
+            <jaxb:typesafeEnumClass>
+                <jaxb:typesafeEnumMember value="10" name="BRONZE"/>
+                <jaxb:typesafeEnumMember value="20" name="SILVER"/>
+                <jaxb:typesafeEnumMember value="30" name="GOLD"/>
+            </jaxb:typesafeEnumClass>
+        </jaxb:bindings>
+    </jaxb:bindings>
+</jaxb:bindings>

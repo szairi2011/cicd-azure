@@ -1,0 +1,29 @@
+****** Priority list *******
+
+- Market simulator ***
+
+- Fusionner les tests e2e entre SGW and TC - OKR augmenter la qualite de nos tests *****
+	- Verifier avec Donia *****
+
+- Unified DevOps migration to Github + Harness --> OKR a definir lors de la migration
+
+- Release management & DevOps challenges - Delays to deliver new releases due to flaky automated tests !!
+
+- SGW and trade clearing security and vulnerability management how can we reduce the lead time e.g. unified commons for SGW ***
+
+- SGW maintenance mode:
+	- Be able to amend SGW WD, running history at runtime
+
+****** Other teams who need help ******
+
+
+- SRE --> Dev - Client bridge **** Damien: Mike Weston is taking care of this. The SRE team is a team that will bridge the gap between the customers requierement and the Dev enhancements including features, UX, bug fixing acceleration ...
+
+- Backoffice **** Damien: There should be plenty of opportunities as this is not structured yet :: pleins de chantiers ...
+
+
+******* Teams are already structured around these initiatives *******
+
+- LME --> decommissionner CV
+
+- TradeAllocator --> Decommissione Focus (A tool used by the clients like Barclays I think) en fin d'annee for the integration data unified platform

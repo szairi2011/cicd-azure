@@ -1,0 +1,53 @@
+<h1>find meeting times from api</h1>
+<form (ngSubmit)="onSubmit()" #findMeetingForm="ngForm">
+  <div class="form-group">
+    <label for="attendees">Attendees</label>
+    <input type="text" class="form-control" id="attendees"
+           placeholder="Enter one or more email addresses (separated with a ;) to add attendees"
+           [(ngModel)]="model.attendees" name="attendees"
+           #name="ngModel">
+  </div>
+  <div class="form-row">
+    <div class="col">
+      <div class="form-group">
+        <label for="start">Start</label>
+        <input type="datetime-local" class="form-control" id="start"
+               required
+               [(ngModel)]="model.start" name="start"
+               #name="ngModel">
+        <div [hidden]="name.valid || name.pristine"
+             class="alert alert-danger">Start is required</div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="form-group">
+        <label for="end">End</label>
+        <input type="datetime-local" class="form-control" id="end"
+               required
+               [(ngModel)]="model.end" name="end"
+               #name="ngModel">
+        <div [hidden]="name.valid || name.pristine"
+             class="alert alert-danger">End is required</div>
+      </div>
+    </div>
+  </div>
+  <button type="submit" class="btn btn-primary mr-2"
+          [disabled]="!findMeetingForm.form.valid">Finds</button>
+  <a class="btn btn-secondary" routerLink="/calendar">Cancel</a>
+</form>
+<table class="table">
+  <tr>
+    <th>Start</th>
+    <th>End</th>
+    <th>Suggestion Reason</th>
+    <th>Confidence</th>
+  </tr>
+  <tbody>
+  <tr *ngFor="let sugg of result.meetingTimeSuggestions">
+    <td>{{formatDateTimeTimeZone(sugg.meetingTimeSlot.start) | date: 'short' }}</td>
+    <td>{{formatDateTimeTimeZone(sugg.meetingTimeSlot.end) | date: 'short' }}</td>
+    <td>{{sugg.suggestionReason}}</td>
+    <td>{{sugg.confidence}}</td>
+  </tr>
+  </tbody>
+</table>

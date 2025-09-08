@@ -1,0 +1,51 @@
+# Deploy to a separate namespace to simplify dev operations and visibility
+# Create namespace if it does not exist
+apiVersion: v1
+kind: Namespace
+metadata:
+  name:  misc
+  labels:
+    name:  misc
+
+---
+
+# nodejs-restapi app Deployment desired state
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nodejs-restapi-mongo
+  namespace: misc # Deploy app to secific namespace
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: nodejs-restapi
+  template:
+    metadata:
+      labels:
+        app: nodejs-restapi
+    spec:
+      containers:
+      - name: nodejs-restapi-mongo
+        image: soulou2019/nodejs-restapi-mongo
+        imagePullPolicy: Always
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m" # i.e. 500 millicpu => 50% max of cpu resource usage allowed per container of this type
+        ports:
+        - containerPort: 3000
+---
+### Define the rest api clusterIP service
+kind: Service
+apiVersion: v1
+metadata:
+  name:  nodejs-restapi-service
+  namespace: misc
+spec:
+  selector:
+    app:  nodejs-restapi
+  type:  ClusterIP
+  ports:
+  - port:  80
+    targetPort:  3000

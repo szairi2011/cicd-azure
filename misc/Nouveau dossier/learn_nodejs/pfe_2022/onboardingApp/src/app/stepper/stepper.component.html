@@ -1,0 +1,103 @@
+<mat-horizontal-stepper>
+    <!--- STEEEEEP 1 -->
+
+     <mat-step label="INVITATION">
+       <div class="control-section">
+         <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+           <!--- Note that these columns can be defined in any order.
+                 The actual rendered columns are set as a property on the row definition" -->
+
+
+           <!-- Position Column -->
+           <ng-container matColumnDef="invitation">
+             <th mat-header-cell *matHeaderCellDef> Invitation </th>
+             <td mat-cell *matCellDef="let element"> {{element.invitation}} </td>
+             <td mat-cell *matCellDef="let element"> {{element.invitation}} </td>
+           </ng-container>
+
+           <!-- Name Column -->
+           <ng-container matColumnDef="name">
+             <th mat-header-cell *matHeaderCellDef> Name </th>
+             <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+           </ng-container>
+
+           <!-- Weight Column -->
+           <ng-container matColumnDef="weight">
+             <th mat-header-cell *matHeaderCellDef> Weight </th>
+
+             <td mat-cell *matCellDef="let element"> {{element.weight}} </td>
+           </ng-container>
+
+           <!-- Symbol Column -->
+           <ng-container matColumnDef="symbol">
+             <th mat-header-cell *matHeaderCellDef> Symbol </th>
+             <td mat-cell *matCellDef="let element"> {{element.symbol}} </td>
+           </ng-container>
+
+           <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+           <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+         </table>
+     </div>
+     </mat-step>
+
+
+
+     <!--steeeeeeeeeeeeeep 2-->
+
+     <mat-step label="MEETING">
+       <h4>Meeting's details</h4>
+       <table class="mat-table">
+         <thead>
+           <tr>
+             <th class="mat-header-cell">Attendees </th>
+             <td class="mat-cell">
+               ameni , salha
+             </td>
+           </tr>
+         </thead>
+         <tbody>
+           <tr>
+             <th class="mat-header-cell">Topic</th>
+             <td class="mat-cell" >
+              DEVOPS
+             </td>
+           </tr>
+         </tbody>
+         <tbody>
+           <tr>
+             <th class="mat-header-cell">Time of start</th>
+             <td class="mat-cell" >
+               28/05/2022-17H00          </td>
+           </tr>
+         </tbody>
+         <tbody>
+           <tr>
+             <th class="mat-header-cell">Date of end </th>
+             <td class="mat-cell" >
+               28/05/2022-17H00
+             </td>
+           </tr>
+         </tbody>
+         <tbody>
+           <tr>
+             <th class="mat-header-cell">STATUS </th>
+             <td class="mat-cell" >
+               DONE
+             </td>
+           </tr>
+         </tbody>
+       </table>
+     </mat-step>
+     <mat-step label="FEEDBACK">
+       <mat-grid-list cols="2" rowHeight="2:1">
+         <mat-grid-tile>NEW JOINER'S FEEDBACK</mat-grid-tile>
+         <mat-grid-tile>MENTOR'S FEEDBACK</mat-grid-tile>
+       </mat-grid-list>
+     </mat-step>
+
+     <mat-step label="FINISH">
+      <H1>CONGRATS! You are now done.</H1>
+     </mat-step>
+
+   </mat-horizontal-stepper>

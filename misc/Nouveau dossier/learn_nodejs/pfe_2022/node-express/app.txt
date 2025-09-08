@@ -1,0 +1,61 @@
+var express = require('express');
+var app = express();
+var request = require('request');
+const cors = require('cors');
+
+app.use(cors());
+
+app.get('/', function (req, res) {
+    let body ={
+        "attendees": [
+            {
+                "emailAddress": {
+                    "address": "ameni.telmoudi@6lfqx1.onmicrosoft.com",
+                    "name": "Ameni Telmoudi"
+                },
+                "type": "Required"
+            }
+        ],
+        "timeConstraint": {
+            "timeslots": [
+                {
+                    "start": {
+                        "dateTime": "2022-05-31T09:15:48.806Z",
+                        "timeZone": "Pacific Standard Time"
+                    },
+                    "end": {
+                        "dateTime": "2022-06-07T09:15:48.806Z",
+                        "timeZone": "Pacific Standard Time"
+                    }
+                }
+            ]
+        },
+        "locationConstraint": {
+            "isRequired": "false",
+            "suggestLocation": "true",
+            "locations": [
+                {
+                    "displayName": "Conf Room 32/1368",
+                    "locationEmailAddress": "conf32room1368@imgeek.onmicrosoft.com"
+                }
+            ]
+        },
+        "meetingDuration": "PT1H"
+    };
+    var clientServerOptions = {
+        uri: 'https://graph.microsoft.com/v1.0/me/findMeetingTimes',
+        body: JSON.stringify(body),
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            'Authorization': 'Bearer eyJ0eXAiOiJKV1QiLCJub25jZSI6ImFjYnotbWpFNnU0MTJEV0w5bDZpRnNGY2NLa2RYbjREclNvVmFEUkRMSDQiLCJhbGciOiJSUzI1NiIsIng1dCI6ImpTMVhvMU9XRGpfNTJ2YndHTmd2UU8yVnpNYyIsImtpZCI6ImpTMVhvMU9XRGpfNTJ2YndHTmd2UU8yVnpNYyJ9.eyJhdWQiOiIwMDAwMDAwMy0wMDAwLTAwMDAtYzAwMC0wMDAwMDAwMDAwMDAiLCJpc3MiOiJodHRwczovL3N0cy53aW5kb3dzLm5ldC84OGY1ODE2OS1lZDQ2LTRhNzMtOGY0Yy03ZWZmZjlmM2U0ZmEvIiwiaWF0IjoxNjUzOTkxOTk0LCJuYmYiOjE2NTM5OTE5OTQsImV4cCI6MTY1Mzk5NzMzMywiYWNjdCI6MCwiYWNyIjoiMSIsImFpbyI6IkFVUUF1LzhUQUFBQTNjcUVIa1pTWDI5QTB6Z1B1QkV6SUNLKytBTDhsS3RxbDBUdUNnTW9SbUkzNEpMUUs1akpUaVpvOFkvem1TTllrRkFKVGxyQ2N4cmlXK3gvazJWK0dRPT0iLCJhbXIiOlsicHdkIiwibWZhIl0sImFwcF9kaXNwbGF5bmFtZSI6IlBvc3RtYW4iLCJhcHBpZCI6ImE1MmEzNGQyLTg4ZjYtNGIyZS05ZmRiLTI0YTA5ODcxMjk3NiIsImFwcGlkYWNyIjoiMSIsImZhbWlseV9uYW1lIjoiQmFjY291Y2hlIiwiZ2l2ZW5fbmFtZSI6IlNrYW5kZXIiLCJpZHR5cCI6InVzZXIiLCJpcGFkZHIiOiIxMTAuMTU5LjE0MC4xOTQiLCJuYW1lIjoiU2thbmRlciBCYWNjb3VjaGUiLCJvaWQiOiJmZDgyMjRmYi0xNjgxLTQ1OWItOWRlNy1iNGI4NjUwMjBmNjUiLCJwbGF0ZiI6IjMiLCJwdWlkIjoiMTAwMzIwMDFGNTZDQ0Y0NiIsInJoIjoiMC5BWEVBYVlIMWlFYnRjMHFQVEg3Xy1mUGstZ01BQUFBQUFBQUF3QUFBQUFBQUFBQ0hBRUEuIiwic2NwIjoiQ2FsZW5kYXJzLlJlYWRXcml0ZSBFeHRlcm5hbEl0ZW0uUmVhZC5BbGwgRXh0ZXJuYWxJdGVtLlJlYWRXcml0ZS5BbGwgRXh0ZXJuYWxJdGVtLlJlYWRXcml0ZS5Pd25lZEJ5IE1haWwuUmVhZFdyaXRlIE1haWwuU2VuZCBVc2VyLlJlYWQgcHJvZmlsZSBvcGVuaWQgZW1haWwiLCJzaWduaW5fc3RhdGUiOlsia21zaSJdLCJzdWIiOiJmYXQyd1FQVUxuMzRqLXVOTWE1SmtwNUZSWFpUTTVVMG9MV1ptOXA1LXNrIiwidGVuYW50X3JlZ2lvbl9zY29wZSI6IkFTIiwidGlkIjoiODhmNTgxNjktZWQ0Ni00YTczLThmNGMtN2VmZmY5ZjNlNGZhIiwidW5pcXVlX25hbWUiOiJza2FuZGVyYmFjY291Y2hlQDZsZnF4MS5vbm1pY3Jvc29mdC5jb20iLCJ1cG4iOiJza2FuZGVyYmFjY291Y2hlQDZsZnF4MS5vbm1pY3Jvc29mdC5jb20iLCJ1dGkiOiJRcUthZ1FtMlkwMkhERExDX211WUFBIiwidmVyIjoiMS4wIiwid2lkcyI6WyI2MmU5MDM5NC02OWY1LTQyMzctOTE5MC0wMTIxNzcxNDVlMTAiLCJiNzlmYmY0ZC0zZWY5LTQ2ODktODE0My03NmIxOTRlODU1MDkiXSwieG1zX3N0Ijp7InN1YiI6IllIWE1HQ0Y5enN3dEdvakVUcHFmd012WkxnU2o4UW1RLWNnRTh0c242aUkifSwieG1zX3RjZHQiOjE2NTEzNDUwMjR9.H3c9aSyzYz6ZywCk8gVsM01ZQ1_o2cRewGWmnniN7PQxgupnd78EbTkcHs3RZk9_bsrUbnChWb5yZHCrwikhSPiU2Ldti5N_ispV8X5GQkiL_WA3N-tNEeK-JMTTwBYpdvdCCu-Z4X9EPhNGd-UwLVOFDN_173kSGJ-IQizOdNg3cR0r05Rmvgn1CJROK6GScMrIxSUQ4KBNiwl5HCmTeG_jBjix1vUuoZor5IFvsZo9kf9i7wU6cAic4Zg_tItFPZJVY21y6vSXlaHGomuAzsqgn0lyf93QM837XoIDlxvCBDxUudzM2EaqBkfqStaU6JZxwVWyyU0c2Dc7gd3NSg'
+        }
+    };
+    request(clientServerOptions, function (error, response) {
+        console.log(error,response);
+        return res.status(201).send(response);
+    });
+});
+app.listen(3000, function () {
+    console.log('Example app listening on port 3000!');
+});

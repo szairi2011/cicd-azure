@@ -1,0 +1,40 @@
+/* .csv-file-chooser-section {
+    padding: 10px;
+    margin: 5%;
+    border: 1px solid;
+    text-align: center;
+  }
+  
+  .csv-result-table {
+    margin: 5%;
+    border: 1px solid #73AD21;
+  
+  }
+  
+  table, th, td {
+    border: 1px solid black;
+  } */
+  :host {
+    display: block;
+    padding: 16px;
+}
+.button {
+    background-color: #04AA6D;
+    border: none;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    text-decoration: none;
+   
+    font-size: 16px;
+    margin: 4px 2px;
+    border-radius: 12px;
+    display: block;
+      margin:0 auto;
+  }
+  
+.list-sample {
+    box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2),
+        0px 1px 1px 0px rgba(0, 0, 0, 0.14),
+        0px 2px 1px -1px rgba(0, 0, 0, 0.12);
+}

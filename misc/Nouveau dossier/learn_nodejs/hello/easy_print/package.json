@@ -1,0 +1,11 @@
+{
+  "name": "sz_easy_print",
+  "version": "1.0.0",
+  "description": "A test example on how to publish a simple node package ...",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "szairi",
+  "license": "ISC"
+}

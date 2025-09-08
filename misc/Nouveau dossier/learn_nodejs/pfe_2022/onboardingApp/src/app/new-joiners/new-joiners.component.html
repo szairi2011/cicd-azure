@@ -1,0 +1,29 @@
+
+
+ <!--  <input type="file" #fileImportInput name="File Upload" id="csvFileUpload" (change)="fileChangeListener($event)"
+    accept=".csv" />
+
+      <tr *ngFor="let csvData of csvRecords;let i = index;">
+
+        <td>{{i+1}}</td>
+        <td>
+          <span>{{csvData.firstName}}</span>
+        </td>
+       
+
+      </tr>
+   -->
+
+    <div class="list-sample">
+      <igx-list >
+          <igx-list-item [isHeader]="true"><button class="button">NEW JOINERS </button> </igx-list-item>
+          <igx-list-item igxRipple igxRippleTarget=".igx-list__item-content" #item *ngFor="let contact of newjoiners ">
+              <igx-avatar igxListThumbnail [src]="contact.photo" [roundShape]="true"></igx-avatar>
+              <span igxListLineTitle>{{ contact.name }}</span>
+              <span igxListLineSubTitle>{{ contact.email }}</span>
+              <span igxListLineSubTitle>{{ contact.interest }}</span>
+             
+          </igx-list-item>
+      </igx-list>
+    </div>
+  

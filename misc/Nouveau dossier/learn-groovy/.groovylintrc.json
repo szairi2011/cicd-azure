@@ -1,0 +1,38 @@
+{
+    "extends": "recommended",
+    "rules": {
+        "CatchException": {
+            "enabled": false
+        },
+        "CompileStatic": {
+            "enabled": false
+        },
+        "DuplicateNumberLiteral": {
+            "enabled": false
+        },
+        "DuplicateStringLiteral": {
+            "enabled": false
+        },
+        "ImplicitClosureParameter": {
+            "enabled": false
+        },
+        "JavaIoPackageAccess": {
+            "enabled": false
+        },
+        "NoDef": {
+            "enabled": false
+        },
+        "NoJavaUtilDate": {
+            "enabled": false
+        },
+        "PrintStackTrace": {
+            "enabled": false
+        },
+        "UnnecessarySemicolon": {
+            "enabled": false
+        },
+        "VariableTypeRequired": {
+            "enabled": false
+        }
+    }
+}

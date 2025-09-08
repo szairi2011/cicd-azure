@@ -1,0 +1,21 @@
+*** Groovy useful artifacts for the WF identification ***
+
+- Closue delegation and DSL API
+
+- List.finAll(closure)
+
+- Safe navigation using ? character to avoid NPE exception: e.g. it.messages[i]?.TradCaptRpt?.TransTyp? == 0
+
+- Use of GPath to traverse object and data structure elements alike
+
+- Use of GString which offer richer feature than Java String, e.g. simple templates including ${} like placeholders
+
+- Template engines e.g. Use MarkupTemplateEngine to create FIXML samples where placeholders can be used
+
+- XMLSlurper for xml parsing...
+
+- JSONSlurper for JSON parsing...
+
+- AST for compilation time processing, e.g. to add handy constructor or getters and setters by the Groovy compiler while keeping the code concise
+
+- Meta Object Model including use of methodMissing() and setProperty(String property, Object o), and getProperty(property) for runtime processing of missing methods and properties

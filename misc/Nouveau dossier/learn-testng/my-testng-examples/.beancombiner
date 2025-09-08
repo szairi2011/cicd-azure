@@ -1,0 +1,27 @@
+version: null
+mapping:
+- target: org.example.bancombiner.Customer
+  combine:
+  - from: org.example.bancombiner.Person
+    fields:
+    - name
+    - surname
+    - age
+    - role
+  - from: org.example.bancombiner.User
+    fields:
+    - username
+    - password
+- target: org.example.convertergenerator.CourseDto
+  combine:
+  - from: org.example.beanutils.Course
+    fields:
+    - id
+    - title
+    - students
+  - from: org.example.bancombiner.Person
+    fields:
+    - name
+    - surname
+    - age
+    - role

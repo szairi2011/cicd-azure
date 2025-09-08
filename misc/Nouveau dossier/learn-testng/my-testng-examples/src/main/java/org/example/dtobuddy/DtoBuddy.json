@@ -1,0 +1,22 @@
+[
+  {
+    "sourcePackage": "org.example.bancombiner",
+    "targetPackage": "org.example.dtobuddy",
+    "mapperPackage": "org.example.dtobuddy",
+    "targetNamer": "name+\u0027Dto\u0027",
+    "mapperNamer": "name+\u0027Mapper\u0027",
+    "mapperMethodName": "mapperToDto",
+    "mapperType": "GetSet",
+    "type": "SourceIsSource"
+  },
+  {
+    "sourcePackage": "org.example.beanutils",
+    "targetPackage": "org.example.dtobuddy",
+    "mapperPackage": "org.example.dtobuddy",
+    "targetNamer": "name+\u0027Dto\u0027",
+    "mapperNamer": "name+\u0027Mapper\u0027",
+    "mapperMethodName": "mapperToDto",
+    "mapperType": "GetSet",
+    "type": "SourceIsSource"
+  }
+]

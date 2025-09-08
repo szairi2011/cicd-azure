@@ -1,0 +1,11 @@
+Epic;Feature;Story;FAILED;BROKEN;PASSED;SKIPPED;UNKNOWN
+FISCD-Epic-123;Labels;FISCD-Story-003: Create new label for authorized user;1;0;0;0;0
+FISCD-Epic-123;Labels;FISCD-Story-016:Create new label via api;0;0;1;0;0
+FISCD-Epic-456;Milestones;FISCD-Story-0018:Create new milestone for authorized user;0;0;1;0;0
+FISCD-Epic-456;Milestones;FISCD-Story-0019:Close existing milestone for authorized user;0;0;1;0;0
+SGW-Epic-5647;Hear shout;SGW-456: Lucy is within range to hear Sean;0;0;1;0;0
+FISCD-Epic-123;Labels;FISCD-Story-017:Delete existing label via api;0;0;1;0;0
+SGW-Epic-5647;Hear shout;SGW-457: Lucy has enough money to buy coffee;0;0;0;1;0
+FISCD-Epic-123;Labels;FISCD-Story-004: Add label to existing issue for authorized user;0;1;0;0;0
+SGW-Epic-5647;Hear shout;SGW-458:Empty scenario, to remind us that there is still work to be done;0;0;1;0;0
+FISCD-Epic-123;Labels;FISCD-Story-005:Delete existing label for authorized user;0;0;1;0;0

@@ -1,0 +1,270 @@
+{
+  "uid": "b1a8273437954620fa374b796ffaacdd",
+  "name": "behaviors",
+  "children": [
+    {
+      "name": "SGW-123",
+      "children": [
+        {
+          "name": "Hear shout",
+          "children": [
+            {
+              "name": "SGW-456",
+              "children": [
+                {
+                  "name": "Listener is within range",
+                  "uid": "6c94211aca24eac2",
+                  "parentUid": "6176fabe35ad768b53e1855f9c1cbcda",
+                  "status": "passed",
+                  "time": {
+                    "start": 1713890684321,
+                    "stop": 1713890684334,
+                    "duration": 13
+                  },
+                  "flaky": false,
+                  "newFailed": false,
+                  "newPassed": false,
+                  "newBroken": false,
+                  "retriesCount": 0,
+                  "retriesStatusChange": false,
+                  "parameters": [],
+                  "tags": []
+                },
+                {
+                  "name": "Using custom parameter in step definition, e.g. person",
+                  "uid": "81bed457d3dc355e",
+                  "parentUid": "6176fabe35ad768b53e1855f9c1cbcda",
+                  "status": "skipped",
+                  "time": {
+                    "start": 1713890684407,
+                    "stop": 1713890684413,
+                    "duration": 6
+                  },
+                  "flaky": false,
+                  "newFailed": false,
+                  "newPassed": false,
+                  "newBroken": false,
+                  "retriesCount": 0,
+                  "retriesStatusChange": false,
+                  "parameters": [],
+                  "tags": []
+                },
+                {
+                  "name": "Empty scenario, to remind us that there is still work to be done",
+                  "uid": "aab98ed170b6bee0",
+                  "parentUid": "6176fabe35ad768b53e1855f9c1cbcda",
+                  "status": "unknown",
+                  "time": {
+                    "start": 1713890684431,
+                    "stop": 1713890684431,
+                    "duration": 0
+                  },
+                  "flaky": false,
+                  "newFailed": false,
+                  "newPassed": false,
+                  "newBroken": false,
+                  "retriesCount": 0,
+                  "retriesStatusChange": false,
+                  "parameters": [],
+                  "tags": []
+                }
+              ],
+              "uid": "6176fabe35ad768b53e1855f9c1cbcda"
+            }
+          ],
+          "uid": "b700760e2548ecf5e6fc4b6f8e01ab13"
+        }
+      ],
+      "uid": "5cb667fcdeac6985f74576801b3ba969"
+    },
+    {
+      "name": "FISCD-Epic-123",
+      "children": [
+        {
+          "name": "Labels",
+          "children": [
+            {
+              "name": "FISCD-Story-016",
+              "children": [
+                {
+                  "name": "Create new label via api",
+                  "uid": "21a1a5a60a74986e",
+                  "parentUid": "19c25576a73760e99f24c179068a9c7d",
+                  "status": "passed",
+                  "time": {
+                    "start": 1713890684496,
+                    "stop": 1713890684497,
+                    "duration": 1
+                  },
+                  "flaky": false,
+                  "newFailed": false,
+                  "newPassed": false,
+                  "newBroken": false,
+                  "retriesCount": 0,
+                  "retriesStatusChange": false,
+                  "parameters": [],
+                  "tags": [
+                    "smoke"
+                  ]
+                },
+                {
+                  "name": "Delete existing label via api",
+                  "uid": "5f78e8c51d24b63c",
+                  "parentUid": "19c25576a73760e99f24c179068a9c7d",
+                  "status": "passed",
+                  "time": {
+                    "start": 1713890684517,
+                    "stop": 1713890684518,
+                    "duration": 1
+                  },
+                  "flaky": false,
+                  "newFailed": false,
+                  "newPassed": false,
+                  "newBroken": false,
+                  "retriesCount": 0,
+                  "retriesStatusChange": false,
+                  "parameters": [],
+                  "tags": [
+                    "smoke"
+                  ]
+                }
+              ],
+              "uid": "19c25576a73760e99f24c179068a9c7d"
+            },
+            {
+              "name": "FISCD-Story-003",
+              "children": [
+                {
+                  "name": "Create new label for authorized user",
+                  "uid": "8811948a78837231",
+                  "parentUid": "a714821be821eae13f9117ad945f0752",
+                  "status": "broken",
+                  "time": {
+                    "start": 1713890684534,
+                    "stop": 1713890684538,
+                    "duration": 4
+                  },
+                  "flaky": false,
+                  "newFailed": false,
+                  "newPassed": false,
+                  "newBroken": false,
+                  "retriesCount": 0,
+                  "retriesStatusChange": false,
+                  "parameters": [],
+                  "tags": [
+                    "regress"
+                  ]
+                },
+                {
+                  "name": "Add label to existing issue for authorized user",
+                  "uid": "26958b3616c22c52",
+                  "parentUid": "a714821be821eae13f9117ad945f0752",
+                  "status": "broken",
+                  "time": {
+                    "start": 1713890684556,
+                    "stop": 1713890684560,
+                    "duration": 4
+                  },
+                  "flaky": false,
+                  "newFailed": false,
+                  "newPassed": false,
+                  "newBroken": false,
+                  "retriesCount": 0,
+                  "retriesStatusChange": false,
+                  "parameters": [],
+                  "tags": []
+                }
+              ],
+              "uid": "a714821be821eae13f9117ad945f0752"
+            },
+            {
+              "name": "FISCD-Story-004",
+              "children": [
+                {
+                  "name": "Delete existing label for authorized user",
+                  "uid": "c1158716d572be4",
+                  "parentUid": "5e69de615c971a7debc334d6c40d4a25",
+                  "status": "broken",
+                  "time": {
+                    "start": 1713890684573,
+                    "stop": 1713890684576,
+                    "duration": 3
+                  },
+                  "flaky": false,
+                  "newFailed": false,
+                  "newPassed": false,
+                  "newBroken": false,
+                  "retriesCount": 0,
+                  "retriesStatusChange": false,
+                  "parameters": [],
+                  "tags": [
+                    "smoke"
+                  ]
+                }
+              ],
+              "uid": "5e69de615c971a7debc334d6c40d4a25"
+            }
+          ],
+          "uid": "483c3f7eacae2cd0827bf1cde2746491"
+        }
+      ],
+      "uid": "a9e237f2a0bd232a16cb11df7fa145cd"
+    },
+    {
+      "name": "FISCD-Epic-456",
+      "children": [
+        {
+          "name": "Milestones",
+          "children": [
+            {
+              "name": "FISCD-Story-001",
+              "children": [
+                {
+                  "name": "Create new milestone for authorized user",
+                  "uid": "2d57d869d09c03af",
+                  "parentUid": "9c116663ace29c564fa2daa786d25bab",
+                  "status": "passed",
+                  "time": {
+                    "start": 1713890684594,
+                    "stop": 1713890684595,
+                    "duration": 1
+                  },
+                  "flaky": false,
+                  "newFailed": false,
+                  "newPassed": false,
+                  "newBroken": false,
+                  "retriesCount": 0,
+                  "retriesStatusChange": false,
+                  "parameters": [],
+                  "tags": []
+                },
+                {
+                  "name": "Close existing milestone for authorized user",
+                  "uid": "8eba5fb551512252",
+                  "parentUid": "9c116663ace29c564fa2daa786d25bab",
+                  "status": "passed",
+                  "time": {
+                    "start": 1713890684609,
+                    "stop": 1713890684610,
+                    "duration": 1
+                  },
+                  "flaky": false,
+                  "newFailed": false,
+                  "newPassed": false,
+                  "newBroken": false,
+                  "retriesCount": 0,
+                  "retriesStatusChange": false,
+                  "parameters": [],
+                  "tags": []
+                }
+              ],
+              "uid": "9c116663ace29c564fa2daa786d25bab"
+            }
+          ],
+          "uid": "ea91dc4744e420a1f58042f029b5d885"
+        }
+      ],
+      "uid": "046cfea4f09294aa57238f2d1cb5f650"
+    }
+  ]
+}

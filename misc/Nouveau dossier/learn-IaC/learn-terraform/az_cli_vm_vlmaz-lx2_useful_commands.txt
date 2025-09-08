@@ -1,0 +1,32 @@
+
+
+1. az login --scope https://management.core.windows.net//.default
+
+2. az vm start --resource-group STRMGATEWAY-NA2 --name vlmazsgw-lx2 --subscription 89e05d73-8862-4007-a700-0f895fc0f7ea
+
+3. az vm stop --resource-group STRMGATEWAY-NA2 --name vlmazsgw-lx2 --subscription 89e05d73-8862-4007-a700-0f895fc0f7ea
+
+az vm list -g STRMGATEWAY-NA2 --subscription 89e05d73-8862-4007-a700-0f895fc0f7ea
+
+====
+
+az vm start --resource-group STREAM-GATEWAYS --name vlmazsgwlx1 --subscription 89e05d73-8862-4007-a700-0f895fc0f7ea
+Error:
+(AuthorizationFailed) The client 'Sofien.Zairi@FISGLOBAL.COM' with object id 'e8391f1e-8ee5-432c-b007-8087e5ae61a2' does not have authorization to perform action 'Microsoft.Compute/virtualMachines/start/action' over scope '/subscriptions/89e05d73-8862-4007-a700-0f895fc0f7ea/resourceGroups/STREAM-GATEWAYS/providers/Microsoft.Compute/virtualMachines/vlmazsgwlx1' or the scope is invalid. If access was recently granted, please refresh your credentials.
+Code: AuthorizationFailed
+Message: The client 'Sofien.Zairi@FISGLOBAL.COM' with object id 'e8391f1e-8ee5-432c-b007-8087e5ae61a2' does not have authorization to perform action 'Microsoft.Compute/virtualMachines/start/action' over scope '/subscriptions/89e05d73-8862-4007-a700-0f895fc0f7ea/resourceGroups/STREAM-GATEWAYS/providers/Microsoft.Compute/virtualMachines/vlmazsgwlx1' or the scope is invalid. If access was recently granted, please refresh your credentials.
+
+====
+
+# Azure CLI Login
+az login
+
+# List Subscriptions
+az account list
+
+# Set Specific Subscription (if we have multiple subscriptions)
+az account set --subscription="SUBSCRIPTION_ID"
+
+====
+
+terraform import azurerm_resource_group.STRMGATEWAY-NA2 /subscriptions/89e05d73-8862-4007-a700-0f895fc0f7ea/resourceGroups/STRMGATEWAY-NA2

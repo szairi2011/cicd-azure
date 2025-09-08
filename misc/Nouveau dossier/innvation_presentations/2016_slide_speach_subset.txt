@@ -1,0 +1,43 @@
+
+- The SGW team in Tunis has been created about two years ago, in July 2014 and it is composed of three teams L2 TS, QA and Dev that are acting as a single entity when it comes to issue resolution and feature development.
+
+- The implementation team has moved to Agile-Scrum practices recently and we are currently trying to share the Agile transformation experience with Pune to benefit the wider team, and improve our processes globally. 
+
+- The team is working in tendem with the global SGW team where: 
+	- Agile has contributed to bridge the gap between teams cross locations, where the BA is now part of the Scrum team acting as a Product Owner for those projects that are developed in Tunis.
+	- Also an ongoing project collaboration initiative between Dev team in Tunis and the QA team in Pune is on the way to enhance our bespoke Test Automation tool and try to improve our customer satisfaction
+	- Tunis QA team is also getting involved for test and validation of a number of  projects that are developed in Pune
+	- Last and not least L2 TS team in Tunis is liasing and proactively collaborating on a daily basis with the CS, L2 and L3 teams across locations to fast track case resolution and improve our TS metrics
+	
+- All in all, in less than two years, the team has managed to provide a number of quality Software and TS services, and contributed in global success of SGW team worldwide. And we look forward to continue improving our processes and products.
+
+============
+
+The team is looking at three main activities:
+ 
+1. Tech support:
+- Primary Level 2 Tech Support in the EMEA region
+- Also primary TS for those gateways that are developed in Tunis
+- Back up suppot for APAC region (Follow the Sun TS model - APAC/EMEA/US)
+
+- Also proximity to Level 1 support team in Tunis helps to fast track issue resolution whenever possible
+
+2. Development:
+- Share the Dev load with the Pune team, and the manage projects that are developed and validated in Tunis
+- Collaborate with the SGW implementation team in Pune to improve process, e.g. moving to Agile methodolgies and practices
+- Enhance codebase quality for SGW that are developed in Tunis
+	- DGCX is in prod since few months ago and only few ossues are raised
+	- OCC is run smoothly
+	Fidessa/Picted SGW connector is running smoothly
+	
+3. Validation:
+The QA team is working on various projects some are managed in Tunis and others in Pune
+
+4. Process improvment:
+For development projects, the team has moved to an Agile-Scrum based methodology since few months ago.
+
+We are analysing the data gathered across Sprints to improve our processes
+
+We have also adopted an RCA based approach to improve our processes
+
+

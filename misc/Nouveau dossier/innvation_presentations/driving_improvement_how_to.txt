@@ -1,0 +1,29 @@
+Strategy:
+Be in line with strategic requrements:
+
+	- Improve 
+
+	- Improve customer experience (CX)
+
+	- Help driving revenu:
+
+		- Improve CX and retention:
+			- Customers told us that they need:
+				- Faster timelines for bug fixing
+				- More frequent intermediate release especially for legacy gateways
+				- Better response time to reported issues:
+					- An efficient support service through, e.g. a support bot could improve customer satisfaction
+			- We think also that better deployment and configuration means could improve CX
+		
+		- New ideas | services | products:
+			- An embedded support service (Customer will easily find reliable information to what they are looking for)
+			- A scalable performance bandwidth service for SGW (On demand performance scalability)
+			
+		
+		- Improve delivery efficiency and effectiveness:
+			
+			- Accelerate development:
+				- We believe that Continuous Delivery initiative is a more sustainable way to accelerate development
+				- Team will need to accomodate the new acceleration requirement through mind set shift and suitable project planning to mitigate the risk
+			- Improve quality:
+				- Carefully planned automation initiatives can help keeping a good Quality level

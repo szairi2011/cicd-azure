@@ -1,0 +1,22 @@
+[tool.poetry]
+name = "gpt-chat-bot"
+version = "0.1.0"
+description = ""
+authors = ["Sofien Zairi <szairi2011@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10.2"
+
+[tool.poetry.group.dev.dependencies]
+jupyter = "^1.0.0"
+
+
+[[tool.poetry.source]]
+name = "fis_artifactory"
+url = "https://e1079458:cmVmdGtuOjAxOjE3Mzk1NDM5OTg6OWxWT0ZEWWhFTUl0a0YzUzlIQWhOY3FiY1Fk@artifactory.fis.dev/artifactory/api/pypi/apexsecfin-pypi-dev/simple"
+priority = "primary"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

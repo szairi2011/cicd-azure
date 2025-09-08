@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created with Liquid Technologies Online Tools 1.0 (https://www.liquid-technologies.com) -->
+<xs:schema xmlns:ns2="http://www.fixprotocol.org/FIXML-Latest/METADATA" attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="FIXML">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="TrdCaptRpt">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="Hdr">
+                                <xs:complexType>
+                                    <xs:attribute name="SID" type="xs:string" use="required" />
+                                    <xs:attribute name="TID" type="xs:string" use="required" />
+                                    <xs:attribute name="PosDup" type="xs:string" use="required" />
+                                    <xs:attribute name="PosRsnd" type="xs:string" use="required" />
+                                    <xs:attribute name="Snt" type="xs:dateTime" use="required" />
+                                </xs:complexType>
+                            </xs:element>
+                            <xs:element name="Instrmt">
+                                <xs:complexType>
+                                    <xs:attribute name="Sym" type="xs:string" use="required" />
+                                    <xs:attribute name="ID" type="xs:string" use="required" />
+                                    <xs:attribute name="Src" type="xs:string" use="required" />
+                                    <xs:attribute name="CFI" type="xs:string" use="required" />
+                                    <xs:attribute name="MMY" type="xs:unsignedInt" use="required" />
+                                    <xs:attribute name="MatDt" type="xs:date" use="required" />
+                                    <xs:attribute name="Mult" type="xs:decimal" use="required" />
+                                    <xs:attribute name="Exch" type="xs:string" use="required" />
+                                </xs:complexType>
+                            </xs:element>
+                            <xs:element name="RptSide">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element maxOccurs="unbounded" name="Pty">
+                                            <xs:complexType>
+                                                <xs:sequence minOccurs="0">
+                                                    <xs:element name="Sub">
+                                                        <xs:complexType>
+                                                            <xs:attribute name="ID" type="xs:unsignedByte" use="required" />
+                                                            <xs:attribute name="Typ" type="xs:unsignedByte" use="required" />
+                                                        </xs:complexType>
+                                                    </xs:element>
+                                                </xs:sequence>
+                                                <xs:attribute name="ID" type="xs:string" use="required" />
+                                                <xs:attribute name="R" type="xs:unsignedByte" use="required" />
+                                            </xs:complexType>
+                                        </xs:element>
+                                        <xs:element name="TrdRegTS">
+                                            <xs:complexType>
+                                                <xs:attribute name="TS" type="xs:dateTime" use="required" />
+                                                <xs:attribute name="Typ" type="xs:unsignedByte" use="required" />
+                                            </xs:complexType>
+                                        </xs:element>
+                                    </xs:sequence>
+                                    <xs:attribute name="Side" type="xs:unsignedByte" use="required" />
+                                    <xs:attribute name="Ccy" type="xs:string" use="required" />
+                                    <xs:attribute name="InptSrc" type="xs:string" use="required" />
+                                    <xs:attribute name="InptDev" type="xs:string" use="required" />
+                                    <xs:attribute name="CustCpcty" type="xs:unsignedByte" use="required" />
+                                    <xs:attribute name="PosEfct" type="xs:string" use="required" />
+                                    <xs:attribute name="ClOrdID" type="xs:unsignedByte" use="required" />
+                                    <xs:attribute name="MLegRptTyp" type="xs:unsignedByte" use="required" />
+                                    <xs:attribute name="AllocInd" type="xs:unsignedByte" use="required" />
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:sequence>
+                        <xs:attribute name="RptID" type="xs:unsignedShort" use="required" />
+                        <xs:attribute name="TrdID" type="xs:unsignedLong" use="required" />
+                        <xs:attribute name="TransTyp" type="xs:unsignedByte" use="required" />
+                        <xs:attribute name="RptTyp" type="xs:unsignedByte" use="required" />
+                        <xs:attribute name="TrdTyp" type="xs:unsignedByte" use="required" />
+                        <xs:attribute name="MtchID" type="xs:unsignedLong" use="required" />
+                        <xs:attribute name="PxTyp" type="xs:unsignedByte" use="required" />
+                        <xs:attribute name="LastQty" type="xs:unsignedByte" use="required" />
+                        <xs:attribute name="LastPx" type="xs:unsignedByte" use="required" />
+                        <xs:attribute name="TrdDt" type="xs:date" use="required" />
+                        <xs:attribute name="BizDt" type="xs:date" use="required" />
+                        <xs:attribute name="TxnTm" type="xs:dateTime" use="required" />
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>

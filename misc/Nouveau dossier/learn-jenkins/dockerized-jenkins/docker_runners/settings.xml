@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<settings xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.2.0 http://maven.apache.org/xsd/settings-1.2.0.xsd" xmlns="http://maven.apache.org/SETTINGS/1.2.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <servers>
+    <server>
+      <username>e1079458</username>
+      <password>cmVmdGtuOjAxOjE3NDcyMjkwOTg6aEtxcVhCY3BCYjBXUDVuSmRGaFhOaERNVHp1</password>
+      <id>central</id>
+    </server>
+    <server>
+      <username>e1079458</username>
+      <password>cmVmdGtuOjAxOjE3NDcyMjkwOTg6aEtxcVhCY3BCYjBXUDVuSmRGaFhOaERNVHp1</password>
+      <id>snapshots</id>
+    </server>
+  </servers>
+  <profiles>
+    <profile>
+      <repositories>
+        <repository>
+          <snapshots>
+            <enabled>false</enabled>
+          </snapshots>
+          <id>central</id>
+          <name>sgw-maven-dev</name>
+          <url>https://artifactory.fis.dev/artifactory/sgw-maven-dev</url>
+        </repository>
+        <repository>
+          <snapshots />
+          <id>snapshots</id>
+          <name>sgw-maven-dev</name>
+          <url>https://artifactory.fis.dev/artifactory/sgw-maven-dev</url>
+        </repository>
+      </repositories>
+      <pluginRepositories>
+        <pluginRepository>
+          <snapshots>
+            <enabled>false</enabled>
+          </snapshots>
+          <id>central</id>
+          <name>sgw-maven-dev</name>
+          <url>https://artifactory.fis.dev/artifactory/sgw-maven-dev</url>
+        </pluginRepository>
+        <pluginRepository>
+          <snapshots />
+          <id>snapshots</id>
+          <name>sgw-maven-dev</name>
+          <url>https://artifactory.fis.dev/artifactory/sgw-maven-dev</url>
+        </pluginRepository>
+      </pluginRepositories>
+      <id>artifactory</id>
+    </profile>
+  </profiles>
+  <activeProfiles>
+    <activeProfile>artifactory</activeProfile>
+  </activeProfiles>
+  <proxies>
+	<proxy>
+	<id>fis.dev.proxy</id>
+	<active>true</active>
+	<protocol>http</protocol>
+	<host>10.49.98.4</host>
+	<port>8080</port>
+	<nonProxyHosts>10.254.154.123|10.254.154.133</nonProxyHosts>
+	</proxy>
+	</proxies>
+</settings>

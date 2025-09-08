@@ -1,0 +1,27 @@
+# Use the Maven image as a base
+FROM maven:3.9.6-eclipse-temurin-17-alpine
+
+# Set up an HTTP proxy for Jenkins controller
+ENV HTTP_PROXY=http://10.49.98.4:8080
+ENV HTTPS_PROXY=$HTTP_PROXY
+ENV NO_PROXY=localhost,127.0.0.1,your_excluded_domains
+
+# Remove the default settings.xml file to be able to download from external repos
+RUN rm -f /usr/share/maven/conf/settings.xml
+
+# Copy the custom .m2 settings file to the container
+COPY settings.xml /root/.m2/settings.xml
+
+# Set up an HTTP proxy for Jenkins controller
+# ENV HTTP_PROXY=http://your_proxy_server:your_proxy_port
+# ENV HTTPS_PROXY=
+# ENV NO_PROXY=localhost,127.0.0.1,your_excluded_domains
+
+# Set the environment variables for the Maven build
+# ENV MAVEN_OPTS "-Dmaven.repo.local=/root/.m2/repository -Dsettings.xml=/root/.m2/settings.xml"
+ENV MAVEN_OPTS "-Dmaven.repo.local=/home/jenkins/.m2/repository -Dsettings.xml=/root/.m2/settings.xml"
+# Expose the Maven CLI port
+EXPOSE 8080
+
+# Run the Maven CLI as the entrypoint
+CMD ["mvn", "help"]

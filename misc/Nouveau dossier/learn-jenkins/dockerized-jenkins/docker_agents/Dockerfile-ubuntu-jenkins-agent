@@ -1,0 +1,19 @@
+FROM jenkins/agent:latest
+
+# Set environment variables for the HTTP proxy
+ARG HTTP_PROXY=http://10.49.98.4:8080
+ARG HTTPS_PROXY=$HTTP_PROXY
+ARG NO_PROXY=localhost,127.0.0.1,localhost.localdomain,10.49.98.4
+
+# Set the environment variables for the ubuntu package manager
+ENV http_proxy=$HTTP_PROXY
+ENV https_proxy=$HTTPS_PROXY
+ENV no_proxy=$NO_PROXY
+
+USER root
+
+RUN apt-get update && apt-get install -y docker.io && rm -rf /var/lib/apt/lists/*
+
+USER jenkins
+
+RUN echo 'export DOCKER_HOST="unix:///var/run/docker.sock"' >> /home/jenkins/.bashrc

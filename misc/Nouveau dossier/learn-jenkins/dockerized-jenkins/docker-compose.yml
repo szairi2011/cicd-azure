@@ -1,0 +1,103 @@
+version: "3.7"
+services:
+  jenkins:
+    image: jenkins/jenkins:lts
+    network_mode: "host" # This will set the container on the same network as the host machine; this is important for the Jenkins controller to communicate properly wit the Docker agents e.g. throuh ssh
+    privileged: true
+    user: root
+    ports:
+      - 8080:8080
+      - 50000:50000
+    container_name: jenkins-lts
+    restart: always
+    volumes:
+      # - ~/jenkins_home:/var/jenkins_home
+      - /var/jenkins_home:/var/jenkins_home
+      - /var/run/docker.sock:/var/run/docker.sock
+      # - /usr/local/bin/docker:/usr/local/bin/docker
+      - /usr/bin/docker:/usr/bin/docker
+  
+  jenkins-ubuntu-agent:
+    image: jenkins-maven-ubuntu:latest
+    # network_mode: "host"
+    privileged: true
+    user: root
+    ports:
+      - '4321:22'
+    container_name: jenkins-agent-ubuntu
+    # restart: always
+    build:
+      context: ./docker_agents
+      dockerfile: Dockerfile-ubuntu
+    environment:
+      # - JENKINS_AGENT_SECRET=your-agent-secret
+      - JENKINS_USERNAME=jenkins
+      - JENKINS_PASSWORD=jenkins # Added only for visibility reasons
+    volumes:
+      - /home/jenkins:/home/jenkins
+      # - /var/run/docker.sock:/var/run/docker.sock
+      - /usr/bin/docker:/usr/bin/docker
+
+  java17-maven-runner:
+    image: java17-maven-runner:latest
+    # network_mode: "host"
+    privileged: true
+    user: root
+    # ports:
+    #   - '4321:22'
+    container_name: java17-maven-runner
+    # restart: always
+    build:
+      context: ./docker_runners
+      dockerfile: Dockerfile-java17-maven-runner
+    # environment:
+    #   # - JENKINS_AGENT_SECRET=your-agent-secret
+    #   - JENKINS_USERNAME=jenkins
+    #   - JENKINS_PASSWORD=jenkins # Added only for visibility reasons
+    volumes:
+      - /home/jenkins:/home/jenkins
+      - /var/run/docker.sock:/var/run/docker.sock
+      - /usr/bin/docker:/usr/bin/docker
+
+  # jenkins-agent:
+  #   image: soulou2019/java-jenkins-agent:latest
+  #   network_mode: "host"
+  #   privileged: true
+  #   user: root
+  #   ports:
+  #     - '2222:22'
+  #   container_name: jenkins-agent-java
+  #   restart: always
+  #   build:
+  #     context: .
+  #     dockerfile: Dockerfile
+  #   environment:
+  #     - JENKINS_AGENT_SECRET=your-agent-secret
+  #     - JENKINS_USERNAME=jenkins
+  #     - JENKINS_PASSWORD=jenkins # Added only for visibility reasons
+  #   volumes:
+  #     - /var/jenkins_home:/var/jenkins_home
+  #     - /var/run/docker.sock:/var/run/docker.sock
+  #     - /usr/bin/docker:/usr/bin/docker
+
+  # ngrok:
+  #   image: shkoliar/ngrok:latest
+  #   # image: ngrok:latest
+  #   # build:
+  #   #   context: ./ngrok
+  #   #   dockerfile: Dockerfile-ngrok
+  #   ports:
+  #     - 4551:4551
+  #   links:
+  #     - jenkins
+  #   environment:
+  #     # - PARAMS=http -region=eu -authtoken=2fYPAqGhcEjrsmakKBJm1OufmM1_4hwXe6ck5PZvKaiDMrnJX localdev.docker:80
+  #     - http_proxy=http://10.49.98.4:8080
+  #     # - AUTH_TOKEN=2fYPAqGhcEjrsmakKBJm1OufmM1_4hwXe6ck5PZvKaiDMrnJX
+  #     # - NGROK_AUTH_TOKEN=2fYPAqGhcEjrsmakKBJm1OufmM1_4hwXe6ck5PZvKaiDMrnJX
+  #     # - PARAMS=http -region=eu -authtoken=2fYPAqGhcEjrsmakKBJm1OufmM1_4hwXe6ck5PZvKaiDMrnJX -log=stdout -config=./ngrok.yml emea-tun-ptds01:8080
+  #     - PARAMS=http emea-tun-ptds01:8080 -region=eu  -authtoken=2fYPAqGhcEjrsmakKBJm1OufmM1_4hwXe6ck5PZvKaiDMrnJX -log=stdout 
+  #     # - PARAMS=http -region=eu -authtoken=${NGROK_AUTH_TOKEN} -log=stdout emea-tun-ptds01:8080
+  #     # - PARAMS=http -region=eu -log=stdout emea-tun-ptds01:8080
+  #     # - DOMAIN=emea-tun-ptds01
+  #     # - PORT=8080

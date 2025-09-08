@@ -1,0 +1,32 @@
+# FROM ubuntu:latest
+FROM ubuntu:18.04
+
+USER root
+
+# Set environment variables for the HTTP proxy
+ARG HTTP_PROXY=http://10.49.98.4:8080
+ARG HTTPS_PROXY=$HTTP_PROXY
+ARG NO_PROXY=localhost,127.0.0.1,localhost.localdomain,10.49.98.4
+
+# Set the environment variables for the ubuntu package manager
+ENV http_proxy=$HTTP_PROXY
+ENV https_proxy=$HTTPS_PROXY
+ENV no_proxy=$NO_PROXY
+
+# Install docker CLI
+RUN apt update && \
+    apt install -y docker.io && \
+    apt install openssh-server sudo -y && \
+    apt install -y openjdk-17-jdk
+
+# RUN sudo apt install -y openjdk-17-jdk
+
+RUN useradd -rm -d /home/ubuntu -s /bin/bash -g root -G sudo -u 1000 jenkins
+
+RUN echo 'jenkins:jenkins' | chpasswd
+
+RUN service ssh start
+
+EXPOSE 22
+
+WORKDIR /home/ubuntu

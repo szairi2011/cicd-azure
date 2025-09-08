@@ -1,0 +1,9 @@
+ngrok:
+  image: shkoliar/ngrok:latest
+  ports:
+    - 4551:4551
+  links:
+    - jenkins
+  environment:
+    - DOMAIN=emea-tun-ptds01
+    - PORT=8080
